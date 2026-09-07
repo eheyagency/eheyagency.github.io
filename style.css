@@ -1,38 +1,313 @@
+/* ==========================================================================
+   RESET & BASE STYLES
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.badge-role.sub { background-color: #ffaa00; }
-.badge-role.member { background-color: #25f4ee; color: #0b0914; }
-
-.member-card h3 {
-  font-size: 18px;
-  margin-bottom: 5px;
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
 }
 
-.member-card p {
-  color: #25f4ee;
-  font-size: 14px;
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-/* Responsif untuk Layar Lebar */
-@media (min-width: 768px) {
-  .team-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+/* ==========================================================================
+   NAVIGATION
+   ========================================================================== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
+nav .logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: #111;
+    letter-spacing: -1px;
 }
 
-/* Layanan Card / Grid */
-.services-section {
-  padding: 60px 5%;
-  background-color: #120e24;
+nav .logo span {
+    color: #fe2c55; /* Warna Khas TikTok */
 }
 
-.services-section h2 {
-  text-align: center;
-  margin-bottom: 40px;
+nav .menu-tag {
+    background: #25f4ee;
+    color: #111;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero {
+    text-align: center;
+    padding: 80px 5%;
+    background: linear-gradient(135deg, #111 0%, #222 100%);
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero .highlight {
+    color: #fe2c55;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    color: #ccc;
+}
+
+/* BUTTONS */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 30px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #fe2c55;
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #e11d43;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    color: #111;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   SERVICES & CARDS
+   ========================================================================== */
+.services-section, .team-section {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background-color: #fe2c55;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .grid-container {
-  display: grid;
-  grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card .icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+/* ==========================================================================
+   TEAM SECTION
+   ========================================================================== */
+.sub-title {
+    color: #666;
+    margin-bottom: 40px;
+    margin-top: -30px;
+}
+
+.founder-area {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+.member-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.member-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.member-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    background-color: #ddd;
+}
+
+.member-card h3 {
+    margin: 15px 0 5px 0;
+    font-size: 18px;
+}
+
+.member-card p {
+    color: #fe2c55;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+/* BADGES */
+.badge-role {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+.elite .badge-role { background-color: #111; color: #fff; }
+.sub .badge-role { background-color: #25f4ee; color: #111; }
+.member .badge-role { background-color: #f1f1f1; color: #555; }
+
+/* ==========================================================================
+   JOIN FORM SECTION
+   ========================================================================== */
+.join-section {
+    background: #f0f2f5;
+    padding: 80px 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.form-box {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.form-box h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.form-box h2::after { display: none; }
+
+.form-box p {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+}
+
+form input:focus, form select:focus {
+    border-color: #fe2c55;
+}
+
+form button {
+    width: 100%;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+footer {
+    background-color: #111;
+    color: #777;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (RESPONSIVE)
+   ========================================================================== */
+@media (max-width: 600px) {
+    .hero h1 { font-size: 32px; }
+    .hero-buttons { flex-direction: column; }
+    .form-box { padding: 25px; }
+}
