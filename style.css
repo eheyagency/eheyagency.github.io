@@ -26,7 +26,7 @@ a {
     position: fixed;
     top: 15px;
     right: 15px;
-    background-color: #0056b3; /* Biru pekat */
+    background-color: #0056b3;
     color: white;
     border: none;
     width: 46px;
@@ -34,7 +34,7 @@ a {
     border-radius: 50%;
     font-size: 20px;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     z-index: 99;
 }
 
@@ -44,7 +44,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 998;
     opacity: 0;
     pointer-events: none;
@@ -173,37 +173,49 @@ a {
 }
 
 /* ==========================================================================
-   HERO BRADING CONTENT
+   HERO BRADING DENGAN POSTER FOTO UTAMA
    ========================================================================== */
-.hero {
+.hero-poster {
+    position: relative;
+    width: 100%;
+    min-height: 85vh; /* Menyesuaikan tinggi poster mewah di layar gawai */
+    display: flex;
+    align-items: flex-end; /* Meletakkan tombol & deskripsi di area bawah poster */
+    justify-content: center;
     text-align: center;
-    padding: 90px 20px 70px 20px;
-    background: linear-gradient(180deg, #111827 0%, #1f2937 100%);
-    color: #ffffff;
+    
+    /* PENGATURAN GAMBAR POSTER */
+    background-image: url('eheyagencypartofalqaqa.png'); 
+    background-size: contain; /* Memastikan poster utuh tidak terpotong */
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-color: #000000; /* Mengisi background hitam di sekeliling gambar */
+    padding: 40px 20px;
 }
 
-.hero h1 {
-    font-size: 38px;
-    font-weight: 900;
-    letter-spacing: 1px;
+/* GRADASI HITAM AGAR TEKS DI BAWAH POSTER TERBACA JELAS */
+.hero-overlay-dark {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 40%, rgba(0,0,0,0));
+    z-index: 1;
 }
 
-.hero .hero-sub {
-    font-size: 18px;
-    color: #9ca3af;
-    margin-top: 5px;
-    margin-bottom: 20px;
+.hero-content-box {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+    width: 100%;
 }
 
-.hero .highlight {
-    color: #fe2c55;
-}
-
-.hero .hero-desc {
+.hero-poster .hero-desc {
     font-size: 15px;
-    max-width: 600px;
-    margin: 0 auto 30px auto;
-    color: #d1d5db;
+    margin-bottom: 25px;
+    color: #e5e7eb;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
 
 .hero-buttons {
@@ -236,6 +248,11 @@ a {
     background-color: transparent;
     color: #ffffff;
     border: 2px solid #ffffff;
+}
+
+.btn-secondary:hover {
+    background-color: #ffffff;
+    color: #111827;
 }
 
 /* ==========================================================================
@@ -386,7 +403,7 @@ footer {
 
 /* RESPONSIVITAS MOBILE */
 @media (max-width: 480px) {
-    .hero h1 { font-size: 30px; }
+    .hero-poster { min-height: 70vh; }
     .hero-buttons { flex-direction: column; }
     .hero-buttons .btn { width: 100%; }
 }
