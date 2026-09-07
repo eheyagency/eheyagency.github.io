@@ -22,37 +22,57 @@ a {
 /* ==========================================================================
    NAVIGATION
    ========================================================================== */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5%;
+/* ==========================================================================
+   PERBAIKAN TOTAL NAVIGASI RATA TENGAH
+   ========================================================================== */
+.nav-pusat {
+    display: flex !important;
+    flex-direction: column !important; /* Memaksa elemen menyusun ke bawah */
+    align-items: center !important;    /* Memaksa rata tengah secara horizontal */
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 15px 5%;
     background-color: #ffffff;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
+    width: 100%;
 }
 
-nav .logo {
-    font-size: 24px;
+/* Gaya Tulisan Utama AL QAQA MANAGEMENT */
+.nav-pusat .logo {
+    font-size: 22px;
     font-weight: 800;
     color: #111;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
+    margin-bottom: 2px;
 }
 
-nav .logo span {
-    color: #fe2c55; /* Warna Khas TikTok */
+.nav-pusat .logo span {
+    color: #fe2c55;
 }
 
-nav .menu-tag {
+/* Gaya Tulisan EHEY AGENCY Tepat di Bawahnya */
+.nav-pusat .sub-agency {
+    font-size: 14px;
+    font-weight: 700;
+    color: #555;
+    letter-spacing: 2px;
+    margin-bottom: 8px; /* Memberi jarak sebelum tombol biru */
+}
+
+/* Gaya Kapsul Biru TikTok Agency */
+.nav-pusat .menu-tag {
     background: #25f4ee;
     color: #111;
-    padding: 5px 15px;
+    padding: 4px 14px;
     border-radius: 20px;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 13px;
+    display: inline-block;
 }
+
 
 /* ==========================================================================
    HERO SECTION
