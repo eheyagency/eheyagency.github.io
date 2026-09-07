@@ -1,5 +1,5 @@
 /* ==========================================================================
-   RESET & DASAR
+   RESET & DASAR UTAMA
    ========================================================================== */
 * {
     margin: 0;
@@ -20,65 +20,170 @@ a {
 }
 
 /* ==========================================================================
-   NAVIGASI (DESAIN RATA TENGAH TOTAL)
+   MODUL SIDEBAR MENU (GAYA EVOCHAT)
    ========================================================================== */
-.nav-pusat {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
-    padding: 16px 20px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    gap: 4px;
-}
-
-.nav-pusat .main-management {
+.btn-buka-menu {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background-color: #0056b3; /* Biru pekat */
+    color: white;
+    border: none;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
     font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    z-index: 99;
+}
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.menu-overlay.aktif {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: -320px;
+    width: 290px;
+    height: 100%;
+    background-color: #f8f9fa;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-menu.aktif {
+    left: 0;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.sidebar-logo {
+    font-size: 18px;
     font-weight: 800;
-    color: #111827;
-    letter-spacing: -0.5px;
+    color: #0056b3;
 }
 
-.nav-pusat .main-management span {
-    color: #fe2c55; /* Warna Aksen TikTok Red */
+.sidebar-logo span {
+    color: #fe2c55;
 }
 
-.nav-pusat .sub-agency {
+.btn-tutup-menu {
+    background-color: #ffffff;
+    color: #495057;
+    border: 1px solid #e9ecef;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.sidebar-links {
+    list-style: none;
+    padding: 10px 0;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.sidebar-links li a {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
     font-size: 15px;
-    font-weight: 700;
-    color: #4b5563;
-    letter-spacing: 3px;
-    margin-bottom: 4px;
+    font-weight: 600;
+    color: #495057;
+    border-bottom: 1px solid #f1f3f5;
+    transition: all 0.2s;
 }
 
-.nav-pusat .menu-tag {
-    background-color: #25f4ee; /* Warna Aksen TikTok Cyan */
-    color: #111827;
-    padding: 4px 14px;
-    border-radius: 9999px;
-    font-weight: 600;
+.sidebar-links li a:hover, 
+.sidebar-links li a.active {
+    background-color: #e9ecef;
+    color: #0056b3;
+}
+
+.sidebar-links li .icon {
+    margin-right: 12px;
+    font-size: 16px;
+}
+
+.sidebar-links li .arrow {
+    margin-left: auto;
+    font-size: 10px;
+    color: #adb5bd;
+}
+
+.sidebar-footer {
+    padding: 20px 15px;
+    background-color: #ffffff;
+    border-top: 1px solid #e9ecef;
+}
+
+.btn-sponsor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 11px;
+    border: 2px solid #0056b3;
+    color: #0056b3;
+    border-radius: 25px;
     font-size: 12px;
-    display: inline-block;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.btn-sponsor:hover {
+    background-color: #0056b3;
+    color: #ffffff;
+}
+
+.btn-sponsor .hand-icon {
+    margin-right: 8px;
 }
 
 /* ==========================================================================
-   HERO BRADING
+   HERO BRADING CONTENT
    ========================================================================== */
 .hero {
     text-align: center;
-    padding: 70px 20px;
+    padding: 90px 20px 70px 20px;
     background: linear-gradient(180deg, #111827 0%, #1f2937 100%);
     color: #ffffff;
 }
 
 .hero h1 {
-    font-size: 40px;
+    font-size: 38px;
     font-weight: 900;
     letter-spacing: 1px;
 }
@@ -92,7 +197,6 @@ a {
 
 .hero .highlight {
     color: #fe2c55;
-    font-weight: 700;
 }
 
 .hero .hero-desc {
@@ -109,7 +213,6 @@ a {
     flex-wrap: wrap;
 }
 
-/* BUTTON SYSTEM */
 .btn {
     padding: 12px 24px;
     font-weight: 600;
@@ -127,7 +230,6 @@ a {
 
 .btn-primary:hover {
     background-color: #e11d43;
-    transform: translateY(-1px);
 }
 
 .btn-secondary {
@@ -136,14 +238,8 @@ a {
     border: 2px solid #ffffff;
 }
 
-.btn-secondary:hover {
-    background-color: #ffffff;
-    color: #111827;
-    transform: translateY(-1px);
-}
-
 /* ==========================================================================
-   SEKSI LAYANAN
+   SEKSI SEKSI HALAMAN
    ========================================================================== */
 .services-section, .team-section {
     padding: 60px 20px;
@@ -153,7 +249,7 @@ a {
 }
 
 h2 {
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 800;
     margin-bottom: 35px;
     color: #111827;
@@ -173,15 +269,9 @@ h2 {
     border: 1px solid #f3f4f6;
 }
 
-.card .icon {
-    font-size: 36px;
-    margin-bottom: 15px;
-}
-
 .card h3 {
     font-size: 18px;
-    margin-bottom: 10px;
-    color: #111827;
+    margin: 10px 0;
 }
 
 .card p {
@@ -189,12 +279,10 @@ h2 {
     color: #4b5563;
 }
 
-/* ==========================================================================
-   SEKSI STRUKTUR TIM (KARTU KREATOR)
-   ========================================================================== */
+/* KARTU TIM KREATOR */
 .sub-title {
     color: #6b7280;
-    font-size: 14px;
+    font-size: 13px;
     margin-top: -25px;
     margin-bottom: 35px;
 }
@@ -217,28 +305,21 @@ h2 {
     overflow: hidden;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     border: 1px solid #e5e7eb;
-    transition: transform 0.2s ease;
-}
-
-.member-card:hover {
-    transform: translateY(-3px);
 }
 
 .img-placeholder {
     width: 100%;
-    height: 180px;
+    height: 170px;
     background-color: #f3f4f6;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
-    color: #9ca3af;
+    font-size: 28px;
 }
 
 .member-card h3 {
-    font-size: 16px;
-    margin: 12px 0 4px 0;
-    color: #111827;
+    font-size: 15px;
+    margin: 10px 0 4px 0;
 }
 
 .member-card p {
@@ -248,7 +329,6 @@ h2 {
     margin-bottom: 12px;
 }
 
-/* Lencana Peran */
 .badge-role {
     display: inline-block;
     padding: 3px 10px;
@@ -263,7 +343,7 @@ h2 {
 .member .badge-role { background-color: #f3f4f6; color: #4b5563; }
 
 /* ==========================================================================
-   FORM PENDAFTARAN
+   FORM PENDAFTARAN & FOOTER
    ========================================================================== */
 .join-section {
     background-color: #f3f4f6;
@@ -276,46 +356,26 @@ h2 {
     background: #ffffff;
     padding: 30px;
     border-radius: 12px;
-    max-width: 460px;
+    max-width: 450px;
     width: 100%;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
 }
 
-.form-box h2 {
-    font-size: 22px;
-    margin-bottom: 8px;
-}
-
-.form-box p {
-    font-size: 13px;
-    color: #4b5563;
-    margin-bottom: 20px;
-}
-
 form input, form select {
     width: 100%;
-    padding: 10px 14px;
+    padding: 11px 14px;
     margin-bottom: 12px;
     border: 1px solid #d1d5db;
     border-radius: 6px;
     font-size: 14px;
     outline: none;
-    background-color: #fff;
-}
-
-form input:focus, form select:focus {
-    border-color: #fe2c55;
-    box-shadow: 0 0 0 2px rgba(254, 44, 85, 0.1);
 }
 
 form button {
     width: 100%;
-    margin-top: 8px;
+    margin-top: 5px;
 }
 
-/* ==========================================================================
-   FOOTER
-   ========================================================================== */
 footer {
     background-color: #111827;
     color: #6b7280;
@@ -326,7 +386,7 @@ footer {
 
 /* RESPONSIVITAS MOBILE */
 @media (max-width: 480px) {
-    .hero h1 { font-size: 32px; }
+    .hero h1 { font-size: 30px; }
     .hero-buttons { flex-direction: column; }
     .hero-buttons .btn { width: 100%; }
 }
