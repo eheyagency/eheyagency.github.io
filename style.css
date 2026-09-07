@@ -1,0 +1,38 @@
+}
+
+.badge-role.sub { background-color: #ffaa00; }
+.badge-role.member { background-color: #25f4ee; color: #0b0914; }
+
+.member-card h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.member-card p {
+  color: #25f4ee;
+  font-size: 14px;
+}
+
+/* Responsif untuk Layar Lebar */
+@media (min-width: 768px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+}
+
+/* Layanan Card / Grid */
+.services-section {
+  padding: 60px 5%;
+  background-color: #120e24;
+}
+
+.services-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
