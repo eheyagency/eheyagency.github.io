@@ -135,20 +135,25 @@
   </section>
 
   <!-- FORMULIR PENDAFTARAN -->
+    <!-- ==========================================================================
+     FORMULIR PENDAFTARAN DENGAN INTEGRASI WHATSAPP ROTASI 2 ADMIN
+     ========================================================================== -->
   <section id="join" class="join-section">
     <div class="form-box">
       <h2>Formulir Registrasi Kemitraan</h2>
       <p>Silakan isi data diri Anda untuk bergabung ke dalam naungan Ehey Agency x Al Qaqa Management.</p>
-      <form onsubmit="event.preventDefault(); alert('Data Anda telah terkirim ke sistem Al Qaqa Management x Ehey Agency!');">
-        <input type="text" placeholder="Nama Lengkap Anda" required>
-        <input type="text" placeholder="ID / Username TikTok (Contoh: @nama_akun)" required>
-        <input type="tel" placeholder="Nomor WhatsApp Aktif" required>
-        <select required>
+      
+      <!-- ID FORMULIR DIKAITKAN DENGAN JAVASCRIPT -->
+      <form id="whatsappForm">
+        <input type="text" id="namaLengkap" placeholder="Nama Lengkap Anda" required>
+        <input type="text" id="usernameTiktok" placeholder="ID / Username TikTok (Contoh: @nama_akun)" required>
+        <input type="tel" id="nomorWa" placeholder="Nomor WhatsApp Aktif" required>
+        <select id="statusPeran" required>
           <option value="" disabled selected>Pilih Status Registrasi</option>
-          <option value="kreator">Pendaftaran Kreator / Live Host</option>
-          <option value="sub-user">Pendaftaran Tim Internal / Sub-User</option>
+          <option value="Kreator / Live Host">Pendaftaran Kreator / Live Host</option>
+          <option value="Tim Internal / Sub-User">Pendaftaran Tim Internal / Sub-User</option>
         </select>
-        <button type="submit" class="btn btn-primary">Kirim Formulir Pendaftaran</button>
+        <button type="submit" class="btn btn-primary">Kirim Ke WhatsApp Admin</button>
       </form>
     </div>
   </section>
@@ -158,14 +163,60 @@
     <p>&copy; 2026 EHEY AGENCY by AL QAQA MANAGEMENT. Hak Cipta Dilindungi.</p>
   </footer>
 
+  <!-- ==========================================================================
+     JAVASCRIPT UTAMA (BUKA/TUTUP MENU + ROTASI FORM WHATSAPP)
+     ========================================================================== -->
   <script>
+    // 1. Fungsi Buka Tutup Menu Samping
     function toggleMenu() {
       const menu = document.getElementById('sidebarMenu');
       const overlay = document.getElementById('menuOverlay');
       menu.classList.toggle('aktif');
       overlay.classList.toggle('aktif');
     }
-  </script>
 
+    // 2. Fungsi Kirim Data Form ke 2 Nomor WhatsApp Bergantian
+    document.getElementById('whatsappForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Mencegah halaman refresh otomatis
+
+      // MASUKKAN 2 NOMOR WHATSAPP ADMIN DI SINI (Gunakan kode negara 62 di depan, tanpa tanda + atau angka 0)
+      const admin1 = "6285398557520"; // Ganti dengan nomor Admin 1 Anda
+      const admin2 = "6282298180166"; // Ganti dengan nomor Admin 2 Anda
+
+      // Mengambil data input dari pendaftar
+      const nama = document.getElementById('namaLengkap').value;
+      const tiktok = document.getElementById('usernameTiktok').value;
+      const waPendaftar = document.getElementById('nomorWa').value;
+      const peran = document.getElementById('statusPeran').value;
+
+      // Menyusun format teks pesan WhatsApp agar rapi dan terbaca jelas
+      const teksPesan = `Halo Admin *AL QAQA x EHEY AGENCY*, saya ingin mendaftar.%0A%0A` +
+                        `*--- DATA REGISTRASI MITRA ---*%0A` +
+                        `📝 *Nama Lengkap :* ${encodeURIComponent(nama)}%0A` +
+                        `📱 *ID/User TikTok :* ${encodeURIComponent(tiktok)}%0A` +
+                        `📞 *No. WhatsApp :* ${encodeURIComponent(waPendaftar)}%0A` +
+                        `🎯 *Daftar Sebagai :* ${encodeURIComponent(peran)}%0A%0A` +
+                        `Mohon segera diproses bimbingannya, terima kasih!`;
+
+      // Sistem Deteksi Rotasi menggunakan LocalStorage (Penyimpanan memori browser HP)
+      let nomorTujuan = admin1;
+      let giliranTerakhir = localStorage.getItem('lastAdminRotation');
+
+      if (giliranTerakhir === 'admin1') {
+          nomorTujuan = admin2;
+          localStorage.setItem('lastAdminRotation', 'admin2'); // Alihkan ke admin 2 untuk pendaftar selanjutnya
+      } else {
+          nomorTujuan = admin1;
+          localStorage.setItem('lastAdminRotation', 'admin1'); // Alihkan ke admin 1 untuk pendaftar selanjutnya
+      }
+
+      // Membuat URL tautan kirim pesan WhatsApp otomatis
+      const urlWhatsapp = `https://whatsapp.com{nomorTujuan}&text=${teksPesan}`;
+
+      // Membuka aplikasi WhatsApp di HP pendaftar secara otomatis
+      window.open(urlWhatsapp, '_blank');
+    });
+  </script>
 </body>
+
 </html>
