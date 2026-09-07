@@ -9,14 +9,63 @@
 </head>
 <body>
 
-  <!-- NAVIGASI RATA TENGAH (STRUKTUR VERTIKAL) -->
-  <nav class="nav-pusat">
-    <div class="main-management">AL QAQA <span>MANAGEMENT</span></div>
-    <div class="sub-agency">EHEY AGENCY</div>
-    <div class="menu-tag">Official TikTok Live Agency</div>
+  <!-- ==========================================================================
+     MODUL MENU SAMPING (SIDEBAR NAVIGATION)
+     ========================================================================== -->
+  <!-- TOMBOL UNTUK MEMBUKA MENU (Bulat Biru di Kanan Atas) -->
+  <button class="btn-buka-menu" onclick="toggleMenu()">☰</button>
+
+  <!-- OVERLAY BACKGROUND GELAP SAAT MENU AKTIF -->
+  <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+
+  <!-- SIDEBAR MENU UTAMA -->
+  <nav class="sidebar-menu" id="sidebarMenu">
+    
+    <!-- HEADER MENU: LOGO & TOMBOL CLOSE -->
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        AL QAQA <span>MGMT</span>
+      </div>
+      <button class="btn-tutup-menu" onclick="toggleMenu()">×</button>
+    </div>
+
+    <!-- DAFTAR LINK NAVIGASI -->
+    <ul class="sidebar-links">
+      <li>
+        <a href="#" class="active" onclick="toggleMenu()">
+          <span class="icon">🎧</span> Home
+        </a>
+      </li>
+      <li class="has-dropdown">
+        <a href="#services" onclick="toggleMenu()">
+          <span class="icon">📅</span> Services & News <span class="arrow">▼</span>
+        </a>
+      </li>
+      <li class="has-dropdown">
+        <a href="#team" onclick="toggleMenu()">
+          <span class="icon">👥</span> Our Team <span class="arrow">▼</span>
+        </a>
+      </li>
+      <li>
+        <a href="#join" onclick="toggleMenu()">
+          <span class="icon">🎮</span> Register Member
+        </a>
+      </li>
+    </ul>
+
+    <!-- TOMBOL AKSENTUASI DI BAGIAN BAWAH SIDEBAR -->
+    <div class="sidebar-footer">
+      <a href="#join" class="btn-sponsor" onclick="toggleMenu()">
+        <span class="hand-icon">🤝</span> BECOME A PARTNER
+      </a>
+    </div>
   </nav>
 
-  <!-- HERO SECTION -->
+
+  <!-- ==========================================================================
+     KONTEN UTAMA HALAMAN WEB (MAIN CONTENT)
+     ========================================================================== -->
+  <!-- HERO SECTION BRANDING -->
   <header class="hero">
     <h1>EHEY AGENCY</h1>
     <p class="hero-sub">Part of <span class="highlight">AL QAQA MANAGEMENT</span></p>
@@ -50,7 +99,7 @@
   </section>
 
   <!-- STRUKTUR TEAM -->
-  <section class="team-section">
+  <section id="team" class="team-section">
     <h2>Struktur Organisasi</h2>
     <p class="sub-title">Klik kartu untuk mengunjungi akun resmi kami</p>
 
@@ -68,7 +117,6 @@
 
     <!-- Sub Management (Ehey Agency) & Members -->
     <div class="team-grid">
-      
       <div class="member-card sub-leader">
         <a href="https://tiktok.com" target="_blank">
           <div class="img-placeholder">📸</div>
@@ -77,7 +125,6 @@
           <p>@ehey.agency</p>
         </a>
       </div>
-
       <div class="member-card">
         <a href="https://tiktok.com" target="_blank">
           <div class="img-placeholder">📸</div>
@@ -86,7 +133,6 @@
           <p>@kreator_ehey1</p>
         </a>
       </div>
-
       <div class="member-card">
         <a href="https://tiktok.com" target="_blank">
           <div class="img-placeholder">📸</div>
@@ -95,7 +141,6 @@
           <p>@kreator_ehey2</p>
         </a>
       </div>
-
     </div>
   </section>
 
@@ -122,6 +167,16 @@
   <footer>
     <p>&copy; 2026 EHEY AGENCY by AL QAQA MANAGEMENT. Hak Cipta Dilindungi.</p>
   </footer>
+
+  <!-- JAVASCRIPT UNTUK BUKA/TUTUP MENU -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('sidebarMenu');
+      const overlay = document.getElementById('menuOverlay');
+      menu.classList.toggle('aktif');
+      overlay.classList.toggle('aktif');
+    }
+  </script>
 
 </body>
 </html>
