@@ -10,18 +10,12 @@
 <body>
 
   <!-- ==========================================================================
-     MODUL MENU SAMPING (SIDEBAR NAVIGATION)
+     MODUL MENU SAMPING (SIDEBAR NAVIGATION - ELEGAN DARK)
      ========================================================================== -->
-  <!-- TOMBOL UNTUK MEMBUKA MENU (Bulat Biru di Kanan Atas) -->
   <button class="btn-buka-menu" onclick="toggleMenu()">☰</button>
-
-  <!-- OVERLAY BACKGROUND GELAP SAAT MENU AKTIF -->
   <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
 
-  <!-- SIDEBAR MENU UTAMA -->
   <nav class="sidebar-menu" id="sidebarMenu">
-    
-    <!-- HEADER MENU: LOGO & TOMBOL CLOSE -->
     <div class="sidebar-header">
       <div class="sidebar-logo">
         AL QAQA <span>MGMT</span>
@@ -29,7 +23,6 @@
       <button class="btn-tutup-menu" onclick="toggleMenu()">×</button>
     </div>
 
-    <!-- DAFTAR LINK NAVIGASI -->
     <ul class="sidebar-links">
       <li>
         <a href="#" class="active" onclick="toggleMenu()">
@@ -53,7 +46,6 @@
       </li>
     </ul>
 
-    <!-- TOMBOL AKSENTUASI DI BAGIAN BAWAH SIDEBAR -->
     <div class="sidebar-footer">
       <a href="#join" class="btn-sponsor" onclick="toggleMenu()">
         <span class="hand-icon">🤝</span> BECOME A PARTNER
@@ -61,15 +53,13 @@
     </div>
   </nav>
 
-
   <!-- ==========================================================================
-     KONTEN UTAMA HALAMAN WEB (MAIN CONTENT)
+     KONTEN UTAMA HALAMAN WEB (THEME: NEON DRIFT)
      ========================================================================== -->
-  <!-- HERO SECTION BRANDING DENGAN FOTO POSTER SEBAGAI BACKGROUND UTAMA -->
+  <!-- HERO POSTER BARU -->
   <header class="hero-poster">
     <div class="hero-overlay-dark"></div>
     <div class="hero-content-box">
-      <!-- Teks judul Ehey & Al Qaqa di sini sudah dihapus total, menyisakan deskripsi ringkas & tombol aksi -->
       <p class="hero-desc">Wadah resmi bagi para kreator berbakat di Gorontalo dan seluruh Indonesia untuk berkembang bersama ekosistem TikTok LIVE secara profesional.</p>
       <div class="hero-buttons">
         <a href="#join" class="btn btn-primary">Daftar Member Sekarang</a>
@@ -105,7 +95,6 @@
     <h2>Struktur Organisasi</h2>
     <p class="sub-title">Klik kartu untuk mengunjungi akun resmi kami</p>
 
-    <!-- Top Management (Al Qaqa) -->
     <div class="founder-area">
       <div class="member-card elite">
         <a href="https://tiktok.com" target="_blank">
@@ -117,7 +106,6 @@
       </div>
     </div>
 
-    <!-- Sub Management (Ehey Agency) & Members -->
     <div class="team-grid">
       <div class="member-card sub-leader">
         <a href="https://tiktok.com" target="_blank">
@@ -170,7 +158,6 @@
     <p>&copy; 2026 EHEY AGENCY by AL QAQA MANAGEMENT. Hak Cipta Dilindungi.</p>
   </footer>
 
-  <!-- JAVASCRIPT UNTUK BUKA/TUTUP MENU -->
   <script>
     function toggleMenu() {
       const menu = document.getElementById('sidebarMenu');
