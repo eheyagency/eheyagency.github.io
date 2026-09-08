@@ -1,6 +1,5 @@
 /* ==========================================
-   EHEY AGENCY — TikTok Live Creator Network
-   Part of AL QAQA MANAGEMENT
+   EHEY AGENCY — Part of AL QAQA MANAGEMENT
 ========================================== */
 
 * {
@@ -11,23 +10,23 @@
 }
 
 :root {
-    --tiktok-black: #000000;
-    --tiktok-dark: #121212;
-    --tiktok-gray: #2A2A2A;
-    --tiktok-pink: #FF2744;
-    --tiktok-cyan: #25F4EE;
-    --tiktok-white: #FFFFFF;
-    --tiktok-gray-text: #B4B4B4;
+    --black: #000000;
+    --dark: #121212;
+    --gray: #2A2A2A;
+    --yellow: #FFB800;
+    --orange: #FF6A00;
+    --white: #FFFFFF;
+    --gray-text: #B4B4B4;
 }
 
 body {
-    background: var(--tiktok-black);
-    color: var(--tiktok-white);
+    background: var(--black);
+    color: var(--white);
     line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* ===== BACKGROUND ANIMATION ===== */
+/* ===== BACKGROUND ===== */
 .bg-gradient {
     position: fixed;
     top: 0;
@@ -35,8 +34,8 @@ body {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(circle at 10% 20%, rgba(255, 39, 68, 0.15) 0%, transparent 20%),
-        radial-gradient(circle at 90% 80%, rgba(37, 244, 238, 0.15) 0%, transparent 20%);
+        radial-gradient(circle at 10% 20%, rgba(255, 184, 0, 0.12) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(255, 106, 0, 0.12) 0%, transparent 20%);
     z-index: -1;
     animation: bgPulse 8s ease-in-out infinite alternate;
 }
@@ -46,9 +45,9 @@ body {
     100% { opacity: 1; }
 }
 
-/* ===== HEADER & NAV ===== */
+/* ===== HEADER ===== */
 header {
-    padding: 1.5rem 5%;
+    padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,51 +56,81 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(0,0,0,0.8);
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
+    background: rgba(0,0,0,0.85);
+    flex-wrap: wrap;
     gap: 1rem;
 }
 
-.logo-icon {
-    font-size: 2.2rem;
-    background: linear-gradient(135deg, var(--tiktok-pink), var(--tiktok-cyan));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.header-inner {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+/* Logo Bulat Sama Besar */
+.logo-circle {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    background: linear-gradient(90deg, var(--yellow), var(--orange)) border-box;
+    filter: drop-shadow(0 0 8px rgba(255, 184, 0, 0.4));
+}
+
+.logo-text {
+    text-align: center;
 }
 
 .logo-text h1 {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     font-weight: 800;
     letter-spacing: 1px;
-    background: linear-gradient(90deg, var(--tiktok-pink), var(--tiktok-white), var(--tiktok-cyan));
+    background: linear-gradient(90deg, var(--yellow), var(--orange), var(--yellow));
+    background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: gradientMove 3s ease infinite;
+    line-height: 1.2;
 }
 
-.logo-text p {
-    font-size: 0.75rem;
-    color: var(--tiktok-gray-text);
+@keyframes gradientMove {
+    0%, 100% { background-position: 0% center; }
+    50% { background-position: 100% center; }
+}
+
+.logo-text .part-of {
+    font-size: 0.7rem;
+    color: var(--gray-text);
     letter-spacing: 2px;
     text-transform: uppercase;
+    line-height: 1.2;
 }
 
+.logo-text .aq-text {
+    font-size: 0.8rem;
+    color: var(--yellow);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+/* NAVIGASI */
 nav ul {
     display: flex;
     list-style: none;
-    gap: 2.5rem;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 nav a {
-    color: var(--tiktok-gray-text);
+    color: var(--gray-text);
     text-decoration: none;
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
@@ -109,7 +138,7 @@ nav a {
 }
 
 nav a:hover {
-    color: var(--tiktok-white);
+    color: var(--yellow);
 }
 
 nav a::after {
@@ -119,7 +148,7 @@ nav a::after {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--tiktok-pink), var(--tiktok-cyan));
+    background: linear-gradient(90deg, var(--yellow), var(--orange));
     transition: width 0.3s ease;
 }
 
@@ -128,38 +157,39 @@ nav a:hover::after {
 }
 
 .btn-join {
-    background: linear-gradient(90deg, var(--tiktok-pink), #ff4a5f);
-    padding: 0.75rem 1.8rem;
+    background: linear-gradient(90deg, var(--yellow), var(--orange));
+    padding: 0.6rem 1.2rem;
     border-radius: 50px;
-    color: white !important;
+    color: #000 !important;
     font-weight: 700;
-    box-shadow: 0 4px 20px rgba(255, 39, 68, 0.4);
+    box-shadow: 0 4px 20px rgba(255, 184, 0, 0.3);
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .btn-join:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(255, 39, 68, 0.5);
+    box-shadow: 0 6px 25px rgba(255, 184, 0, 0.5);
 }
 
-/* ===== TEKS BERJALAN — MARQUEE ===== */
+/* ===== TEKS BERJALAN ===== */
 .marquee-container {
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .marquee-text {
     display: inline-block;
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 800;
     color: transparent;
-    background: linear-gradient(90deg, var(--tiktok-pink), var(--tiktok-cyan), var(--tiktok-pink));
+    background: linear-gradient(90deg, var(--yellow), var(--orange), var(--yellow));
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
-    animation: marquee 15s linear infinite, gradientMove 3s ease infinite;
+    animation: marquee 12s linear infinite, gradientMove 3s ease infinite;
     padding-left: 100%;
 }
 
@@ -168,12 +198,7 @@ nav a:hover::after {
     100% { transform: translateX(-200%); }
 }
 
-@keyframes gradientMove {
-    0%, 100% { background-position: 0% center; }
-    50% { background-position: 100% center; }
-}
-
-/* ===== HERO SECTION ===== */
+/* ===== HERO ===== */
 .hero {
     min-height: 90vh;
     display: flex;
@@ -185,31 +210,18 @@ nav a:hover::after {
     position: relative;
 }
 
-.hero-badge {
-    background: rgba(42, 42, 42, 0.7);
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 0.5rem 1.5rem;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    color: var(--tiktok-cyan);
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
 .hero h2 {
-    font-size: 4.5rem;
+    font-size: 4rem;
     line-height: 1.2;
     margin-bottom: 1.5rem;
 }
 
-.hero h2 .pink { color: var(--tiktok-pink); }
-.hero h2 .cyan { color: var(--tiktok-cyan); }
+.hero h2 .yellow { color: var(--yellow); }
+.hero h2 .orange { color: var(--orange); }
 
 .hero p {
-    font-size: 1.3rem;
-    color: var(--tiktok-gray-text);
+    font-size: 1.1rem;
+    color: var(--gray-text);
     max-width: 800px;
     margin-bottom: 3rem;
 }
@@ -227,44 +239,38 @@ nav a:hover::after {
     align-items: center;
     gap: 0.5rem;
     text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .btn-primary {
-    background: linear-gradient(90deg, var(--tiktok-pink), var(--tiktok-cyan));
+    background: linear-gradient(90deg, var(--yellow), var(--orange));
     padding: 1rem 2.5rem;
-    border-radius: 8px;
-    color: white;
-    font-weight: 700;
-    font-size: 1.1rem;
+    color: #000;
     border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 30px rgba(255, 39, 68, 0.3);
+    box-shadow: 0 4px 30px rgba(255, 184, 0, 0.3);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 8px 35px rgba(255, 39, 68, 0.4);
+    box-shadow: 0 8px 35px rgba(255, 184, 0, 0.5);
 }
 
 .btn-secondary {
     background: transparent;
     padding: 1rem 2.5rem;
-    border-radius: 8px;
-    color: white;
-    font-weight: 700;
-    font-size: 1.1rem;
-    border: 2px solid var(--tiktok-gray);
-    cursor: pointer;
-    transition: all 0.3s ease;
+    color: var(--yellow);
+    border: 2px solid var(--yellow);
 }
 
 .btn-secondary:hover {
-    border-color: var(--tiktok-pink);
-    background: rgba(255, 39, 68, 0.05);
+    background: rgba(255, 184, 0, 0.1);
 }
 
-/* STATS — Hanya tersisa Total Followers */
+/* STATISTIK */
 .stats {
     display: flex;
     gap: 4rem;
@@ -276,18 +282,18 @@ nav a:hover::after {
 .stat-item h3 {
     font-size: 2.5rem;
     font-weight: 800;
-    background: linear-gradient(90deg, var(--tiktok-pink), var(--tiktok-cyan));
+    background: linear-gradient(90deg, var(--yellow), var(--orange));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .stat-item p {
-    color: var(--tiktok-gray-text);
-    font-size: 0.9rem;
+    color: var(--gray-text);
+    font-size: 1rem;
     margin-top: 0.3rem;
 }
 
-/* ===== SECTION GENERAL ===== */
+/* ===== SECTION UMUM ===== */
 section {
     padding: 5rem 5%;
     max-width: 1400px;
@@ -300,22 +306,22 @@ section {
 }
 
 .section-title h3 {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     margin-bottom: 1rem;
 }
 
-.section-title .pink { color: var(--tiktok-pink); }
+.section-title .yellow { color: var(--yellow); }
 
 .section-title p {
-    color: var(--tiktok-gray-text);
+    color: var(--gray-text);
     font-size: 1.1rem;
     max-width: 600px;
     margin: 0 auto;
 }
 
-/* ===== GALERI KREATOR ===== */
+/* ===== KREATOR ===== */
 .creators-section {
-    background: linear-gradient(180deg, transparent, rgba(255,39,68,0.03), transparent);
+    background: linear-gradient(180deg, transparent, rgba(255, 184, 0, 0.03), transparent);
 }
 
 .creators-grid {
@@ -325,7 +331,7 @@ section {
 }
 
 .creator-card {
-    background: var(--tiktok-dark);
+    background: var(--dark);
     border: 1px solid rgba(255,255,255,0.05);
     border-radius: 20px;
     padding: 2rem;
@@ -342,7 +348,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(255,39,68,0.1), rgba(37,244,238,0.1));
+    background: linear-gradient(135deg, rgba(255, 184, 0, 0.1), rgba(255, 106, 0, 0.1));
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 0;
@@ -350,8 +356,8 @@ section {
 
 .creator-card:hover {
     transform: translateY(-12px) scale(1.02);
-    border-color: rgba(255, 39, 68, 0.4);
-    box-shadow: 0 20px 50px rgba(255, 39, 68, 0.2);
+    border-color: rgba(255, 184, 0, 0.4);
+    box-shadow: 0 20px 50px rgba(255, 184, 0, 0.2);
 }
 
 .creator-card:hover::before {
@@ -359,13 +365,13 @@ section {
 }
 
 .creator-avatar {
-    width: 140px;
-    height: 140px;
+    width: 130px;
+    height: 130px;
     margin: 0 auto 1.5rem;
     border-radius: 50%;
     overflow: hidden;
     border: 4px solid transparent;
-    background: linear-gradient(90deg, var(--tiktok-pink), var(--tiktok-cyan)) border-box;
+    background: linear-gradient(90deg, var(--yellow), var(--orange)) border-box;
     position: relative;
     z-index: 1;
 }
@@ -383,13 +389,13 @@ section {
 }
 
 .creator-info h4 {
-    font-size: 1.3rem;
-    color: var(--tiktok-pink);
+    font-size: 1.2rem;
+    color: var(--yellow);
     margin-bottom: 0.3rem;
 }
 
 .creator-name {
-    color: var(--tiktok-white);
+    color: var(--white);
     font-weight: 500;
     margin-bottom: 1rem;
 }
@@ -403,14 +409,14 @@ section {
 
 .creator-stats span {
     font-size: 0.9rem;
-    color: var(--tiktok-gray-text);
+    color: var(--gray-text);
     display: flex;
     align-items: center;
     gap: 0.3rem;
 }
 
 .creator-stats span i {
-    color: var(--tiktok-pink);
+    color: var(--yellow);
 }
 
 .creator-follow {
@@ -418,8 +424,8 @@ section {
     align-items: center;
     gap: 0.5rem;
     background: transparent;
-    border: 2px solid var(--tiktok-cyan);
-    color: var(--tiktok-cyan);
+    border: 2px solid var(--yellow);
+    color: var(--yellow);
     padding: 0.6rem 1.5rem;
     border-radius: 50px;
     text-decoration: none;
@@ -428,8 +434,8 @@ section {
 }
 
 .creator-follow:hover {
-    background: var(--tiktok-cyan);
-    color: var(--tiktok-black);
+    background: var(--yellow);
+    color: #000;
 }
 
 .view-all-btn {
@@ -437,7 +443,7 @@ section {
     margin-top: 3rem;
 }
 
-/* FEATURES */
+/* ===== KEUNGGULAN / FEATURES ===== */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -445,7 +451,7 @@ section {
 }
 
 .feature-card {
-    background: var(--tiktok-dark);
+    background: var(--dark);
     border: 1px solid rgba(255,255,255,0.05);
     border-radius: 16px;
     padding: 2.5rem;
@@ -461,7 +467,7 @@ section {
     left: 0;
     width: 100%;
     height: 3px;
-    background: linear-gradient(90deg, var(--tiktok-pink), var(--tiktok-cyan));
+    background: linear-gradient(90deg, var(--yellow), var(--orange));
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease;
@@ -469,7 +475,7 @@ section {
 
 .feature-card:hover {
     transform: translateY(-10px);
-    border-color: rgba(255, 39, 68, 0.3);
+    border-color: rgba(255, 184, 0, 0.3);
     box-shadow: 0 15px 40px rgba(0,0,0,0.4);
 }
 
@@ -480,7 +486,7 @@ section {
 .feature-icon {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, var(--tiktok-pink), var(--tiktok-cyan));
+    background: linear-gradient(135deg, var(--yellow), var(--orange));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -491,23 +497,23 @@ section {
 }
 
 .feature-card p {
-    color: var(--tiktok-gray-text);
+    color: var(--gray-text);
     font-size: 0.95rem;
     line-height: 1.7;
 }
 
 /* ===== FORM PENDAFTARAN ===== */
 .join-section {
-    background: linear-gradient(180deg, transparent, rgba(37,244,238,0.03), transparent);
+    background: linear-gradient(180deg, transparent, rgba(255, 184, 0, 0.03), transparent);
 }
 
 .form-container {
     max-width: 800px;
     margin: 0 auto;
-    background: var(--tiktok-dark);
+    background: var(--dark);
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: 24px;
-    padding: 3rem;
+    padding: 2.5rem;
     box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
 
@@ -525,7 +531,7 @@ section {
 
 .form-group {
     flex: 1;
-    min-width: 280px;
+    min-width: 260px;
 }
 
 .form-group.full-width {
@@ -536,12 +542,12 @@ section {
     display: block;
     margin-bottom: 0.6rem;
     font-weight: 500;
-    color: var(--tiktok-white);
+    color: var(--white);
     font-size: 0.95rem;
 }
 
 .form-group label i {
-    color: var(--tiktok-pink);
+    color: var(--yellow);
     margin-right: 0.5rem;
 }
 
@@ -550,10 +556,10 @@ section {
 .form-group textarea {
     width: 100%;
     padding: 1rem 1.2rem;
-    background: var(--tiktok-black);
+    background: var(--black);
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 10px;
-    color: var(--tiktok-white);
+    color: var(--white);
     font-size: 1rem;
     transition: all 0.3s ease;
     outline: none;
@@ -562,19 +568,19 @@ section {
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-    border-color: var(--tiktok-pink);
-    box-shadow: 0 0 0 3px rgba(255, 39, 68, 0.15);
+    border-color: var(--yellow);
+    box-shadow: 0 0 0 3px rgba(255, 184, 0, 0.15);
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: var(--tiktok-gray-text);
+    color: var(--gray-text);
 }
 
 .checkbox-group {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0.8rem;
     margin-top: 0.5rem;
 }
 
@@ -583,14 +589,15 @@ section {
     align-items: center;
     gap: 0.5rem;
     cursor: pointer;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.8rem;
     background: rgba(255,255,255,0.03);
     border-radius: 8px;
     transition: all 0.2s ease;
+    font-size: 0.9rem;
 }
 
 .checkbox-label:hover {
-    background: rgba(255, 39, 68, 0.1);
+    background: rgba(255, 184, 0, 0.1);
 }
 
 .checkbox-label input {
@@ -599,32 +606,32 @@ section {
 }
 
 .checkbox-agree {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 
 .form-link {
-    color: var(--tiktok-cyan);
+    color: var(--yellow);
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 .form-link:hover {
-    color: var(--tiktok-pink);
+    color: var(--orange);
     text-decoration: underline;
 }
 
 .submit-btn {
-    margin-top: 1rem;
-    padding: 1.2rem 3rem;
-    background: linear-gradient(90deg, var(--tiktok-pink), var(--tiktok-cyan));
+    margin-top: 0.5rem;
+    padding: 1.1rem 3rem;
+    background: linear-gradient(90deg, var(--yellow), var(--orange));
     border: none;
     border-radius: 12px;
-    color: white;
-    font-size: 1.2rem;
+    color: #000;
+    font-size: 1.15rem;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 25px rgba(255, 39, 68, 0.3);
+    box-shadow: 0 4px 25px rgba(255, 184, 0, 0.3);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -633,12 +640,12 @@ section {
 
 .submit-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 35px rgba(255, 39, 68, 0.4);
+    box-shadow: 0 8px 35px rgba(255, 184, 0, 0.5);
 }
 
 /* ===== FOOTER ===== */
 footer {
-    background: var(--tiktok-dark);
+    background: var(--dark);
     padding: 4rem 5% 2rem;
     border-top: 1px solid rgba(255,255,255,0.05);
 }
@@ -653,23 +660,38 @@ footer {
     margin-bottom: 3rem;
 }
 
+.footer-logo-wrapper {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.footer-logo-circle {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--yellow);
+}
+
 .footer-brand h4 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-bottom: 0.5rem;
-    background: linear-gradient(90deg, var(--tiktok-pink), var(--tiktok-cyan));
+    background: linear-gradient(90deg, var(--yellow), var(--orange));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .footer-brand p {
-    color: var(--tiktok-gray-text);
+    color: var(--gray-text);
     font-size: 0.9rem;
+    line-height: 1.8;
 }
 
 .footer-links h5 {
     font-size: 1rem;
     margin-bottom: 1.2rem;
-    color: var(--tiktok-white);
+    color: var(--white);
 }
 
 .footer-links ul {
@@ -677,7 +699,7 @@ footer {
 }
 
 .footer-links a {
-    color: var(--tiktok-gray-text);
+    color: var(--gray-text);
     text-decoration: none;
     font-size: 0.9rem;
     line-height: 2;
@@ -685,20 +707,20 @@ footer {
 }
 
 .footer-links a:hover {
-    color: var(--tiktok-pink);
+    color: var(--yellow);
 }
 
 .social-icons {
     display: flex;
     gap: 1rem;
-    margin-top: 1rem;
+    margin-top: 1.2rem;
 }
 
 .social-icons a {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: var(--tiktok-gray);
+    background: var(--gray);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -709,7 +731,8 @@ footer {
 }
 
 .social-icons a:hover {
-    background: linear-gradient(135deg, var(--tiktok-pink), var(--tiktok-cyan));
+    background: linear-gradient(135deg, var(--yellow), var(--orange));
+    color: #000;
     transform: translateY(-3px);
 }
 
@@ -717,29 +740,38 @@ footer {
     text-align: center;
     padding-top: 2rem;
     border-top: 1px solid rgba(255,255,255,0.05);
-    color: var(--tiktok-gray-text);
+    color: var(--gray-text);
     font-size: 0.85rem;
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
     .features-grid, .creators-grid { 
         grid-template-columns: repeat(2, 1fr); 
     }
-    .hero h2 { font-size: 3.5rem; }
-    .form-container { padding: 2rem; }
+    .hero h2 { font-size: 3rem; }
     .marquee-text { font-size: 1.2rem; }
 }
 
 @media (max-width: 768px) {
-    header { flex-wrap: wrap; gap: 1rem; }
-    nav ul { gap: 1.5rem; flex-wrap: wrap; }
-    .hero h2 { font-size: 2.5rem; }
-    .stats { flex-wrap: wrap; justify-content: center; }
-    .features-grid, .creators-grid { 
-        grid-template-columns: 1fr; 
-    }
-    .form-row { flex-direction: column; }
-    .checkbox-group { justify-content: flex-start; }
+    header { flex-direction: column; text-align: center; padding: 1rem 3%; }
+    .header-inner { justify-content: center; }
+    .logo-circle { width: 45px; height: 45px; }
+    .logo-text h1 { font-size: 1.1rem; }
+    nav ul { justify-content: center; margin-top: 0.5rem; gap: 1rem; }
+    .hero h2 { font-size: 2.2rem; }
+    .features-grid, .creators-grid { grid-template-columns: 1fr; }
+    .form-container { padding: 1.5rem; }
+    section { padding: 3rem 3%; }
     .marquee-text { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+    .logo-circle { width: 38px; height: 38px; }
+    .logo-text h1 { font-size: 0.95rem; }
+    .logo-text .part-of { font-size: 0.6rem; }
+    .logo-text .aq-text { font-size: 0.7rem; }
+    .btn-join { padding: 0.5rem 1rem; font-size: 0.85rem; }
+    nav ul { gap: 0.8rem; }
+    nav a { font-size: 0.75rem; }
 }
