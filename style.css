@@ -398,3 +398,37 @@ img[src*="ehey.png"] {
 footer {
     background: #0a0a0a;
     border-top: 1px solid rgba
+    /* ===== FOOTER BRAND — Logo di kiri, berdekatan dengan teks ===== */
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.footer-logo-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+.footer-logo-circle {
+    width: 50px; /* Sama ukuran logo header */
+    height: 50px;
+    border-radius: 50%;
+    object-fit: contain;
+    border: 2px solid var(--yellow);
+}
+.footer-brand-text {
+    flex: 1;
+    min-width: 180px;
+}
+.footer-brand-text h4 {
+    font-size: 1.2rem;
+    color: var(--yellow);
+    margin-bottom: 0.25rem;
+}
+.footer-brand-text p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
