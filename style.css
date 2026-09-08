@@ -82,6 +82,40 @@ nav a { color: var(--text); padding: 0.5rem 0.75rem; border-radius: 6px; transit
 nav a:hover { background: rgba(255,184,0,0.15); color: var(--yellow); }
 .btn-join { background: linear-gradient(90deg, var(--yellow), var(--orange)); color: #000 !important; font-weight: 700; padding: 0.6rem 1.2rem !important; border-radius: 8px; }
 
+/* ===== Batasi ukuran semua logo & gambar ===== */
+.logo-circle,
+.footer-logo-circle,
+.blinking-img,
+.follower-avatar,
+.creator-avatar img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain; /* Biar gambar tidak terdistorsi */
+}
+
+/* Khusus logo besar di bagian atas halaman */
+.blinking-img {
+  width: 160px; /* Sesuaikan ukuran yang diinginkan */
+  height: 160px;
+}
+
+/* Khusus logo bulat di header */
+.logo-circle {
+  width: 60px;
+  height: 60px;
+}
+
+/* Khusus logo besar di bagian bawah yang kebesaran */
+img[src*="AQ.png"],
+img[src*="ehey.png"] {
+  max-width: 250px; /* Batasi lebar maksimal */
+  width: 80%; /* Atur persentase dari layar */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Tengahin */
+}
+
+
 /* ===== TEKS BERJALAN ===== */
 .marquee-container {
     width: 100%;
