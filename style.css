@@ -1,4 +1,3 @@
-/* ===== DASAR ===== */
 :root {
     --yellow: #ffb800;
     --orange: #ff9500;
@@ -37,6 +36,25 @@ section { padding: 3rem 1rem; max-width: 1200px; margin: 0 auto; }
 .section-title h3 { font-size: 2rem; margin-bottom: 0.5rem; }
 .section-title p { color: var(--muted); max-width: 600px; margin: 0 auto; }
 
+/* ===== BINGKAI JABATAN SAJA — PERSIS SEPERTI TOMBOL GABUNG SEKARANG ===== */
+.role-badge {
+    display: inline-block;
+    background: #ffb800;
+    color: #000000;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.45rem 1.1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(255, 184, 0, 0.25);
+    transition: all 0.25s ease;
+    border: none;
+}
+.creator-card:hover .role-badge,
+.follower-card:hover .role-badge {
+    transform: scale(1.05);
+    box-shadow: 0 3px 10px rgba(255, 184, 0, 0.4);
+}
+
 /* ===== HEADER ===== */
 header {
     background: rgba(0,0,0,0.9);
@@ -62,7 +80,7 @@ nav { max-width: 1200px; margin: 1rem auto 0; }
 nav ul { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: center; }
 nav a { color: var(--text); padding: 0.5rem 0.75rem; border-radius: 6px; transition: 0.2s; }
 nav a:hover { background: rgba(255,184,0,0.15); color: var(--yellow); }
-.btn-join { background: linear-gradient(90deg, var(--yellow), var(--orange)); color: #000 !important; font-weight: 700; padding: 0.6rem 1.2rem !important; }
+.btn-join { background: linear-gradient(90deg, var(--yellow), var(--orange)); color: #000 !important; font-weight: 700; padding: 0.6rem 1.2rem !important; border-radius: 8px; }
 
 /* ===== TEKS BERJALAN ===== */
 .marquee-container {
@@ -123,21 +141,22 @@ nav a:hover { background: rgba(255,184,0,0.15); color: var(--yellow); }
     background: linear-gradient(90deg, var(--yellow), var(--orange));
     color: #000;
     padding: 0.9rem 2rem;
-    border-radius: 10px;
+    border-radius: 8px;
     font-weight: 700;
     font-size: 1.05rem;
     transition: transform 0.2s;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    border: none;
 }
 .btn-primary:hover { transform: translateY(-2px); }
 .btn-secondary {
-    background: transparent;
+    background: #000;
     color: var(--yellow);
     border: 2px solid var(--yellow);
     padding: 0.9rem 2rem;
-    border-radius: 10px;
+    border-radius: 8px;
     font-weight: 600;
     font-size: 1.05rem;
     transition: all 0.2s;
@@ -186,13 +205,16 @@ nav a:hover { background: rgba(255,184,0,0.15); color: var(--yellow); }
     object-fit: cover;
     border: 3px solid var(--yellow);
 }
-.creator-info h4 { font-size: 1.2rem; margin-bottom: 0.25rem; color: var(--yellow); }
-.creator-name { color: #ccc; margin-bottom: 0.75rem; font-size: 0.95rem; }
+.creator-info h4 {
+    font-size: 1.1rem;
+    color: var(--yellow);
+    margin-bottom: 0.75rem;
+}
 .creator-stats {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-bottom: 1rem;
+    margin: 1rem 0;
     font-size: 0.9rem;
     color: var(--muted);
 }
@@ -210,6 +232,7 @@ nav a:hover { background: rgba(255,184,0,0.15); color: var(--yellow); }
     background: var(--yellow);
     color: #000;
 }
+.view-all-btn { text-align: center; margin-top: 2.5rem; }
 
 /* ===== KEUNGGULAN ===== */
 .features-grid {
@@ -316,113 +339,28 @@ nav a:hover { background: rgba(255,184,0,0.15); color: var(--yellow); }
     width: auto;
     accent-color: var(--yellow);
 }
-.checkbox-agree { margin: 1.2rem 0; }
+.checkbox-agree { margin-top: 1.25rem; }
 .form-link { color: var(--yellow); text-decoration: underline; }
 .submit-btn {
     width: 100%;
-    padding: 1rem;
     background: linear-gradient(90deg, var(--yellow), var(--orange));
     color: #000;
-    font-size: 1.1rem;
-    font-weight: 700;
     border: none;
-    border-radius: 12px;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    font-weight: 700;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255,184,0,0.35);
-}
-.submit-btn i { margin-right: 0.5rem; }
-
-/* ===== FOOTER ===== */
-footer {
-    background: #0f0f0f;
-    padding: 3rem 1rem 1.5rem;
-    border-top: 1px solid rgba(255,184,0,0.1);
-}
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 2rem;
-}
-.footer-logo-wrapper { display: flex; gap: 1rem; margin-bottom: 1rem; }
-.footer-logo-circle { width: 50px; height: 50px; border-radius: 50%; object-fit: contain; border: 2px solid var(--yellow); }
-.footer-brand h4 { font-size: 1.2rem; margin-bottom: 0.75rem; color: var(--yellow); }
-.footer-brand p { color: #aaa; font-size: 0.9rem; line-height: 1.8; margin-bottom: 1rem; }
-.social-icons { display: flex; gap: 0.75rem; }
-.social-icons a {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: rgba(255,184,0,0.15);
-    color: var(--yellow);
+    transition: transform 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 0.2s;
+    gap: 0.5rem;
+    margin-top: 1rem;
 }
-.social-icons a:hover { background: var(--yellow); color: #000; }
-.footer-links h5 { font-size: 1rem; margin-bottom: 1rem; color: var(--yellow); }
-.footer-links ul { display: flex; flex-direction: column; gap: 0.5rem; }
-.footer-links a { color: #aaa; font-size: 0.95rem; transition: 0.2s; }
-.footer-links a:hover { color: var(--yellow); padding-left: 4px; }
-.copyright {
-    text-align: center;
-    margin-top: 3rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    color: #666;
-    font-size: 0.85rem;
-}
+.submit-btn:hover { transform: translateY(-2px); }
 
-/* ===== RESPONSIVE — HP ===== */
-@media (max-width: 480px) {
-    section { padding: 2rem 0.75rem; }
-    .section-title h3 { font-size: 1.5rem; }
-    .logo-text h1 { font-size: 1.1rem; }
-    .logo-side .logo-circle { width: 45px; height: 45px; }
-    nav ul { gap: 0.5rem; }
-    nav a { font-size: 0.9rem; padding: 0.4rem 0.5rem; }
-    .btn-join { padding: 0.5rem 0.9rem !important; font-size: 0.9rem; }
-    .marquee-text { font-size: 1rem; }
-    .blinking-img { width: 130px; height: 130px; }
-    .hero p { font-size: 1rem; }
-    .btn-primary, .btn-secondary { padding: 0.8rem 1.5rem; font-size: 1rem; }
-    .registration-form { padding: 1.25rem; }
-    .form-group input,
-    .form-group select,
-    .form-group textarea { padding: 0.75rem 0.9rem; font-size: 0.95rem; }
-    .form-group label { font-size: 0.9rem; }
-    .checkbox-label { font-size: 0.85rem; }
-    .creator-avatar img { width: 100px; height: 100px; }
-}
-/* ===== TOMBOL LIHAT KREATOR — SESUAI GAMBAR ===== */
-.btn-secondary {
-  background: #000000 !important; /* Latar hitam */
-  color: #ffb800 !important;      /* Teks kuning */
-  border: 2px solid #ffb800 !important; /* Garis pinggir kuning */
-  border-radius: 12px !important; /* Sudut melengkung */
-  padding: 0.9rem 2.5rem !important;
-  font-size: 1.1rem !important;
-  font-weight: 600 !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 0.6rem !important;
-  transition: all 0.3s ease !important;
-  text-decoration: none !important;
-}
-
-.btn-secondary:hover {
-  background: rgba(255, 184, 0, 0.1) !important;
-  box-shadow: 0 0 12px rgba(255, 184, 0, 0.3) !important;
-  transform: scale(1.02) !important;
-}
-
-/* Ikon play lingkaran */
-.btn-secondary i {
-  font-size: 1.2rem !important;
-}
+/* ===== FOOTER ===== */
+footer {
+    background: #0a0a0a;
+    border-top: 1px solid rgba
