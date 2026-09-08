@@ -37,18 +37,6 @@ section { padding: 3rem 1rem; max-width: 1200px; margin: 0 auto; }
 .section-title h3 { font-size: 2rem; margin-bottom: 0.5rem; }
 .section-title p { color: var(--muted); max-width: 600px; margin: 0 auto; }
 
-/* ===== LINK ANGKA FOLLOWERS ===== */
-.stat-link {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.2s ease, filter 0.2s ease;
-}
-.stat-link:hover {
-    transform: scale(1.08);
-    filter: drop-shadow(0 0 8px rgba(255,184,0,0.4));
-}
-
 /* ===== HEADER ===== */
 header {
     background: rgba(0,0,0,0.9);
@@ -161,6 +149,16 @@ nav a:hover { background: rgba(255,184,0,0.15); color: var(--yellow); }
 .stats { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
 .stat-item h3 { font-size: 2rem; color: var(--yellow); }
 .stat-item p { color: var(--muted); font-size: 0.95rem; }
+.stat-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+.stat-link:hover {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 8px rgba(255,184,0,0.4));
+}
 
 /* ===== KREATOR ===== */
 .creators-grid {
@@ -212,7 +210,6 @@ nav a:hover { background: rgba(255,184,0,0.15); color: var(--yellow); }
     background: var(--yellow);
     color: #000;
 }
-.view-all-btn { text-align: center; margin-top: 2.5rem; }
 
 /* ===== KEUNGGULAN ===== */
 .features-grid {
@@ -246,7 +243,7 @@ nav a:hover { background: rgba(255,184,0,0.15); color: var(--yellow); }
 .feature-card h4 { font-size: 1.15rem; margin-bottom: 0.75rem; }
 .feature-card p { color: #aaa; font-size: 0.95rem; line-height: 1.7; }
 
-/* ===== FORM PENDAFTARAN — RAPI DI HP ===== */
+/* ===== FORM PENDAFTARAN ===== */
 .join-section {
     background: linear-gradient(135deg, rgba(26,26,26,0.95), rgba(43,43,43,0.9));
 }
