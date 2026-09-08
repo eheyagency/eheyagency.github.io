@@ -192,6 +192,38 @@ nav a:hover::after {
     animation: marquee 12s linear infinite, gradientMove 3s ease infinite;
     padding-left: 100%;
 }
+/* ===== LOGO BERKEDIP ===== */
+.blinking-logo {
+    margin: 1.5rem 0 2rem;
+}
+
+.blinking-img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 50%;
+    animation: blink 1.2s ease-in-out infinite;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6));
+}
+
+/* Animasi Kedap-kedip */
+@keyframes blink {
+    0% { 
+        opacity: 1; 
+        transform: scale(1);
+        filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6));
+    }
+    50% { 
+        opacity: 0.2; 
+        transform: scale(0.95);
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+    }
+    100% { 
+        opacity: 1; 
+        transform: scale(1);
+        filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6));
+    }
+}
 
 @keyframes marquee {
     0% { transform: translateX(0); }
