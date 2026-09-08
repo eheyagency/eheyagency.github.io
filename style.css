@@ -431,4 +431,67 @@ footer {
     color: var(--muted);
     line-height: 1.5;
 }
+/* ===== FOOTER — Logo kecil di sudut kiri, berdampingan ===== */
+.footer-brand {
+    display: flex;
+    align-items: flex-start; /* Logo & teks rata atas */
+    gap: 12px; /* Jarak logo & teks */
+    width: 100%;
+}
+
+/* Wrapper logo — berdampingan */
+.footer-logo-wrapper {
+    display: flex;
+    gap: 8px; /* Jarak logo AQ & EHEY */
+    flex-shrink: 0; /* Tidak mengecil */
+}
+
+/* Logo bulat kecil — sama ukuran header */
+.footer-logo-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: contain;
+    border: 2px solid var(--yellow);
+}
+
+/* Teks di sebelah kanan logo */
+.footer-brand-text {
+    flex: 1;
+}
+.footer-brand-text h4 {
+    font-size: 1.1rem;
+    color: var(--yellow);
+    margin: 0 0 2px 0;
+}
+.footer-brand-text .part-of {
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+.footer-brand-text .aq-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0 0 6px 0;
+}
+.footer-brand-text .location {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Responsif HP — logo tetap rapi */
+@media (max-width: 480px) {
+    .footer-logo-circle {
+        width: 42px;
+        height: 42px;
+    }
+    .footer-brand {
+        gap: 10px;
+    }
+}
+
 
