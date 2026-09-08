@@ -40,31 +40,30 @@
     <!-- HERO SECTION -->
     <section class="hero" id="home">
         <div class="marquee-container">
-            <div class="marquee-text">✨ SELAMAT DATANG DI WEB RESMI EHEY AGENCY ✨</div>
+            <div class="marquee-text">✨ SELAMAT DATANG DI EHEY AGENCY ✨</div>
         </div>
         <div class="blinking-logo">
             <img src="ehey.png" alt="EHEY AGENCY" class="blinking-img">
         </div>
-        <p>Bagian dari <strong>AL QAQA MANAGEMENT</strong> — jaringan kreator resmi (TikTok LIVE Creator Network) atau agensi multi-channel network (MCN) yang terverifikasi langsung oleh platform TikTok,Tempat terbaik untuk mengembangkan karier kreator TikTok Live kamu. Dukungan penuh, komunitas solid, dan peluang tak terbatas!</p>
+        <p>Bagian dari <strong>AL QAQA MANAGEMENT</strong> — jaringan kreator resmi (TikTok LIVE Creator Network) atau agensi multi-channel network (MCN) yang terverifikasi langsung oleh platform TikTok Tempat terbaik untuk mengembangkan karier kreator TikTok Live kamu. Dukungan penuh, komunitas solid,Menjaga akun Dan Mengatasi Masalah kalian Dari Pelanggaran, dan peluang tak terbatas!</p>
         <div class="hero-buttons">
             <a href="#join" class="btn-primary"><i class="fa fa-rocket"></i> Daftar Sekarang</a>
             <a href="#creators" class="btn-secondary"><i class="fa fa-play-circle"></i> Lihat Kreator Kami</a>
         </div>
-                <div class="stats">
+        <div class="stats">
             <div class="stat-item">
                 <a href="followers.html" class="stat-link">
                     <h3>95</h3>
-                    <p>Total Member Saat Ini</p>
+                    <p>🎭Total Member Saat Ini🎭</p>
                 </a>
             </div>
         </div>
-
     </section>
 
     <!-- GALERI KREATOR -->
     <section id="creators" class="creators-section">
         <div class="section-title">
-            <h3>TEAM <span class="yellow">AGENCY</span> KAMI ⭐</h3>
+            <h3>Para <span class="yellow">Kreator</span> Kami ⭐</h3>
             <p>Bergabunglah dengan kreator-kreator berbakat yang sudah bersinar bersama EHEY AGENCY!</p>
         </div>
         <div class="creators-grid">
@@ -121,14 +120,13 @@
                 </div>
             </div>
         </div>
-        <div class="view-all-btn"><a href="#" class="btn-secondary">Lihat Semua Kreator <i class="fa fa-arrow-right"></i></a></div>
     </section>
 
     <!-- KEUNGGULAN -->
     <section id="benefits">
         <div class="section-title">
             <h3>Kenapa Pilih <span class="yellow">EHEY</span> AGENCY?</h3>
-            <p>Kami memberikan dukungan lengkap untuk membantu kamu bersinar di TikTok Live Dan Membantu Mengamankan Akun!</p>
+            <p>Kami memberikan dukungan lengkap untuk membantu kamu bersinar di TikTok Live!</p>
         </div>
         <div class="features-grid">
             <div class="feature-card">
@@ -276,7 +274,7 @@
                 <h5>Hubungi Kami</h5>
                 <ul>
                     <li><a href="https://wa.me/6285398557520" target="_blank">WhatsApp: +62 853-9855-7520</a></li>
-                    <li><a href="#">Email: admineheyagency@gmail.com</a></li>
+                    <li><a href="#">Email: admin@eheyagency.com</a></li>
                     <li><a href="#">IG: @eheyagency</a></li>
                 </ul>
             </div>
@@ -288,9 +286,8 @@
     <script>
         const form = document.getElementById('daftarForm');
         form.addEventListener('submit', function(e) {
-            e.preventDefault(); // Cegah reload halaman
+            e.preventDefault();
 
-            // Ambil nilai dari setiap input
             const fullname = document.getElementById('fullname').value.trim();
             const nickname = document.getElementById('nickname').value.trim() || '-';
             const tiktok = document.getElementById('tiktok-username').value.trim();
@@ -299,7 +296,6 @@
             const age = document.getElementById('age').value;
             const experience = document.getElementById('experience').value.trim() || '-';
 
-            // Ambil kategori yang dicentang
             const categories = document.querySelectorAll('input[name="category"]:checked');
             let categoryList = '';
             if (categories.length > 0) {
@@ -310,7 +306,6 @@
                 categoryList = 'Tidak dipilih';
             }
 
-            // Susun pesan WhatsApp
             const pesan = `📋 PENDAFTARAN EHEY AGENCY
 ━━━━━━━━━━━━━━━━━━
 👤 Nama Lengkap: ${fullname}
@@ -324,13 +319,8 @@
 ━━━━━━━━━━━━━━━━━━
 Terima kasih telah mendaftar! Tim kami akan segera menghubungi Anda.`;
 
-            // Encode pesan untuk URL
             const pesanEncoded = encodeURIComponent(pesan);
-
-            // Nomor WhatsApp Tujuan: 085398557520 → diubah jadi 6285398557520
             const nomorWA = '6285398557520';
-
-            // Buka WhatsApp dengan pesan
             const url = `https://wa.me/${nomorWA}?text=${pesanEncoded}`;
             window.open(url, '_blank');
         });
