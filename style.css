@@ -400,3 +400,29 @@ footer {
     .checkbox-label { font-size: 0.85rem; }
     .creator-avatar img { width: 100px; height: 100px; }
 }
+/* ===== TOMBOL LIHAT KREATOR — SESUAI GAMBAR ===== */
+.btn-secondary {
+  background: #000000 !important; /* Latar hitam */
+  color: #ffb800 !important;      /* Teks kuning */
+  border: 2px solid #ffb800 !important; /* Garis pinggir kuning */
+  border-radius: 12px !important; /* Sudut melengkung */
+  padding: 0.9rem 2.5rem !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.6rem !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 184, 0, 0.1) !important;
+  box-shadow: 0 0 12px rgba(255, 184, 0, 0.3) !important;
+  transform: scale(1.02) !important;
+}
+
+/* Ikon play lingkaran */
+.btn-secondary i {
+  font-size: 1.2rem !important;
+}
