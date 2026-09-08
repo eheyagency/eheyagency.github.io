@@ -142,6 +142,37 @@ nav a:hover::after {
     box-shadow: 0 6px 25px rgba(255, 39, 68, 0.5);
 }
 
+/* ===== TEKS BERJALAN — MARQUEE ===== */
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: 1.5rem;
+}
+
+.marquee-text {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: transparent;
+    background: linear-gradient(90deg, var(--tiktok-pink), var(--tiktok-cyan), var(--tiktok-pink));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: marquee 15s linear infinite, gradientMove 3s ease infinite;
+    padding-left: 100%;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-200%); }
+}
+
+@keyframes gradientMove {
+    0%, 100% { background-position: 0% center; }
+    50% { background-position: 100% center; }
+}
+
 /* ===== HERO SECTION ===== */
 .hero {
     min-height: 90vh;
@@ -233,7 +264,7 @@ nav a:hover::after {
     background: rgba(255, 39, 68, 0.05);
 }
 
-/* STATS */
+/* STATS — Hanya tersisa Total Followers */
 .stats {
     display: flex;
     gap: 4rem;
@@ -282,7 +313,7 @@ section {
     margin: 0 auto;
 }
 
-/* ===== 🆕 GALERI KREATOR ===== */
+/* ===== GALERI KREATOR ===== */
 .creators-section {
     background: linear-gradient(180deg, transparent, rgba(255,39,68,0.03), transparent);
 }
@@ -465,7 +496,7 @@ section {
     line-height: 1.7;
 }
 
-/* ===== 🆕 FORM PENDAFTARAN ===== */
+/* ===== FORM PENDAFTARAN ===== */
 .join-section {
     background: linear-gradient(180deg, transparent, rgba(37,244,238,0.03), transparent);
 }
@@ -540,7 +571,6 @@ section {
     color: var(--tiktok-gray-text);
 }
 
-/* Checkbox Group */
 .checkbox-group {
     display: flex;
     flex-wrap: wrap;
@@ -698,6 +728,7 @@ footer {
     }
     .hero h2 { font-size: 3.5rem; }
     .form-container { padding: 2rem; }
+    .marquee-text { font-size: 1.2rem; }
 }
 
 @media (max-width: 768px) {
@@ -710,4 +741,5 @@ footer {
     }
     .form-row { flex-direction: column; }
     .checkbox-group { justify-content: flex-start; }
+    .marquee-text { font-size: 1rem; }
 }
