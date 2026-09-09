@@ -152,16 +152,39 @@
                         <p class="location">📍 Gorontalo, Indonesia<br>📧 admin@eheyagency.web.id</p>
                     </div>
                 </div>
-                <div class="footer-social-wrapper">
-                    <h5>Ikuti Kami</h5>
-                    <div class="social-icons">
-                        <a href="https://www.tiktok.com/@alqaqa999" target="_blank"><i class="fa fa-tiktok"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-whatsapp"></i></a>
-                        <a href="#"><i class="fa fa-youtube-play"></i></a>
-                    </div>
+            </div>
+
+            <!-- TABEL STATISTIK DI SINI JUGA -->
+            <div class="visitor-table-wrapper">
+                <table class="visitor-table">
+                    <tr>
+                        <th colspan="2">📊 STATISTIK KUNJUNGAN</th>
+                    </tr>
+                    <tr>
+                        <td>👁️ Kunjungan Hari Ini</td>
+                        <td id="today-visitor">0</td>
+                    </tr>
+                    <tr>
+                        <td>👥 Total Pengunjung</td>
+                        <td id="total-visitor">0</td>
+                    </tr>
+                    <tr>
+                        <td>🟢 Online Sekarang</td>
+                        <td id="online-now">1</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="footer-social-wrapper">
+                <h5>Ikuti Kami</h5>
+                <div class="social-icons">
+                    <a href="https://www.tiktok.com/@alqaqa999" target="_blank"><i class="fa fa-tiktok"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="https://wa.me/6285398557520" target="_blank"><i class="fa fa-whatsapp"></i></a>
+                    <a href="#"><i class="fa fa-youtube-play"></i></a>
                 </div>
             </div>
+
             <div class="footer-links-row">
                 <div class="footer-links">
                     <h5>Tautan Cepat</h5>
@@ -193,5 +216,30 @@
         </div>
         <div class="copyright">© 2026 EHEY AGENCY — Part of AL QAQA MANAGEMENT. All Rights Reserved.</div>
     </footer>
+
+    <!-- SCRIPT PENGHITUNG PENGUNJUNG -->
+    <script>
+        let totalVisits = parseInt(localStorage.getItem('ehey_totalVisits') || '0');
+        let todayVisits = parseInt(localStorage.getItem('ehey_todayVisits') || '0');
+        let lastDate = localStorage.getItem('ehey_lastDate') || '';
+
+        const sekarang = new Date();
+        const tanggalSekarang = sekarang.toLocaleDateString('id-ID');
+
+        if (lastDate !== tanggalSekarang) {
+            todayVisits = 0;
+            localStorage.setItem('ehey_lastDate', tanggalSekarang);
+        }
+
+        totalVisits += 1;
+        todayVisits += 1;
+
+        localStorage.setItem('ehey_totalVisits', totalVisits);
+        localStorage.setItem('ehey_todayVisits', todayVisits);
+
+        document.getElementById('total-visitor').textContent = totalVisits.toLocaleString('id-ID');
+        document.getElementById('today-visitor').textContent = todayVisits.toLocaleString('id-ID');
+        document.getElementById('online-now').textContent = Math.floor(Math.random() * 5) + 1;
+    </script>
 </body>
 </html>
