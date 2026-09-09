@@ -27,7 +27,7 @@
         </div>
     </header>
 
-    <!-- DAFTAR MEMBER DENGAN NOMOR URUT -->
+    <!-- DAFTAR MEMBER DENGAN FOTO SENDIRI -->
     <section class="followers-page">
         <div class="section-title">
             <h3>Daftar <span class="yellow">Kreator & Member</span> Kami 👥</h3>
@@ -38,40 +38,56 @@
             <!-- NOMOR 1 -->
             <a href="https://www.tiktok.com/@alqaqa999?_r=1&_t=ZS-99YfGKAZB5U" target="_blank" class="follower-card">
                 <span class="nomor-urut">1</span>
-                <div class="follower-avatar-loading">Memuat...</div>
+                <img src="alqaqa.png" alt="AL QAQA" class="follower-avatar" onerror="gantiFotoGagal(this)">
                 <div class="follower-info">
                     <h4 class="nama-member">AL QAQA</h4>
                     <span class="jabatan-member">DIRUT AL QAQA MANAGEMENT</span>
                 </div>
             </a>
+
             <!-- NOMOR 2 -->
             <a href="https://www.tiktok.com/@unibrahim95?_r=1&_t=ZS-99Yfo0tsmV6" target="_blank" class="follower-card">
                 <span class="nomor-urut">2</span>
-                <div class="follower-avatar-loading">Memuat...</div>
+                <img src="bgun.png" alt="UN IBRAHIM" class="follower-avatar" onerror="gantiFotoGagal(this)">
                 <div class="follower-info">
                     <h4 class="nama-member">UN IBRAHIM</h4>
                     <span class="jabatan-member">FOUNDER EHEY AGENCY</span>
                 </div>
             </a>
+
             <!-- NOMOR 3 -->
             <a href="https://www.tiktok.com/@jemzlamato.eheyagency?_r=1&_t=ZS-99YgEEB2iGY" target="_blank" class="follower-card">
                 <span class="nomor-urut">3</span>
-                <div class="follower-avatar-loading">Memuat...</div>
+                <img src="jemz.png" alt="JEMZ LAMATO" class="follower-avatar" onerror="gantiFotoGagal(this)">
                 <div class="follower-info">
                     <h4 class="nama-member">JEMZ LAMATO</h4>
                     <span class="jabatan-member">SUPER ADMIN</span>
                 </div>
             </a>
+
             <!-- NOMOR 4 -->
             <a href="https://www.tiktok.com/@rilibrahim01?_r=1&_t=ZS-99YgVmVwACN" target="_blank" class="follower-card">
                 <span class="nomor-urut">4</span>
-                <div class="follower-avatar-loading">Memuat...</div>
+                <img src="aril.png" alt="RIL IBRAHIM" class="follower-avatar" onerror="gantiFotoGagal(this)">
                 <div class="follower-info">
                     <h4 class="nama-member">RIL IBRAHIM</h4>
                     <span class="jabatan-member">ADMIN EHEY AGENCY</span>
                 </div>
             </a>
-            <!-- TAMBAH DI SINI: Salin blok di atas, ubah nomor, foto, nama, jabatan, link -->
+
+            <!-- ==============================================
+                 CARA TAMBAH MEMBER BARU:
+                 Salin blok di bawah ini, ubah nomor, foto, nama, jabatan, link
+                 ==============================================
+            <a href="LINK_TIKTOK" target="_blank" class="follower-card">
+                <span class="nomor-urut">5</span>
+                <img src="NAMA_FOTO.png" alt="NAMA" class="follower-avatar" onerror="gantiFotoGagal(this)">
+                <div class="follower-info">
+                    <h4 class="nama-member">NAMA LENGKAP</h4>
+                    <span class="jabatan-member">JABATAN</span>
+                </div>
+            </a>
+            -->
         </div>
 
         <div class="back-btn">
@@ -85,28 +101,13 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.follower-card');
-            cards.forEach(card => {
-                const linkHref = card.getAttribute('href');
-                let username = '';
-                if (linkHref) {
-                    const match = linkHref.match(/@([^/?]+)/);
-                    if (match) username = match[1];
-                }
-                const avatarDiv = card.querySelector('.follower-avatar-loading');
-                if (!avatarDiv || !username) return;
-
-                const tiktokImg = new Image();
-                tiktokImg.src = `https://unavatar.io/tiktok/${username}`;
-                tiktokImg.onload = function() {
-                    avatarDiv.innerHTML = `<img src="${tiktokImg.src}" alt="Foto" class="follower-avatar">`;
-                };
-                tiktokImg.onerror = function() {
-                    avatarDiv.innerHTML = `<img src="AQ.png" alt="Foto" class="follower-avatar">`;
-                };
-            });
-        });
+        // Fungsi: Jika foto gagal dimuat, ganti dengan foto cadangan
+        function gantiFotoGagal(img) {
+            // Foto cadangan — Ubah nama filenya sesuai foto yang kamu inginkan!
+            img.src = "AQ.png"; 
+            // Mencegah perulangan jika foto cadangan juga tidak ada
+            img.onerror = null;
+        }
     </script>
 </body>
 </html>
