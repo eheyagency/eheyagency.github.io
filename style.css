@@ -56,7 +56,7 @@ section { padding: 3rem 1rem; max-width: 1200px; margin: 0 auto; }
 
 /* ===== TABEL PENGUNJUNG ===== */
 .visitor-table-wrapper {
-    margin: 2rem auto 0;
+    margin: 1.5rem auto;
     max-width: 280px;
 }
 .visitor-table {
@@ -309,56 +309,4 @@ nav a:hover { background: rgba(255,184,0,0.15); color: var(--yellow); }
     height: 60px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid #ffb800;
-    flex-shrink: 0;
-}
-.follower-info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-.follower-info h4 {
-    font-size: 1rem;
-    color: #ffb800;
-    margin: 0;
-}
-.back-btn {
-    text-align: center;
-    margin-top: 3rem;
-}
-
-/* ===== KEUNGGULAN ===== */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-}
-.feature-card {
-    background: var(--card);
-    padding: 1.75rem;
-    border-radius: 16px;
-    border: 1px solid rgba(255,184,0,0.1);
-    transition: 0.3s;
-}
-.feature-card:hover {
-    border-color: rgba(255,184,0,0.3);
-    transform: translateY(-3px);
-}
-.feature-icon {
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(90deg, var(--yellow), var(--orange));
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.4rem;
-    color: #000;
-    margin-bottom: 1rem;
-}
-.feature-card h4 { font-size: 1.15rem; margin-bottom: 0.75rem; }
-.feature-card p { color: #aaa; font-size: 0.95rem; line-height: 1.7; }
-
-/* ===== FORM PENDAFTARAN ===== */
-.join-section {
-    background: linear-gradient(135deg, rgba(26,26,26
+   
