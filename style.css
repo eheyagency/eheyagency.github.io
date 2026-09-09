@@ -7,17 +7,20 @@
     --text: #ffffff;
     --muted: #b0b0b0;
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Roboto, Arial, sans-serif;
 }
+
 body {
     background: var(--darker);
     color: var(--text);
     line-height: 1.6;
 }
+
 .bg-gradient {
     position: fixed;
     top: 0; left: 0;
@@ -26,14 +29,17 @@ body {
     pointer-events: none;
     z-index: -1;
 }
+
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 .yellow { color: var(--yellow); }
+
 section {
     padding: 2.5rem 1rem;
     max-width: 1200px;
     margin: 0 auto;
 }
+
 .section-title {
     text-align: center;
     margin-bottom: 2rem;
@@ -51,73 +57,105 @@ section {
 /* ===== HEADER ===== */
 header {
     background: rgba(0,0,0,0.95);
-    padding: 1rem;
+    padding: 0.7rem 1rem;
     position: sticky;
     top: 0;
     z-index: 100;
     border-bottom: 1px solid rgba(255,184,0,0.15);
 }
+
 .header-inner {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     max-width: 1200px;
     margin: 0 auto;
+    text-align: center;
 }
-.logo-side .logo-circle {
-    width: 55px;
-    height: 55px;
+
+.header-logos-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    margin-bottom: 0.5rem;
+}
+
+.logo-circle-both {
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    object-fit: contain;
+    object-fit: cover;
     border: 2px solid var(--yellow);
 }
-.logo-text { text-align: center; }
-.logo-text h1 {
-    font-size: 1.3rem;
-    color: var(--yellow);
+
+.logo-text {
+    text-align: center;
 }
+
+.logo-text h1 {
+    font-size: 1.15rem;
+    color: var(--yellow);
+    margin-bottom: 0.2rem;
+}
+
 .part-of {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     color: var(--muted);
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
 }
+
 .aq-text {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
+    margin-bottom: 0.3rem;
 }
+
+.logo-text .location {
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
 nav {
     max-width: 1200px;
-    margin: 0.8rem auto 0;
+    margin: 0.6rem auto 0;
 }
+
 nav ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem 1rem;
+    gap: 0.4rem 0.8rem;
     align-items: center;
     justify-content: center;
 }
+
 nav a {
     color: var(--text);
-    padding: 0.5rem 0.7rem;
+    padding: 0.4rem 0.6rem;
     border-radius: 6px;
     transition: 0.2s;
+    font-size: 0.9rem;
 }
+
 nav a:hover {
     background: rgba(255,184,0,0.15);
     color: var(--yellow);
 }
+
 .btn-join {
     background: linear-gradient(90deg, var(--yellow), var(--orange));
     color: #000 !important;
     font-weight: 700;
     padding: 0.5rem 1rem !important;
+    font-size: 0.9rem;
 }
 
 /* ===== HEADER SEDERHANA ===== */
 .simple-header {
     background: rgba(0,0,0,0.95);
-    padding: 0.8rem 1rem;
+    padding: 0.7rem 1rem;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -130,12 +168,12 @@ nav a:hover {
     overflow: hidden;
     background: linear-gradient(90deg, var(--yellow), var(--orange));
     color: #000;
-    padding: 0.6rem 0;
+    padding: 0.5rem 0;
     margin-bottom: 1.5rem;
 }
 .marquee-text {
     white-space: nowrap;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
     animation: marquee 15s linear infinite;
 }
@@ -150,8 +188,8 @@ nav a:hover {
     margin-bottom: 1.5rem;
 }
 .blinking-img {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
     object-fit: contain;
     animation: blink 1.5s ease-in-out infinite;
 }
@@ -167,10 +205,12 @@ nav a:hover {
     max-width: 700px;
     margin: 0 auto 1.5rem;
     color: #ddd;
+    font-size: 0.95rem;
+    padding: 0 0.5rem;
 }
 .hero-buttons {
     display: flex;
-    gap: 1rem;
+    gap: 0.8rem;
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 1.5rem;
@@ -178,28 +218,30 @@ nav a:hover {
 .btn-primary {
     background: linear-gradient(90deg, var(--yellow), var(--orange));
     color: #000;
-    padding: 0.8rem 1.8rem;
+    padding: 0.7rem 1.4rem;
     border-radius: 8px;
     font-weight: 700;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     border: none;
+    font-size: 0.95rem;
 }
 .btn-secondary {
     background: transparent;
     color: var(--yellow);
     border: 2px solid var(--yellow);
-    padding: 0.8rem 1.8rem;
+    padding: 0.7rem 1.4rem;
     border-radius: 8px;
     font-weight: 600;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    font-size: 0.95rem;
 }
 .stats { margin-top: 1rem; }
 .stat-item h3 {
-    font-size: 2.2rem;
+    font-size: 2rem;
     color: var(--yellow);
 }
 .stat-link { display: inline-block; transition: 0.2s; }
@@ -208,13 +250,13 @@ nav a:hover {
 /* ===== KREATOR ===== */
 .creators-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
 }
 .creator-card {
     background: var(--card);
     border-radius: 14px;
-    padding: 1.3rem;
+    padding: 1rem;
     text-align: center;
     border: 1px solid rgba(255,184,0,0.1);
     transition: 0.3s;
@@ -224,35 +266,37 @@ nav a:hover {
     border-color: rgba(255,184,0,0.4);
 }
 .creator-avatar img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--yellow);
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.6rem;
 }
 .creator-info h4 {
     color: var(--yellow);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
 }
 .role-badge {
     display: inline-block;
     background: var(--yellow);
     color: #000;
     font-weight: 700;
-    font-size: 0.8rem;
-    padding: 0.35rem 0.9rem;
+    font-size: 0.75rem;
+    padding: 0.3rem 0.7rem;
     border-radius: 6px;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.7rem;
 }
 .creator-follow {
     display: inline-block;
     border: 2px solid var(--yellow);
     color: var(--yellow);
-    padding: 0.5rem 1.2rem;
+    padding: 0.4rem 1rem;
     border-radius: 6px;
     font-weight: 600;
     transition: 0.2s;
+    font-size: 0.9rem;
 }
 .creator-follow:hover {
     background: var(--yellow);
@@ -260,7 +304,7 @@ nav a:hover {
 }
 .view-all-btn {
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 
 /* ===== FOLLOWERS PAGE ===== */
@@ -271,19 +315,19 @@ nav a:hover {
 }
 .followers-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
     max-width: 1000px;
     margin: 0 auto;
 }
 .follower-card {
     background: #1e1e1e;
     border-radius: 14px;
-    padding: 1.3rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.8rem;
+    gap: 0.7rem;
     border: 1px solid rgba(255,184,0,0.1);
     transition: all 0.3s ease;
     text-decoration: none;
@@ -295,30 +339,71 @@ nav a:hover {
     box-shadow: 0 8px 24px rgba(255,184,0,0.15);
     background: rgba(255,184,0,0.05);
 }
+
+/* ===== NAMA & JABATAN DIPISAH — BARU ===== */
+.nama-member {
+    color: var(--yellow);
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 0.2rem 0;
+    text-align: center;
+}
+
+.jabatan-member {
+    display: inline-block;
+    background: rgba(255, 184, 0, 0.15);
+    color: #ffcc00;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.follower-avatar-loading {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: #2a2a2a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 0.8rem;
+    border: 3px solid var(--yellow);
+}
+
 .follower-avatar {
     width: 75px;
     height: 75px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--yellow);
+    border: none;
 }
+
 .follower-info {
     width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
 }
+
 .back-btn {
     text-align: center;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 /* ===== KEUNGGULAN ===== */
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
 }
 .feature-card {
     background: var(--card);
-    padding: 1.5rem;
+    padding: 1.2rem;
     border-radius: 14px;
     border: 1px solid rgba(255,184,0,0.1);
     transition: 0.3s;
@@ -328,43 +413,44 @@ nav a:hover {
     transform: translateY(-3px);
 }
 .feature-icon {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: var(--yellow);
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.7rem;
 }
-.feature-card h4 { margin-bottom: 0.5rem; }
-.feature-card p { color: var(--muted); font-size: 0.95rem; }
+.feature-card h4 { margin-bottom: 0.5rem; font-size: 1rem; }
+.feature-card p { color: var(--muted); font-size: 0.9rem; }
 
 /* ===== FORM PENDAFTARAN ===== */
 .form-container {
-    max-width: 600px;
+    max-width: 100%;
     margin: 0 auto;
     background: var(--card);
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 16px;
     border: 1px solid rgba(255,184,0,0.15);
 }
 .form-row {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
 }
-.form-group { margin-bottom: 1rem; }
+.form-group { margin-bottom: 0.8rem; }
 .form-group.full-width { grid-column: 1 / -1; }
 .form-group label {
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
     font-size: 0.9rem;
 }
 .form-group input,
 .form-group select,
 .form-group textarea {
     width: 100%;
-    padding: 0.8rem;
+    padding: 0.7rem;
     background: #2a2a2a;
     border: 1px solid #444;
     border-radius: 6px;
     color: #fff;
+    font-size: 1rem;
 }
 .form-group input:focus,
 .form-group select:focus,
@@ -375,33 +461,33 @@ nav a:hover {
 .checkbox-group {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.7rem;
+    gap: 0.5rem;
 }
 .checkbox-label {
     display: flex;
     align-items: center;
-    gap: 0.4rem;
-    font-size: 0.9rem;
+    gap: 0.3rem;
+    font-size: 0.85rem;
 }
-.checkbox-agree { margin-top: 1rem; }
+.checkbox-agree { margin-top: 0.8rem; }
 .submit-btn {
     width: 100%;
-    padding: 0.9rem;
+    padding: 0.8rem;
     background: linear-gradient(90deg, var(--yellow), var(--orange));
     color: #000;
     border: none;
     border-radius: 8px;
     font-weight: 700;
     font-size: 1rem;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     cursor: pointer;
 }
 
 /* ===== FOOTER ===== */
 footer {
     background: #0a0a0a;
-    padding: 2.5rem 1rem 1rem;
-    margin-top: 3rem;
+    padding: 2rem 1rem 1rem;
+    margin-top: 2rem;
     border-top: 1px solid rgba(255,184,0,0.1);
 }
 .footer-content {
@@ -415,32 +501,40 @@ footer {
 .footer-logo-wrapper {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    align-items: center;
+    gap: 0.65rem;
     margin-bottom: 0.8rem;
 }
 .footer-logo-circle {
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    object-fit: contain;
+    object-fit: cover;
     border: 2px solid var(--yellow);
 }
 .footer-brand h4 {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     color: var(--yellow);
+    margin-bottom: 0.2rem;
 }
 .footer-brand .part-of {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     color: var(--muted);
     text-transform: uppercase;
 }
 .footer-brand .aq-text {
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
+    font-size: 0.85rem;
 }
 .footer-brand .location {
     color: var(--muted);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+}
+.email-footer {
+    color: var(--muted);
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
 }
 
 /* ===== TABEL STATISTIK ===== */
@@ -460,13 +554,13 @@ footer {
 .visitor-table th {
     background: linear-gradient(90deg, var(--yellow), var(--orange));
     color: #000;
-    padding: 0.7rem;
-    font-size: 0.9rem;
+    padding: 0.6rem;
+    font-size: 0.85rem;
     font-weight: 700;
 }
 .visitor-table td {
-    padding: 0.7rem 1rem;
-    font-size: 0.85rem;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.8rem;
     border-bottom: 1px solid rgba(255,184,0,0.1);
 }
 .visitor-table tr:last-child td { border-bottom: none; }
@@ -474,10 +568,6 @@ footer {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-}
-.visitor-table td img {
-    vertical-align: middle;
-    filter: drop-shadow(0 0 3px rgba(255,184,0,0.5));
 }
 
 /* ===== IKUTI KAMI ===== */
@@ -487,23 +577,23 @@ footer {
 }
 .footer-social-wrapper h5 {
     margin-bottom: 0.8rem;
-    font-size: 1rem;
+    font-size: 0.95rem;
 }
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 0.8rem;
 }
 .social-icons a {
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
     background: rgba(255,184,0,0.1);
     color: var(--yellow);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.1rem;
+    font-size: 1rem;
     transition: 0.2s;
 }
 .social-icons a:hover {
@@ -514,20 +604,21 @@ footer {
 /* ===== TAUTAN ===== */
 .footer-links-row {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
 }
+.footer-links { text-align: center; }
 .footer-links h5 {
-    margin-bottom: 0.8rem;
-    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+    font-size: 0.9rem;
 }
 .footer-links ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 .footer-links ul li a {
     color: var(--muted);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     transition: 0.2s;
 }
 .footer-links ul li a:hover {
@@ -537,35 +628,41 @@ footer {
 /* ===== FOOTER SEDERHANA ===== */
 .simple-footer {
     background: #0a0a0a;
-    padding: 1.5rem;
+    padding: 1.2rem;
     margin-top: 2rem;
     border-top: 1px solid rgba(255,184,0,0.1);
     text-align: center;
     color: var(--muted);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 .copyright {
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     padding-top: 1rem;
     border-top: 1px solid #222;
     color: var(--muted);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-    .form-row,
-    .footer-links-row {
-        grid-template-columns: 1fr;
+/* ===== RESPONSIVE — LAYAR BESAR ===== */
+@media (min-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr 1fr;
     }
-    .logo-side .logo-circle {
-        width: 45px;
-        height: 45px;
+    .footer-links-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .logo-circle-both,
+    .footer-logo-circle {
+        width: 55px;
+        height: 55px;
     }
     .blinking-img {
-        width: 110px;
-        height: 110px;
+        width: 140px;
+        height: 140px;
+    }
+    .creators-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
 }
