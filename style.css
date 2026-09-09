@@ -30,13 +30,12 @@ body {
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 .yellow { color: var(--yellow); }
-.orange { color: var(--orange); }
 section { padding: 3rem 1rem; max-width: 1200px; margin: 0 auto; }
 .section-title { text-align: center; margin-bottom: 2.5rem; }
 .section-title h3 { font-size: 2rem; margin-bottom: 0.5rem; }
 .section-title p { color: var(--muted); max-width: 600px; margin: 0 auto; }
 
-/* ===== BINGKAI JABATAN SAJA — PERSIS SEPERTI TOMBOL GABUNG SEKARANG ===== */
+/* ===== BINGKAI JABATAN ===== */
 .role-badge {
     display: inline-block;
     background: #ffb800;
@@ -55,6 +54,41 @@ section { padding: 3rem 1rem; max-width: 1200px; margin: 0 auto; }
     box-shadow: 0 3px 10px rgba(255, 184, 0, 0.4);
 }
 
+/* ===== TABEL PENGUNJUNG ===== */
+.visitor-table-wrapper {
+    margin: 2rem auto 0;
+    max-width: 280px;
+}
+.visitor-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #1a1a1a;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(255,184,0,0.2);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+.visitor-table th {
+    background: linear-gradient(90deg, #ffb800, #ff9500);
+    color: #000;
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+.visitor-table td {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.85rem;
+    border-bottom: 1px solid rgba(255,184,0,0.1);
+}
+.visitor-table tr:last-child td { border-bottom: none; }
+.visitor-table td:last-child {
+    color: #ffb800;
+    font-weight: 700;
+    text-align: right;
+    font-size: 0.95rem;
+}
+
 /* ===== HEADER ===== */
 header {
     background: rgba(0,0,0,0.9);
@@ -71,7 +105,12 @@ header {
     max-width: 1200px;
     margin: 0 auto;
 }
-.logo-side .logo-circle { width: 60px; height: 60px; border-radius: 50%; object-fit: contain; border: 2px solid var(--yellow); }
+.logo-side .logo-circle {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    object-fit: contain;
+    border: 2px solid var(--yellow);
+}
 .logo-text { text-align: center; }
 .logo-text h1 { font-size: 1.5rem; color: var(--yellow); }
 .part-of { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; }
@@ -80,41 +119,13 @@ nav { max-width: 1200px; margin: 1rem auto 0; }
 nav ul { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: center; }
 nav a { color: var(--text); padding: 0.5rem 0.75rem; border-radius: 6px; transition: 0.2s; }
 nav a:hover { background: rgba(255,184,0,0.15); color: var(--yellow); }
-.btn-join { background: linear-gradient(90deg, var(--yellow), var(--orange)); color: #000 !important; font-weight: 700; padding: 0.6rem 1.2rem !important; border-radius: 8px; }
-
-/* ===== Batasi ukuran semua logo & gambar ===== */
-.logo-circle,
-.footer-logo-circle,
-.blinking-img,
-.follower-avatar,
-.creator-avatar img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain; /* Biar gambar tidak terdistorsi */
+.btn-join {
+    background: linear-gradient(90deg, var(--yellow), var(--orange));
+    color: #000 !important;
+    font-weight: 700;
+    padding: 0.6rem 1.2rem !important;
+    border-radius: 8px;
 }
-
-/* Khusus logo besar di bagian atas halaman */
-.blinking-img {
-  width: 160px; /* Sesuaikan ukuran yang diinginkan */
-  height: 160px;
-}
-
-/* Khusus logo bulat di header */
-.logo-circle {
-  width: 60px;
-  height: 60px;
-}
-
-/* Khusus logo besar di bagian bawah yang kebesaran */
-img[src*="AQ.png"],
-img[src*="ehey.png"] {
-  max-width: 250px; /* Batasi lebar maksimal */
-  width: 80%; /* Atur persentase dari layar */
-  height: auto;
-  display: block;
-  margin: 0 auto; /* Tengahin */
-}
-
 
 /* ===== TEKS BERJALAN ===== */
 .marquee-container {
@@ -159,17 +170,18 @@ img[src*="ehey.png"] {
     padding-top: 2rem;
 }
 .hero p {
-    max-width: 700px;
+    max-width: 750px;
     margin: 0 auto 2rem;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: #ddd;
+    line-height: 1.7;
 }
 .hero-buttons {
     display: flex;
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
 }
 .btn-primary {
     background: linear-gradient(90deg, var(--yellow), var(--orange));
@@ -199,19 +211,14 @@ img[src*="ehey.png"] {
     gap: 0.5rem;
 }
 .btn-secondary:hover { background: rgba(255,184,0,0.1); }
-.stats { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
-.stat-item h3 { font-size: 2rem; color: var(--yellow); }
-.stat-item p { color: var(--muted); font-size: 0.95rem; }
+.stats { display: flex; justify-content: center; flex-wrap: wrap; }
+.stat-item h3 { font-size: 2.5rem; color: var(--yellow); }
+.stat-item p { color: var(--muted); font-size: 1rem; }
 .stat-link {
     display: block;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.2s ease, filter 0.2s ease;
+    transition: transform 0.2s ease;
 }
-.stat-link:hover {
-    transform: scale(1.08);
-    filter: drop-shadow(0 0 8px rgba(255,184,0,0.4));
-}
+.stat-link:hover { transform: scale(1.08); }
 
 /* ===== KREATOR ===== */
 .creators-grid {
@@ -268,6 +275,58 @@ img[src*="ehey.png"] {
 }
 .view-all-btn { text-align: center; margin-top: 2.5rem; }
 
+/* ===== FOLLOWERS PAGE ===== */
+.followers-page {
+    min-height: 80vh;
+    padding-top: 3rem;
+}
+.followers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.follower-card {
+    background: #1e1e1e;
+    border-radius: 14px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid rgba(255,184,0,0.1);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+.follower-card:hover {
+    transform: translateY(-4px);
+    border-color: #ffb800;
+    box-shadow: 0 8px 24px rgba(255,184,0,0.15);
+    background: rgba(255,184,0,0.05);
+}
+.follower-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffb800;
+    flex-shrink: 0;
+}
+.follower-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.follower-info h4 {
+    font-size: 1rem;
+    color: #ffb800;
+    margin: 0;
+}
+.back-btn {
+    text-align: center;
+    margin-top: 3rem;
+}
+
 /* ===== KEUNGGULAN ===== */
 .features-grid {
     display: grid;
@@ -302,351 +361,4 @@ img[src*="ehey.png"] {
 
 /* ===== FORM PENDAFTARAN ===== */
 .join-section {
-    background: linear-gradient(135deg, rgba(26,26,26,0.95), rgba(43,43,43,0.9));
-}
-.form-container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 0 0.5rem;
-}
-.registration-form {
-    background: #1a1a1a;
-    padding: 1.5rem;
-    border-radius: 16px;
-    border: 1px solid rgba(255,184,0,0.2);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-}
-.form-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-.form-group { flex: 1 1 100%; }
-.form-group.full-width { flex: 1 1 100%; }
-.form-group label {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--yellow);
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    font-size: 0.95rem;
-}
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 0.85rem 1rem;
-    background: #2c2c2c;
-    border: 1px solid #444;
-    border-radius: 10px;
-    color: #fff;
-    font-size: 1rem;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease;
-}
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--yellow);
-    box-shadow: 0 0 0 3px rgba(255,184,0,0.15);
-}
-.form-group input::placeholder,
-.form-group textarea::placeholder { color: #888; }
-.checkbox-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-top: 0.5rem;
-}
-.checkbox-label {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    color: #ddd;
-    font-size: 0.9rem;
-    cursor: pointer;
-}
-.checkbox-label input[type="checkbox"] {
-    width: auto;
-    accent-color: var(--yellow);
-}
-.checkbox-agree { margin-top: 1.25rem; }
-.form-link { color: var(--yellow); text-decoration: underline; }
-.submit-btn {
-    width: 100%;
-    background: linear-gradient(90deg, var(--yellow), var(--orange));
-    color: #000;
-    border: none;
-    padding: 1rem;
-    border-radius: 10px;
-    font-size: 1.05rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: transform 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 1rem;
-}
-.submit-btn:hover { transform: translateY(-2px); }
-
-/* ===== FOOTER ===== */
-footer {
-    background: #0a0a0a;
-    border-top: 1px solid rgba
-    /* ===== FOOTER BRAND — Logo di kiri, berdekatan dengan teks ===== */
-.footer-brand {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-.footer-logo-wrapper {
-    display: flex;
-    gap: 0.5rem;
-    flex-shrink: 0;
-}
-.footer-logo-circle {
-    width: 50px; /* Sama ukuran logo header */
-    height: 50px;
-    border-radius: 50%;
-    object-fit: contain;
-    border: 2px solid var(--yellow);
-}
-.footer-brand-text {
-    flex: 1;
-    min-width: 180px;
-}
-.footer-brand-text h4 {
-    font-size: 1.2rem;
-    color: var(--yellow);
-    margin-bottom: 0.25rem;
-}
-.footer-brand-text p {
-    font-size: 0.9rem;
-    color: var(--muted);
-    line-height: 1.5;
-}
-/* ===== FOOTER — Logo kecil di sudut kiri, berdampingan ===== */
-.footer-brand {
-    display: flex;
-    align-items: flex-start; /* Logo & teks rata atas */
-    gap: 12px; /* Jarak logo & teks */
-    width: 100%;
-}
-
-/* Wrapper logo — berdampingan */
-.footer-logo-wrapper {
-    display: flex;
-    gap: 8px; /* Jarak logo AQ & EHEY */
-    flex-shrink: 0; /* Tidak mengecil */
-}
-
-/* Logo bulat kecil — sama ukuran header */
-.footer-logo-circle {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: contain;
-    border: 2px solid var(--yellow);
-}
-
-/* Teks di sebelah kanan logo */
-.footer-brand-text {
-    flex: 1;
-}
-.footer-brand-text h4 {
-    font-size: 1.1rem;
-    color: var(--yellow);
-    margin: 0 0 2px 0;
-}
-.footer-brand-text .part-of {
-    font-size: 0.75rem;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin: 0;
-}
-.footer-brand-text .aq-text {
-    font-size: 0.95rem;
-    font-weight: 600;
-    margin: 0 0 6px 0;
-}
-.footer-brand-text .location {
-    font-size: 0.85rem;
-    color: var(--muted);
-    line-height: 1.5;
-    margin: 0;
-}
-
-/* Responsif HP — logo tetap rapi */
-@media (max-width: 480px) {
-    .footer-logo-circle {
-        width: 42px;
-        height: 42px;
-    }
-    .footer-brand {
-        gap: 10px;
-    }
-}
-
-/* ===== PERBAIKAN FOOTER BAGIAN BAWAH ===== */
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-    box-sizing: border-box;
-}
-
-.footer-bottom-area {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-}
-
-/* Bagian kiri: Logo + Teks EHEY AGENCY */
-.footer-brand {
-    flex: 1 1 280px;
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    min-width: 250px;
-}
-
-.footer-logo-wrapper {
-    display: flex;
-    gap: 8px;
-    flex-shrink: 0;
-}
-
-.footer-logo-circle {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    object-fit: contain;
-    border: 2px solid var(--yellow);
-}
-
-.footer-brand-text {
-    flex: 1;
-    min-width: 180px;
-}
-
-.footer-brand-text h4 {
-    font-size: 1.1rem;
-    color: var(--yellow);
-    margin: 0 0 4px 0;
-}
-
-.footer-brand-text .part-of {
-    font-size: 0.75rem;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin: 0 0 4px 0;
-}
-
-.footer-brand-text .aq-text {
-    font-size: 0.95rem;
-    font-weight: 600;
-    margin: 0 0 8px 0;
-}
-
-.footer-brand-text .location {
-    font-size: 0.85rem;
-    color: var(--muted);
-    line-height: 1.6;
-    margin: 0;
-}
-
-/* Bagian kanan: Social Icons */
-.footer-social-wrapper {
-    flex-shrink: 0;
-    min-width: 200px;
-    text-align: right;
-}
-
-.footer-social-wrapper .social-icons {
-    display: flex;
-    gap: 10px;
-    justify-content: flex-end;
-    margin-top: 0.5rem;
-}
-
-.footer-social-wrapper .social-icons a {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: rgba(255, 184, 0, 0.1);
-    color: var(--yellow);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.2s;
-}
-
-.footer-social-wrapper .social-icons a:hover {
-    background: var(--yellow);
-    color: #000;
-}
-
-/* Copyright di paling bawah */
-.copyright {
-    text-align: center;
-    margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255, 184, 0, 0.15);
-    color: var(--muted);
-    font-size: 0.85rem;
-}
-
-/* Responsif HP */
-@media (max-width: 768px) {
-    .footer-bottom-area {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .footer-brand {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-brand-text {
-        text-align: center;
-    }
-
-    .footer-social-wrapper {
-        text-align: center;
-        margin-top: 1rem;
-    }
-
-    .footer-social-wrapper .social-icons {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .footer-logo-circle {
-        width: 42px;
-        height: 42px;
-    }
-
-    .footer-brand-text h4 {
-        font-size: 1rem;
-    }
-
-    .footer-brand-text .location {
-        font-size: 0.8rem;
-    }
-}
-
-
+    background: linear-gradient(135deg, rgba(26,26,26
