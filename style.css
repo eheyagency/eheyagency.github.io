@@ -494,4 +494,159 @@ footer {
     }
 }
 
+/* ===== PERBAIKAN FOOTER BAGIAN BAWAH ===== */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+}
+
+.footer-bottom-area {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* Bagian kiri: Logo + Teks EHEY AGENCY */
+.footer-brand {
+    flex: 1 1 280px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    min-width: 250px;
+}
+
+.footer-logo-wrapper {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.footer-logo-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: contain;
+    border: 2px solid var(--yellow);
+}
+
+.footer-brand-text {
+    flex: 1;
+    min-width: 180px;
+}
+
+.footer-brand-text h4 {
+    font-size: 1.1rem;
+    color: var(--yellow);
+    margin: 0 0 4px 0;
+}
+
+.footer-brand-text .part-of {
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 4px 0;
+}
+
+.footer-brand-text .aq-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+}
+
+.footer-brand-text .location {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Bagian kanan: Social Icons */
+.footer-social-wrapper {
+    flex-shrink: 0;
+    min-width: 200px;
+    text-align: right;
+}
+
+.footer-social-wrapper .social-icons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+}
+
+.footer-social-wrapper .social-icons a {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 184, 0, 0.1);
+    color: var(--yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.footer-social-wrapper .social-icons a:hover {
+    background: var(--yellow);
+    color: #000;
+}
+
+/* Copyright di paling bawah */
+.copyright {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 184, 0, 0.15);
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+/* Responsif HP */
+@media (max-width: 768px) {
+    .footer-bottom-area {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-brand {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-brand-text {
+        text-align: center;
+    }
+
+    .footer-social-wrapper {
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .footer-social-wrapper .social-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-logo-circle {
+        width: 42px;
+        height: 42px;
+    }
+
+    .footer-brand-text h4 {
+        font-size: 1rem;
+    }
+
+    .footer-brand-text .location {
+        font-size: 0.8rem;
+    }
+}
+
 
