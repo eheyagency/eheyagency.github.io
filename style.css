@@ -913,3 +913,124 @@ footer {
         grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     }
 }
+
+/* ==================================================
+   HEADER FOLLOWERS — PERSIS SEPERTI GAMBAR
+   ================================================== */
+.header-followers {
+    width: 100%;
+    padding: 25px 20px;
+    background:
+        radial-gradient(ellipse at top left, rgba(139, 92, 246, 0.25), transparent 50%),
+        radial-gradient(ellipse at top right, rgba(250, 204, 21, 0.15), transparent 50%),
+        linear-gradient(135deg, #1a1033 0%, #0f0a1f 50%, #000000 100%);
+    border-bottom: 1px solid rgba(250, 204, 21, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.header-inner-followers {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Logo Kiri & Kanan */
+.logo-aq-wrap, .logo-ehey-wrap {
+    flex: 0 0 110px;
+    text-align: center;
+}
+.logo-aq-wrap { text-align: left; }
+.logo-ehey-wrap { text-align: right; }
+
+.logo-aq-img, .logo-ehey-img {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+/* Teks Tengah */
+.header-text-center-followers {
+    flex: 1;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.judul-ehey {
+    font-size: 42px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 3px;
+    margin: 0 0 5px;
+    text-shadow: 0 0 15px rgba(250, 204, 21, 0.4);
+}
+
+.part-of-teks {
+    font-size: 18px;
+    color: #facc15;
+    font-style: italic;
+    margin: 0 0 8px;
+    letter-spacing: 2px;
+}
+
+.judul-alqaqa {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 25px;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 10px rgba(96, 165, 250, 0.4);
+}
+
+.judul-daftar-besar {
+    font-size: 30px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 10px;
+}
+
+.kuning-teks {
+    color: #facc15;
+}
+
+.sub-teks {
+    font-size: 16px;
+    color: #cccccc;
+    margin: 0;
+}
+
+/* ===== RESPONSIF HP ===== */
+@media (max-width: 900px) {
+    .header-inner-followers {
+        flex-direction: column;
+        text-align: center;
+    }
+    .logo-aq-wrap, .logo-ehey-wrap {
+        text-align: center;
+        flex: 0 0 auto;
+    }
+    .logo-aq-img, .logo-ehey-img {
+        width: 90px;
+        height: 90px;
+    }
+    .judul-ehey { font-size: 30px; }
+    .part-of-teks { font-size: 15px; }
+    .judul-alqaqa { font-size: 22px; }
+    .judul-daftar-besar { font-size: 22px; }
+}
+
+@media (max-width: 480px) {
+    .logo-aq-img, .logo-ehey-img {
+        width: 75px;
+        height: 75px;
+    }
+    .judul-ehey { font-size: 24px; letter-spacing: 1px; }
+    .judul-alqaqa { font-size: 18px; }
+    .judul-daftar-besar { font-size: 18px; }
+    .sub-teks { font-size: 14px; }
+}
