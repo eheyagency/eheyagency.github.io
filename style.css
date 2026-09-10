@@ -1,172 +1,843 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar Kreator & Member | EHEY AGENCY</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-</head>
-<body>
-    <div class="bg-gradient"></div>
+/* ==================================================
+   BAGIAN DASAR — DIPAKAI KEDUA HALAMAN
+   ================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
 
-    <!-- HEADER -->
-    <header class="header-followers">
-        <div class="header-inner-followers">
-            
-            <!-- Logo Kiri: AQ -->
-            <div class="logo-aq-wrap">
-                <img src="AQ.png" alt="AL QAQA MANAGEMENT" class="logo-aq-img"
-                     onerror="this.src='https://via.placeholder.com/100?text=AQ';this.style.border='3px solid gold'">
-            </div>
+body {
+    color: #fff;
+    line-height: 1.6;
+    min-height: 100vh;
+}
 
-            <!-- Teks Tengah -->
-            <div class="header-text-center-followers">
-                <h1 class="judul-ehey">EHEY AGENCY</h1>
-                <p class="part-of-teks">PART OF</p>
-                <h2 class="judul-alqaqa">AL QAQA MANAGEMENT</h2>
-                <h3 class="judul-daftar-besar">
-                    Daftar <span class="kuning-teks">Kreator & Member</span> Kami 👥
-                </h3>
-                <p class="sub-teks">Klik foto untuk menuju profil TikTok!</p>
-            </div>
+.bg-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #000000 0%, #1a1a0f 50%, #0f0f00 100%);
+    z-index: -1;
+}
 
-            <!-- Logo Kanan: EHEY -->
-            <div class="logo-ehey-wrap">
-                <img src="ehey.png" alt="EHEY AGENCY" class="logo-ehey-img"
-                     onerror="this.src='https://via.placeholder.com/100?text=EHEY';this.style.border='3px solid gold'">
-            </div>
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-        </div>
-    </header>
+ul {
+    list-style: none;
+}
 
-    <!-- DAFTAR MEMBER -->
-    <section class="followers-page">
-        <div class="followers-grid">
+.yellow, .kuning-teks {
+    color: #facc15;
+}
 
-            <!-- NOMOR 1 -->
-            <a href="https://www.tiktok.com/@alqaqa999?_r=1&_t=ZS-99YfGKAZB5U" target="_blank" class="follower-card"
-               data-tiktok-user="alqaqa999"
-               data-foto-sendiri="alqaqa.png">
-                <span class="nomor-urut">1</span>
-                <div class="foto-tempat">Memuat...</div>
-                <div class="follower-info">
-                    <p class="nama-sendiri">AL QAQA</p>
-                    <span class="jabatan-member">DIRUT AL QAQA MANAGEMENT</span>
-                    <p class="stat-member">— Following • — Followers • — Likes</p>
-                </div>
-            </a>
+/* ==================================================
+   BAGIAN INDEX.HTML — TIDAK DIUBAH SAAT EDIT FOLLOWERS
+   ================================================== */
 
-            <!-- NOMOR 2 -->
-            <a href="https://www.tiktok.com/@unibrahim95?_r=1&_t=ZS-99Yfo0tsmV6" target="_blank" class="follower-card"
-               data-tiktok-user="unibrahim95"
-               data-foto-sendiri="bgun.png">
-                <span class="nomor-urut">2</span>
-                <div class="foto-tempat">Memuat...</div>
-                <div class="follower-info">
-                    <p class="nama-sendiri">UN IBRAHIM</p>
-                    <span class="jabatan-member">FOUNDER EHEY AGENCY</span>
-                    <p class="stat-member">2.9K Following • 78.7K Followers • 1.1M Likes</p>
-                </div>
-            </a>
+/* HEADER */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
 
-            <!-- NOMOR 3 -->
-            <a href="https://www.tiktok.com/@jemzlamato.eheyagency?_r=1&_t=ZS-99YgEEB2iGY" target="_blank" class="follower-card"
-               data-tiktok-user="jemzlamato.eheyagency"
-               data-foto-sendiri="jemz.png">
-                <span class="nomor-urut">3</span>
-                <div class="foto-tempat">Memuat...</div>
-                <div class="follower-info">
-                    <p class="nama-sendiri">JEMZ LAMATO</p>
-                    <span class="jabatan-member">SUPER ADMIN</span>
-                    <p class="stat-member">— Following • — Followers • — Likes</p>
-                </div>
-            </a>
+.header-logo-left, .header-logo-right {
+    flex: 0 0 90px;
+}
+.header-logo-right { text-align: right; }
 
-            <!-- NOMOR 4 -->
-            <a href="https://www.tiktok.com/@rilibrahim01?_r=1&_t=ZS-99YgVmVwACN" target="_blank" class="follower-card"
-               data-tiktok-user="rilibrahim01"
-               data-foto-sendiri="aril.png">
-                <span class="nomor-urut">4</span>
-                <div class="foto-tempat">Memuat...</div>
-                <div class="follower-info">
-                    <p class="nama-sendiri">RIL IBRAHIM</p>
-                    <span class="jabatan-member">ADMIN EHEY AGENCY</span>
-                    <p class="stat-member">85 Following • 1.8K Followers • 0 Likes</p>
-                </div>
-            </a>
+.logo-round {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #facc15;
+}
 
-            <!-- NOMOR 5 -->
-            <a href="https://www.tiktok.com/@koko.ltf?_r=1&_t=ZS-99Z9PfcphjD" target="_blank" class="follower-card"
-               data-tiktok-user="koko.ltf"
-               data-foto-sendiri="koko.png">
-                <span class="nomor-urut">5</span>
-                <div class="foto-tempat">Memuat...</div>
-                <div class="follower-info">
-                    <p class="nama-sendiri">KOKO LTF</p>
-                    <span class="jabatan-member">MEMBER</span>
-                    <p class="stat-member">98 Following • 637 Followers • 585 Likes</p>
-                </div>
-            </a>
+.header-text-center {
+    flex: 1;
+    text-align: center;
+    padding: 0 20px;
+}
 
-        </div>
+.ehey-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #facc15;
+    margin: 0;
+    letter-spacing: 2px;
+}
 
-        <div class="total-member-box">
-            <p class="total-member-teks">🎭 Total Member: <strong id="jumlahMember">5</strong> Orang</p>
-        </div>
+.part-of-line {
+    color: #ffffff;
+    font-size: 16px;
+    margin: 5px 0;
+    opacity: 0.8;
+}
 
-        <div class="back-btn">
-            <a href="index.html" class="btn-secondary"><i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda</a>
-        </div>
-    </section>
+.alqaqa-title {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
 
-    <!-- FOOTER -->
-    <footer class="simple-footer">
-        <p>© 2026 EHEY AGENCY — Part of AL QAQA MANAGEMENT</p>
-    </footer>
+.header-nav {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 12px 0;
+    margin-top: 5px;
+}
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const daftarKartu = document.querySelectorAll('.follower-card');
-            
-            // Hitung jumlah member otomatis
-            document.getElementById('jumlahMember').textContent = daftarKartu.length;
+.header-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px 30px;
+    margin: 0;
+    padding: 0;
+}
 
-            daftarKartu.forEach(kartu => {
-                const username = kartu.getAttribute('data-tiktok-user');
-                const fotoSendiri = kartu.getAttribute('data-foto-sendiri');
-                const tempatFoto = kartu.querySelector('.foto-tempat');
-                
-                if (!username || !tempatFoto) return;
+.header-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
 
-                // Prioritas 1: unavatar.io
-                const fotoTikTok = new Image();
-                fotoTikTok.src = `https://unavatar.io/tiktok/${username}`;
-                
-                fotoTikTok.onload = () => {
-                    tempatFoto.innerHTML = `<img src="${fotoTikTok.src}" alt="@${username}" class="follower-avatar">`;
-                };
-                
-                fotoTikTok.onerror = () => {
-                    // Prioritas 2: foto lokal sendiri
-                    if (fotoSendiri) {
-                        const lokal = new Image();
-                        lokal.src = fotoSendiri;
-                        lokal.onload = () => {
-                            tempatFoto.innerHTML = `<img src="${fotoSendiri}" alt="@${username}" class="follower-avatar">`;
-                        };
-                        lokal.onerror = () => {
-                            // Prioritas 3: placeholder
-                            const inisial = kartu.querySelector('.nama-sendiri').textContent.slice(0,2);
-                            tempatFoto.innerHTML = `<img src="https://via.placeholder.com/100?text=${inisial}" alt="Foto" class="follower-avatar">`;
-                        };
-                    } else {
-                        const inisial = kartu.querySelector('.nama-sendiri').textContent.slice(0,2);
-                        tempatFoto.innerHTML = `<img src="https://via.placeholder.com/100?text=${inisial}" alt="Foto" class="follower-avatar">`;
-                    }
-                };
-            });
-        });
-    </script>
-</body>
-</html>
+.header-nav a:hover {
+    color: #facc15;
+}
+
+.btn-join-header {
+    background: linear-gradient(to right, #facc15, #eab308);
+    color: #000 !important;
+    padding: 10px 25px !important;
+    border-radius: 8px;
+    font-weight: bold !important;
+}
+
+/* TEKS BERJALAN */
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    background: rgba(250, 204, 21, 0.1);
+    padding: 10px 0;
+    margin: 10px 0 20px;
+}
+
+.marquee-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 15s linear infinite;
+    color: #facc15;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* LOGO BERKEDIP */
+.blinking-logo {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.blinking-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #facc15;
+    object-fit: cover;
+    animation: blink 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes blink {
+    0% { opacity: 0.4; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 30px 20px 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, #facc15, #eab308);
+    color: #000;
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: transform 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #facc15;
+    border: 2px solid #facc15;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background: #facc15;
+    color: #000;
+}
+
+/* STATISTIK */
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(250, 204, 21, 0.3);
+    transition: transform 0.3s;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    border-color: #facc15;
+}
+
+.stat-item h3 {
+    font-size: 36px;
+    color: #facc15;
+}
+
+.stat-link {
+    display: block;
+}
+
+/* JUDUL BAGIAN */
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    opacity: 0.7;
+}
+
+/* GALERI KREATOR */
+.creators-section {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.creators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.creator-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    border: 1px solid rgba(250, 204, 21, 0.2);
+    transition: all 0.3s;
+}
+
+.creator-card:hover {
+    transform: translateY(-5px);
+    border-color: #facc15;
+    background: rgba(250, 204, 21, 0.05);
+}
+
+.creator-card .nomor-urut {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #facc15, #eab308);
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 15px;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(250, 204, 21, 0.4);
+}
+
+.creator-avatar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #facc15;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.creator-info h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.role-badge {
+    display: inline-block;
+    background: rgba(250, 204, 21, 0.2);
+    color: #facc15;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.creator-follow {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    border: 1px solid #facc15;
+    transition: all 0.3s;
+}
+
+.creator-follow:hover {
+    background: #facc15;
+    color: #000;
+}
+
+.view-all-btn {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* KEUNGGULAN */
+section {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid rgba(250, 204, 21, 0.2);
+    transition: all 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: #facc15;
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(250, 204, 21, 0.15);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: #facc15;
+    margin-bottom: 20px;
+}
+
+.feature-card h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    opacity: 0.7;
+    font-size: 15px;
+}
+
+/* FORM PENDAFTARAN */
+.join-section {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.form-container {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 35px;
+    border: 1px solid rgba(250, 204, 21, 0.2);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(250, 204, 21, 0.3);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 15px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #facc15;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    margin-top: 10px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.checkbox-agree {
+    margin: 25px 0;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to right, #facc15, #eab308);
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.submit-btn:hover {
+    transform: scale(1.02);
+}
+
+/* FOOTER INDEX */
+footer {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 50px 20px 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-brand {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.footer-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.footer-logo-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #facc15;
+}
+
+.footer-brand h4 {
+    font-size: 22px;
+    color: #facc15;
+    margin-bottom: 5px;
+}
+
+.footer-brand .part-of {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.footer-brand .aq-text {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.footer-brand .location {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.footer-social-wrapper {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.footer-social-wrapper h5 {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 22px;
+}
+
+.social-icons a {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(250, 204, 21, 0.1);
+    color: #facc15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.social-icons a:hover {
+    background: #facc15;
+    color: #000;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0.6;
+    font-size: 14px;
+}
+
+/* ==================================================
+   BAGIAN FOLLOWERS.HTML — TIDAK DIUBAH SAAT EDIT INDEX
+   ================================================== */
+
+/* HEADER FOLLOWERS — TETAP 3 KOLOM DI SEMUA LAYAR */
+.header-followers {
+    width: 100%;
+    padding: 20px 15px;
+    background:
+        radial-gradient(ellipse at top left, rgba(139, 92, 246, 0.25), transparent 50%),
+        radial-gradient(ellipse at top right, rgba(250, 204, 21, 0.15), transparent 50%),
+        linear-gradient(135deg, #1a1033 0%, #0f0a1f 50%, #000000 100%);
+    border-bottom: 1px solid rgba(250, 204, 21, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.header-inner-followers {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+
+.logo-aq-wrap, .logo-ehey-wrap {
+    flex: 0 0 auto;
+    text-align: center;
+}
+.logo-aq-wrap { text-align: left; }
+.logo-ehey-wrap { text-align: right; }
+
+.logo-aq-img, .logo-ehey-img {
+    width: 9vw;
+    height: 9vw;
+    max-width: 110px;
+    max-height: 110px;
+    min-width: 60px;
+    min-height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #facc15;
+}
+
+.header-text-center-followers {
+    flex: 1;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.judul-ehey {
+    font-size: clamp(22px, 5vw, 42px);
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 2px;
+    margin: 0 0 4px;
+    text-shadow: 0 0 15px rgba(250, 204, 21, 0.4);
+}
+
+.part-of-teks {
+    font-size: clamp(13px, 2.5vw, 18px);
+    color: #facc15;
+    font-style: italic;
+    margin: 0 0 5px;
+    letter-spacing: 2px;
+}
+
+.judul-alqaqa {
+    font-size: clamp(18px, 4vw, 32px);
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 15px;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 10px rgba(96, 165, 250, 0.4);
+}
+
+.judul-daftar-besar {
+    font-size: clamp(16px, 3.5vw, 30px);
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 6px;
+}
+
+.sub-teks {
+    font-size: clamp(12px, 2vw, 16px);
+    color: #cccccc;
+    margin: 0;
+}
+
+/* KONTEN DAFTAR MEMBER */
+.followers-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+}
+
+.followers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.follower-card {
+    display: block;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(250, 204, 21, 0.25);
+    border-radius: 16px;
+    padding: 20px 15px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.follower-card:hover {
+    border-color: #facc15;
+    transform: translateY(-5px);
+    background: rgba(250, 204, 21, 0.08);
+}
+
+.follower-card .nomor-urut {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: linear-gradient(135deg, #facc15, #eab308);
+    color: #000;
+    font-weight: bold;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(250, 204, 21, 0.35);
+}
+
+.foto-tempat {
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    border-radius: 50%;
+    background: rgba(250, 204, 21, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #facc15;
+    border: 2px dashed rgba(250, 204, 21, 0.3);
+}
+
+.follower-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #facc15;
+}
+
+.nama-sendiri {
+    font-size: 16px;
+    color: #ffffff;
+    margin: 0 0 5px;
+    font-weight: bold;
+}
+
+.jabatan-member {
+    display: inline-block;
+    background: rgba(250, 204, 21, 0.15);
+    color: #facc15;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.stat-member {
+    font-size: 11px;
+    color: #888;
+    margin: 0;
+}
+
+/* TOTAL MEMBER */
+.total-member-box {
+    text-align: center;
+    margin: 30px 0 10px;
+    padding: 15px;
+    background: rgba(250, 204, 21, 0.08);
+    border-radius: 12px;
+    border: 1px solid rgba(250, 204, 21, 0.2);
+}
+
+.total-member-teks {
+    font-size: 18px;
+}
+
+/* TOMBOL KEMBALI */
+.back-btn {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* FOOTER SEDERHANA FOLLOWERS */
+.simple-footer {
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid rgba(250, 204, 21, 0.2);
+    color: #999;
+    font-size: 14px;
+}
+
+/* RESPONSIF HP */
+@media (max-width: 600px) {
+    .header-inner-followers {
+        flex-wrap: nowrap !important;
+        gap: 5px;
+    }
+    .logo-aq-img, .logo-ehey-img {
+        width: 12vw;
+        height: 12vw;
+        min-width: 50px;
+        min-height: 50px;
+    }
+    .judul-ehey { letter-spacing: 1px; }
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    .followers-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    .foto-tempat, .follower-avatar {
+        width: 80px;
+        height: 80px;
+    }
+    .header-container {
