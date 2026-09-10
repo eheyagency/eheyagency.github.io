@@ -816,6 +816,69 @@ footer {
     font-size: 14px;
 }
 
+/* Username TikTok */
+.username-tiktok {
+  font-weight: 600;
+  color: #fe2c55; /* Warna TikTok */
+  margin: 4px 0;
+  font-size: 0.9rem;
+}
+
+/* Nama tampil sendiri */
+.nama-sendiri {
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 2px 0 10px;
+}
+
+/* Tombol Follow */
+.btn-follow {
+  display: inline-block;
+  background: linear-gradient(135deg, #fe2c55, #25f4ee);
+  color: white !important;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.85rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-follow:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(254, 44, 85, 0.3);
+}
+
+.btn-follow i {
+  margin-right: 6px;
+}
+
+.follower-card {
+  text-align: center;
+  padding: 15px;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+}
+
+.follower-card:hover {
+  transform: translateY(-3px);
+}
+
+.follower-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid gold;
+}
+
+.foto-tempat {
+  margin-bottom: 10px;
+}
+
+
 /* RESPONSIF HP */
 @media (max-width: 600px) {
     .header-inner-followers {
