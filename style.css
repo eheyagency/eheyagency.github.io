@@ -765,7 +765,7 @@ footer {
 
 .nama-sendiri {
     font-size: 16px;
-    color: #ffffff;
+    color: #000000;
     margin: 0 0 5px;
     font-weight: bold;
 }
@@ -773,7 +773,7 @@ footer {
 .jabatan-member {
     display: inline-block;
     background: rgba(250, 204, 21, 0.15);
-    color: #facc15;
+    color: #fff;
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 12px;
