@@ -176,25 +176,25 @@
             <p>Isi data diri di bawah ini</p>
         </div>
         <div class="form-container">
-            <form action="#" method="post">
+                        <form onsubmit="kirimKeWhatsApp(); return false;">
                 <div class="form-row">
                     <div class="form-group">
                         <label>Nama Lengkap</label>
-                        <input type="text" name="nama" placeholder="Contoh: Budi Santoso" required>
+                        <input type="text" name="nama" id="nama" placeholder="Contoh: Budi Santoso" required>
                     </div>
                     <div class="form-group">
                         <label>Username TikTok</label>
-                        <input type="text" name="tiktok" placeholder="@username" required>
+                        <input type="text" name="tiktok" id="tiktok" placeholder="@username" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
                         <label>Nomor WhatsApp</label>
-                        <input type="tel" name="wa" placeholder="+62..." required>
+                        <input type="tel" name="wa" id="wa" placeholder="+62..." required>
                     </div>
                     <div class="form-group">
                         <label>Usia</label>
-                        <select name="usia">
+                        <select name="usia" id="usia">
                             <option value="">Pilih usia</option>
                             <option>Di bawah 15 tahun</option>
                             <option>15–17 tahun</option>
@@ -215,16 +215,17 @@
                 </div>
                 <div class="form-group full-width">
                     <label>Alasan Bergabung</label>
-                    <textarea name="alasan" rows="4" placeholder="Ceritakan mengapa ingin bergabung..."></textarea>
+                    <textarea name="alasan" id="alasan" rows="4" placeholder="Ceritakan mengapa ingin bergabung..."></textarea>
                 </div>
                 <div class="checkbox-agree">
                     <label class="checkbox-label">
-                        <input type="checkbox" required>
+                        <input type="checkbox" id="setuju" required>
                         Saya menyetujui syarat & ketentuan keanggotaan
                     </label>
                 </div>
                 <button type="submit" class="submit-btn">Kirim Pendaftaran <i class="fa-solid fa-paper-plane"></i></button>
             </form>
+
         </div>
     </section>
 
@@ -268,5 +269,45 @@
             })
             .catch(() => {});
     </script>
+    <script>
+function kirimKeWhatsApp() {
+    const nama = document.getElementById('nama').value;
+    const tiktok = document.getElementById('tiktok').value;
+    const wa = document.getElementById('wa').value;
+    const usia = document.getElementById('usia').value;
+    const alasan = document.getElementById('alasan').value;
+
+    // Ambil kategori yang dipilih
+    const kategoriCheck = document.querySelectorAll('input[name="kategori"]:checked');
+    let kategori = [];
+    kategoriCheck.forEach(cb => kategori.push(cb.parentElement.textContent.trim()));
+    kategori = kategori.length ? kategori.join(', ') : 'Tidak dipilih';
+
+    // Susun pesan
+    const pesan = `Halo! Saya ingin mendaftar sebagai member EHEY AGENCY:\n\n` +
+        `📋 Nama Lengkap: ${nama}\n` +
+        `🎵 Username TikTok: ${tiktok}\n` +
+        `📱 Nomor WhatsApp: ${wa}\n` +
+        `🎂 Usia: ${usia}\n` +
+        `🏷️ Kategori Konten: ${kategori}\n` +
+        `💬 Alasan Bergabung:\n${alasan || 'Tidak diisi'}`;
+
+    // Nomor WhatsApp tujuan: 085398557520 → diubah ke format internasional
+    const nomorTujuan = '6285398557520';
+
+    // Buka WhatsApp
+    window.open(`https://wa.me/${nomorTujuan}?text=${encodeURIComponent(pesan)}`, '_blank');
+}
+
+// Kode asli tetap dipertahankan
+fetch('followers.html')
+    .then(r => r.text())
+    .then(html => {
+        const hitung = (html.match(/class="follower-card"/g) || []).length;
+        if (hitung > 0) document.getElementById('jumlahMember').textContent = hitung;
+    })
+    .catch(() => {});
+</script>
+
 </body>
 </html>
