@@ -773,7 +773,7 @@ footer {
 .jabatan-member {
     display: inline-block;
     background: rgba(250, 204, 21, 0.15);
-    color: #fff;
+    color: #ff0000;
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 12px;
@@ -929,7 +929,7 @@ footer {
 
 .jabatan-member {
   font-size: 0.8rem;
-  color: #fff;
+  color: #ff0000;
   margin: 0 0 10px;
   white-space: nowrap;
   overflow: hidden;
