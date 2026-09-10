@@ -3,14 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EHEY AGENCY — Part of AL QAQA MANAGEMENT</title>
+    <title>Ehey Agency — Part of AL QAQA MANAGEMENT</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header-logo-left, .header-logo-right {
+            flex: 0 0 90px;
+        }
+        .header-logo-right { text-align: right; }
+
+        .logo-round {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #facc15;
+        }
+
+        /* === FONT + SUSUNAN PERSIS SEPERTI FOTO === */
+        .header-text-center {
+            flex: 1;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .ehey-title {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 44px;
+            font-weight: normal;
+            letter-spacing: 1px;
+            margin: 0 0 8px 0;
+            color: #fef3c7;
+            text-shadow: 0 0 12px rgba(250, 204, 21, 0.35);
+        }
+
+        .part-of-line {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 16px;
+            letter-spacing: 1px;
+            color: #d4af37;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        .alqaqa-title {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 16px;
+            font-weight: normal;
+            color: #facc15;
+            margin: 0;
+            display: inline;
+        }
+        /* ========================================== */
+
+        @media (max-width: 600px) {
+            .ehey-title { font-size: 28px; }
+            .part-of-line, .alqaqa-title { font-size: 13px; }
+        }
+    </style>
 </head>
 <body>
     <div class="bg-gradient"></div>
 
-    <!-- HEADER -->
+    <!-- HEADER — FONT + SUSUNAN SAMA PERSIS -->
     <header>
         <div class="header-container">
             <div class="header-logo-left">
@@ -19,13 +83,12 @@
             </div>
 
             <div class="header-text-center">
-                <h1 class="ehey-title">EHEY AGENCY</h1>
-                <p class="part-of-line">PART OF</p>
-                <h2 class="alqaqa-title">AL QAQA MANAGEMENT</h2>
+                <h1 class="ehey-title">Ehey Agency</h1>
+                <p class="part-of-line">Part of AL QAQA MANAGEMENT</p>
             </div>
 
             <div class="header-logo-right">
-                <img src="ehey.png" alt="EHEY AGENCY" class="logo-round"
+                <img src="ehey.png" alt="Ehey Agency" class="logo-round"
                      onerror="this.src='https://via.placeholder.com/90?text=EHEY';this.style.border='3px solid gold'">
             </div>
         </div>
@@ -41,7 +104,7 @@
 
     <!-- TEKS BERJALAN -->
     <div class="marquee-container">
-        <p class="marquee-text">✨ Selamat Datang di EHEY AGENCY — Bagian dari AL QAQA MANAGEMENT ✨ Bersama Kita Tumbuh & Berkembang ✨</p>
+        <p class="marquee-text">✨ Selamat Datang di Ehey Agency — Bagian dari AL QAQA MANAGEMENT ✨ Bersama Kita Tumbuh & Berkembang ✨</p>
     </div>
 
     <!-- LOGO BERKEDIP -->
@@ -52,14 +115,13 @@
 
     <!-- HERO -->
     <section class="hero">
-        <h2>Selamat Datang di <span class="yellow">EHEY AGENCY</span></h2>
+        <h2>Selamat Datang di <span class="yellow">Ehey Agency</span></h2>
         <p>Komunitas kreator TikTok resmi bagian dari AL QAQA MANAGEMENT. Bangun jaringan, kembangkan bakat, dan raih impian bersama kami!</p>
         <div class="hero-buttons">
             <a href="followers.html" class="btn-primary"><i class="fa-solid fa-eye"></i> Lihat Daftar Member</a>
             <a href="#daftar" class="btn-secondary"><i class="fa-solid fa-pen-to-square"></i> Daftar Menjadi Member</a>
         </div>
 
-        <!-- STATISTIK -->
         <div class="stats">
             <a href="followers.html" class="stat-link">
                 <div class="stat-item">
@@ -140,7 +202,7 @@
     <section>
         <div class="section-title">
             <h3>Mengapa Bergabung? 💡</h3>
-            <p>Manfaat menjadi bagian EHEY AGENCY</p>
+            <p>Manfaat menjadi bagian Ehey Agency</p>
         </div>
         <div class="features-grid">
             <div class="feature-card">
@@ -227,12 +289,11 @@
                 <div class="footer-logo-wrapper">
                     <img src="AQ.png" alt="AL QAQA" class="footer-logo-circle"
                          onerror="this.src='https://via.placeholder.com/60?text=AQ'">
-                    <img src="ehey.png" alt="EHEY" class="footer-logo-circle"
+                    <img src="ehey.png" alt="Ehey Agency" class="footer-logo-circle"
                          onerror="this.src='https://via.placeholder.com/60?text=EH'">
                 </div>
-                <h4>EHEY AGENCY</h4>
-                <p class="part-of">PART OF</p>
-                <p class="aq-text">AL QAQA MANAGEMENT</p>
+                <h4>Ehey Agency</h4>
+                <p class="part-of">Part of AL QAQA MANAGEMENT</p>
                 <p class="location"><i class="fa-solid fa-location-dot"></i> Gorontalo, Indonesia</p>
             </div>
 
@@ -246,12 +307,11 @@
                 </div>
             </div>
 
-            <p class="copyright">© 2026 EHEY AGENCY — Part of AL QAQA MANAGEMENT. Semua Hak Dilindungi.</p>
+            <p class="copyright">© 2026 Ehey Agency — Part of AL QAQA MANAGEMENT. Semua Hak Dilindungi.</p>
         </div>
     </footer>
 
     <script>
-        // Jumlah member disesuaikan otomatis
         fetch('followers.html')
             .then(r => r.text())
             .then(html => {
