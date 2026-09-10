@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EHEY AGENCY | Part of AL QAQA MANAGEMENT</title>
+    <title>EHEY AGENCY — Part of AL QAQA MANAGEMENT</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <div class="bg-gradient"></div>
@@ -14,324 +14,251 @@
     <header>
         <div class="header-container">
             <div class="header-logo-left">
-                <img src="AQ.png" alt="AQ MANAGEMENT" class="logo-round">
+                <img src="AQ.png" alt="AL QAQA MANAGEMENT" class="logo-round"
+                     onerror="this.src='https://via.placeholder.com/90?text=AQ';this.style.border='3px solid gold'">
             </div>
+
             <div class="header-text-center">
                 <h1 class="ehey-title">EHEY AGENCY</h1>
                 <p class="part-of-line">PART OF</p>
-                <p class="alqaqa-title">AL QAQA MANAGEMENT</p>
+                <h2 class="alqaqa-title">AL QAQA MANAGEMENT</h2>
             </div>
+
             <div class="header-logo-right">
-                <img src="ehey.png" alt="EHEY AGENCY" class="logo-round">
+                <img src="ehey.png" alt="EHEY AGENCY" class="logo-round"
+                     onerror="this.src='https://via.placeholder.com/90?text=EHEY';this.style.border='3px solid gold'">
             </div>
         </div>
+
         <nav class="header-nav">
             <ul>
-                <li><a href="#home">Beranda</a></li>
-                <li><a href="#creators">Kreator</a></li>
-                <li><a href="#benefits">Keuntungan</a></li>
-                <li><a href="#join">Daftar</a></li>
-                <li><a href="#contact">Kontak</a></li>
-                <li><a href="#join" class="btn-join-header">Gabung Sekarang</a></li>
+                <li><a href="index.html"><i class="fa-solid fa-home"></i> Beranda</a></li>
+                <li><a href="followers.html"><i class="fa-solid fa-users"></i> Daftar Member</a></li>
+                <li><a href="#daftar" class="btn-join-header"><i class="fa-solid fa-user-plus"></i> Bergabung Sekarang</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero" id="home">
-        <div class="marquee-container">
-            <div class="marquee-text">✨ SELAMAT DATANG DI EHEY AGENCY ✨</div>
-        </div>
-        <div class="blinking-logo">
-            <img src="ehey.png" alt="EHEY AGENCY" class="blinking-img">
-        </div>
-        <p>Bagian dari <strong>AL QAQA MANAGEMENT</strong> — jaringan kreator resmi TikTok LIVE Creator Network. Tempat terbaik mengembangkan karier kreator TikTok Live kamu!</p>
+    <!-- TEKS BERJALAN -->
+    <div class="marquee-container">
+        <p class="marquee-text">✨ Selamat Datang di EHEY AGENCY — Bagian dari AL QAQA MANAGEMENT ✨ Bersama Kita Tumbuh & Berkembang ✨</p>
+    </div>
+
+    <!-- LOGO BERKEDIP -->
+    <div class="blinking-logo">
+        <img src="AQ.png" alt="AL QAQA MANAGEMENT" class="blinking-img"
+             onerror="this.src='https://via.placeholder.com/150?text=AQ';this.style.border='3px solid gold'">
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h2>Selamat Datang di <span class="yellow">EHEY AGENCY</span></h2>
+        <p>Komunitas kreator TikTok resmi bagian dari AL QAQA MANAGEMENT. Bangun jaringan, kembangkan bakat, dan raih impian bersama kami!</p>
         <div class="hero-buttons">
-            <a href="#join" class="btn-primary"><i class="fa fa-rocket"></i> Daftar Sekarang</a>
-            <a href="followers.html" class="btn-secondary"><i class="fa fa-users"></i> Lihat Kreator Kami</a>
+            <a href="followers.html" class="btn-primary"><i class="fa-solid fa-eye"></i> Lihat Daftar Member</a>
+            <a href="#daftar" class="btn-secondary"><i class="fa-solid fa-pen-to-square"></i> Daftar Menjadi Member</a>
         </div>
+
+        <!-- STATISTIK -->
         <div class="stats">
+            <a href="followers.html" class="stat-link">
+                <div class="stat-item">
+                    <h3 id="jumlahMember">5</h3>
+                    <p>Member Aktif</p>
+                </div>
+            </a>
             <div class="stat-item">
-                <a href="followers.html" class="stat-link">
-                    <h3>95</h3>
-                    <p>🎭 Total Member Saat Ini 🎭</p>
-                </a>
+                <h3>50+</h3>
+                <p>Konten Dibuat</p>
+            </div>
+            <div class="stat-item">
+                <h3>10K+</h3>
+                <p>Total Pengikut</p>
             </div>
         </div>
     </section>
 
-    <!-- GALERI KREATOR DENGAN NOMOR URUT -->
-    <section id="creators" class="creators-section">
+    <!-- GALERI KREATOR -->
+    <section class="creators-section">
         <div class="section-title">
-            <h3>Team <span class="yellow">AGENCY</span> Kami ⭐</h3>
-            <p>Bergabunglah dengan kreator-kreator berbakat yang sudah bersinar bersama EHEY AGENCY!</p>
+            <h3>Kreator Unggulan ⭐</h3>
+            <p>Beberapa anggota terbaik kami</p>
         </div>
         <div class="creators-grid">
-            <!-- NOMOR 1 -->
             <div class="creator-card">
                 <span class="nomor-urut">1</span>
-                <div class="creator-avatar"><img src="alqaqa.png" alt="@alqaqa999"></div>
+                <div class="creator-avatar">
+                    <img src="alqaqa.png" alt="AL QAQA"
+                         onerror="this.src='https://unavatar.io/tiktok/alqaqa999'">
+                </div>
                 <div class="creator-info">
-                    <h4>@alqaqa999</h4>
-                    <span class="role-badge">DIRUT AL QAQA MANAGEMENT</span>
-                    <a href="https://www.tiktok.com/@alqaqa999?_r=1&_t=ZS-99YfGKAZB5U" target="_blank" class="creator-follow"><i class="fa fa-tiktok"></i> Follow</a>
+                    <h4>AL QAQA</h4>
+                    <span class="role-badge">DIRUT</span>
+                    <br>
+                    <a href="https://www.tiktok.com/@alqaqa999" target="_blank" class="creator-follow">
+                        <i class="fa-brands fa-tiktok"></i> @alqaqa999
+                    </a>
                 </div>
             </div>
-            <!-- NOMOR 2 -->
             <div class="creator-card">
                 <span class="nomor-urut">2</span>
-                <div class="creator-avatar"><img src="bgun.png" alt="@unibrahim95"></div>
+                <div class="creator-avatar">
+                    <img src="bgun.png" alt="UN IBRAHIM"
+                         onerror="this.src='https://unavatar.io/tiktok/unibrahim95'">
+                </div>
                 <div class="creator-info">
-                    <h4>@unibrahim95</h4>
-                    <span class="role-badge">FOUNDER EHEY AGENCY</span>
-                    <a href="https://www.tiktok.com/@unibrahim95?_r=1&_t=ZS-99Yfo0tsmV6" target="_blank" class="creator-follow"><i class="fa fa-tiktok"></i> Follow</a>
+                    <h4>UN IBRAHIM</h4>
+                    <span class="role-badge">FOUNDER</span>
+                    <br>
+                    <a href="https://www.tiktok.com/@unibrahim95" target="_blank" class="creator-follow">
+                        <i class="fa-brands fa-tiktok"></i> @unibrahim95
+                    </a>
                 </div>
             </div>
-            <!-- NOMOR 3 -->
             <div class="creator-card">
                 <span class="nomor-urut">3</span>
-                <div class="creator-avatar"><img src="jemz.png" alt="@jemzlamato.eheyagency"></div>
-                <div class="creator-info">
-                    <h4>@jemzlamato.eheyagency</h4>
-                    <span class="role-badge">SUPER ADMIN</span>
-                    <a href="https://www.tiktok.com/@jemzlamato.eheyagency?_r=1&_t=ZS-99YgEEB2iGY" target="_blank" class="creator-follow"><i class="fa fa-tiktok"></i> Follow</a>
+                <div class="creator-avatar">
+                    <img src="jemz.png" alt="JEMZ LAMATO"
+                         onerror="this.src='https://unavatar.io/tiktok/jemzlamato.eheyagency'">
                 </div>
-            </div>
-            <!-- NOMOR 4 -->
-            <div class="creator-card">
-                <span class="nomor-urut">4</span>
-                <div class="creator-avatar"><img src="aril.png" alt="@rilibrahim01"></div>
                 <div class="creator-info">
-                    <h4>@rilibrahim01</h4>
-                    <span class="role-badge">ADMIN EHEY AGENCY</span>
-                    <a href="https://www.tiktok.com/@rilibrahim01?_r=1&_t=ZS-99YgVmVwACN" target="_blank" class="creator-follow"><i class="fa fa-tiktok"></i> Follow</a>
+                    <h4>JEMZ LAMATO</h4>
+                    <span class="role-badge">SUPER ADMIN</span>
+                    <br>
+                    <a href="https://www.tiktok.com/@jemzlamato.eheyagency" target="_blank" class="creator-follow">
+                        <i class="fa-brands fa-tiktok"></i> Profil TikTok
+                    </a>
                 </div>
             </div>
         </div>
         <div class="view-all-btn">
-            <a href="followers.html" class="btn-secondary">Lihat Semua Member <i class="fa fa-arrow-right"></i></a>
+            <a href="followers.html" class="btn-secondary">Lihat Semua Member <i class="fa-solid fa-arrow-right"></i></a>
         </div>
     </section>
 
     <!-- KEUNGGULAN -->
-    <section id="benefits">
+    <section>
         <div class="section-title">
-            <h3>Kenapa Pilih <span class="yellow">EHEY</span> AGENCY?</h3>
-            <p>Kami memberikan dukungan lengkap untuk membantu kamu bersinar di TikTok Live!</p>
+            <h3>Mengapa Bergabung? 💡</h3>
+            <p>Manfaat menjadi bagian EHEY AGENCY</p>
         </div>
         <div class="features-grid">
             <div class="feature-card">
-                <div class="feature-icon"><i class="fa fa-line-chart"></i></div>
-                <h4>Pertumbuhan Cepat</h4>
-                <p>Strategi terbukti naikkan view, like, dan follower secara signifikan.</p>
+                <div class="feature-icon"><i class="fa-solid fa-users"></i></div>
+                <h4>Jaringan Luas</h4>
+                <p>Terhubung dengan sesama kreator, saling bantu, dan tumbuh bersama.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon"><i class="fa fa-money"></i></div>
-                <h4>Komisi Terbaik</h4>
-                <p>Sistem bagi hasil paling kompetitif. Semakin rajin live, semakin besar penghasilan!</p>
+                <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h4>Dukungan Penuh</h4>
+                <p>Dibimbing tim berpengalaman, arahan konten, dan bantuan teknis.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon"><i class="fa fa-users"></i></div>
-                <h4>Komunitas Solid</h4>
-                <p>Bergabung dengan ratusan kreator lain. Berbagi tips & tumbuh bersama.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fa fa-headphones"></i></div>
-                <h4>Dukungan 24/7</h4>
-                <p>Tim selalu siap bantu kapan saja — masalah teknis, panduan konten, semua kami tangani!</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fa fa-gift"></i></div>
-                <h4>Bonus & Reward</h4>
-                <p>Hadiah tiap bulan — bonus top kreator, hadiah khusus, kerjasama brand!</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fa fa-star"></i></div>
-                <h4>Brand Partnership</h4>
-                <p>Akses kolaborasi brand ternama. Monetisasi lebih dari sekadar gift & live!</p>
+                <div class="feature-icon"><i class="fa-solid fa-chart-line"></i></div>
+                <h4>Peluang Berkembang</h4>
+                <p>Promosi silang, kolaborasi, dan peluang tampil di halaman utama.</p>
             </div>
         </div>
     </section>
 
     <!-- FORM PENDAFTARAN -->
-    <section id="join" class="join-section">
+    <section class="join-section" id="daftar">
         <div class="section-title">
-            <h3>Gabung <span class="yellow">EHEY</span> AGENCY 📝</h3>
-            <p>Isi formulir di bawah ini dan mulai karier kreator profesionalmu bersama AL QAQA MANAGEMENT!</p>
+            <h3>Daftar Menjadi Member 📝</h3>
+            <p>Isi data diri di bawah ini</p>
         </div>
         <div class="form-container">
-            <form class="registration-form" id="daftarForm">
+            <form action="#" method="post">
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="fullname"><i class="fa fa-user"></i> Nama Lengkap *</label>
-                        <input type="text" id="fullname" placeholder="Masukkan nama lengkapmu" required>
+                        <label>Nama Lengkap</label>
+                        <input type="text" name="nama" placeholder="Contoh: Budi Santoso" required>
                     </div>
                     <div class="form-group">
-                        <label for="nickname"><i class="fa fa-tag"></i> Nama Panggilan</label>
-                        <input type="text" id="nickname" placeholder="Nama panggilan">
+                        <label>Username TikTok</label>
+                        <input type="text" name="tiktok" placeholder="@username" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="tiktok"><i class="fa fa-tiktok"></i> Username TikTok *</label>
-                        <input type="text" id="tiktok" placeholder="@username_tiktok" required>
+                        <label>Nomor WhatsApp</label>
+                        <input type="tel" name="wa" placeholder="+62..." required>
                     </div>
                     <div class="form-group">
-                        <label for="followers"><i class="fa fa-users"></i> Jumlah Followers *</label>
-                        <select id="followers" required>
-                            <option value="">-- Pilih --</option>
-                            <option>Di bawah 1.000</option>
-                            <option>1.000 - 10.000</option>
-                            <option>10.000 - 100.000</option>
-                            <option>100.000 - 500.000</option>
-                            <option>500.000 - 1 Juta</option>
-                            <option>Di atas 1 Juta</option>
+                        <label>Usia</label>
+                        <select name="usia">
+                            <option value="">Pilih usia</option>
+                            <option>Di bawah 15 tahun</option>
+                            <option>15–17 tahun</option>
+                            <option>18–24 tahun</option>
+                            <option>25 tahun ke atas</option>
                         </select>
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="wa"><i class="fa fa-whatsapp"></i> Nomor WhatsApp *</label>
-                        <input type="tel" id="wa" placeholder="+62 8xx-xxxx-xxxx" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="age"><i class="fa fa-calendar"></i> Usia *</label>
-                        <input type="number" id="age" min="13" placeholder="Minimal 13 tahun" required>
-                    </div>
-                </div>
                 <div class="form-group full-width">
-                    <label><i class="fa fa-th-large"></i> Kategori Konten *</label>
+                    <label>Kategori Konten</label>
                     <div class="checkbox-group">
-                        <label class="checkbox-label"><input type="checkbox" value="🎮 Gaming"> 🎮 Gaming</label>
-                        <label class="checkbox-label"><input type="checkbox" value="🎵 Musik & Nyanyi"> 🎵 Musik & Nyanyi</label>
-                        <label class="checkbox-label"><input type="checkbox" value="💃 Dance"> 💃 Dance</label>
-                        <label class="checkbox-label"><input type="checkbox" value="💬 Talk / Ngobrol"> 💬 Talk / Ngobrol</label>
-                        <label class="checkbox-label"><input type="checkbox" value="💄 Beauty & Fashion"> 💄 Beauty & Fashion</label>
-                        <label class="checkbox-label"><input type="checkbox" value="Lainnya"> Lainnya</label>
+                        <label class="checkbox-label"><input type="checkbox" name="kategori" value="tarian"> Tarian</label>
+                        <label class="checkbox-label"><input type="checkbox" name="kategori" value="komedi"> Komedi</label>
+                        <label class="checkbox-label"><input type="checkbox" name="kategori" value="edukasi"> Edukasi</label>
+                        <label class="checkbox-label"><input type="checkbox" name="kategori" value="musik"> Musik</label>
+                        <label class="checkbox-label"><input type="checkbox" name="kategori" value="lainnya"> Lainnya</label>
                     </div>
                 </div>
                 <div class="form-group full-width">
-                    <label for="experience"><i class="fa fa-briefcase"></i> Pengalaman Live</label>
-                    <textarea id="experience" rows="3" placeholder="Ceritakan pengalamanmu..."></textarea>
+                    <label>Alasan Bergabung</label>
+                    <textarea name="alasan" rows="4" placeholder="Ceritakan mengapa ingin bergabung..."></textarea>
                 </div>
-                <div class="form-group checkbox-agree">
+                <div class="checkbox-agree">
                     <label class="checkbox-label">
-                        <input type="checkbox" id="agree" required> Saya setuju dengan Syarat & Ketentuan serta Kebijakan Privasi *
+                        <input type="checkbox" required>
+                        Saya menyetujui syarat & ketentuan keanggotaan
                     </label>
                 </div>
-                <button type="submit" class="submit-btn"><i class="fa fa-paper-plane"></i> Kirim Pendaftaran</button>
+                <button type="submit" class="submit-btn">Kirim Pendaftaran <i class="fa-solid fa-paper-plane"></i></button>
             </form>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer id="contact">
+    <footer>
         <div class="footer-content">
             <div class="footer-brand">
                 <div class="footer-logo-wrapper">
-                    <img src="AQ.png" alt="AQ MANAGEMENT" class="footer-logo-circle">
-                    <img src="ehey.png" alt="EHEY AGENCY" class="footer-logo-circle">
+                    <img src="AQ.png" alt="AL QAQA" class="footer-logo-circle"
+                         onerror="this.src='https://via.placeholder.com/60?text=AQ'">
+                    <img src="ehey.png" alt="EHEY" class="footer-logo-circle"
+                         onerror="this.src='https://via.placeholder.com/60?text=EH'">
                 </div>
                 <h4>EHEY AGENCY</h4>
                 <p class="part-of">PART OF</p>
                 <p class="aq-text">AL QAQA MANAGEMENT</p>
-                <p class="location">📍 Gorontalo, Indonesia<br>📧 admin@eheyagency.web.id</p>
-            </div>
-
-            <div class="visitor-table-wrapper">
-                <table class="visitor-table">
-                    <tr>
-                        <th colspan="2">📊 STATISTIK KUNJUNGAN</th>
-                    </tr>
-                    <tr>
-                        <td>👁️ Kunjungan Hari Ini</td>
-                        <td>
-                            <img src="https://counter.websiteout.net/php/counter.php?c=11&d=1" alt="" style="border:none; height:22px;">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>👥 Total Pengunjung</td>
-                        <td>
-                            <img src="https://hitwebcounter.com/counter/counter.php?page=19723457&style=1&type=page&count=0&layout=horizontal&color=FFFFFF&background=000000" alt="" style="border:none; height:22px;">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>🟢 Online Sekarang</td>
-                        <td>
-                            <img src="https://www.free-website-hit-counter.com/c.php?d=9&id=123456&s=1" alt="" style="border:none; height:22px;">
-                        </td>
-                    </tr>
-                </table>
+                <p class="location"><i class="fa-solid fa-location-dot"></i> Gorontalo, Indonesia</p>
             </div>
 
             <div class="footer-social-wrapper">
                 <h5>Ikuti Kami</h5>
                 <div class="social-icons">
-                    <a href="https://www.tiktok.com/@alqaqa999" target="_blank"><i class="fa fa-tiktok"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                    <a href="https://wa.me/6285398557520" target="_blank"><i class="fa fa-whatsapp"></i></a>
-                    <a href="#"><i class="fa fa-youtube-play"></i></a>
+                    <a href="https://www.tiktok.com/@alqaqa999" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
 
-            <div class="footer-links-row">
-                <div class="footer-links">
-                    <h5>Tautan Cepat</h5>
-                    <ul>
-                        <li><a href="#home">Beranda</a></li>
-                        <li><a href="#creators">Kreator Kami</a></li>
-                        <li><a href="#benefits">Keuntungan</a></li>
-                        <li><a href="#join">Daftar Sekarang</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h5>Dukungan</h5>
-                    <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Syarat & Ketentuan</a></li>
-                        <li><a href="#">Kebijakan Privasi</a></li>
-                        <li><a href="#">Bantuan</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h5>Hubungi Kami</h5>
-                    <ul>
-                        <li><a href="https://wa.me/6285398557520" target="_blank">WhatsApp: +62 853-9855-7520</a></li>
-                        <li><a href="#">Email: admin@eheyagency.web.id</a></li>
-                        <li><a href="#">IG: @eheyagency</a></li>
-                    </ul>
-                </div>
-            </div>
+            <p class="copyright">© 2026 EHEY AGENCY — Part of AL QAQA MANAGEMENT. Semua Hak Dilindungi.</p>
         </div>
-        <div class="copyright">© 2026 EHEY AGENCY — Part of AL QAQA MANAGEMENT. All Rights Reserved.</div>
     </footer>
 
     <script>
-        document.getElementById('daftarForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const nama = document.getElementById('fullname').value;
-            const panggilan = document.getElementById('nickname').value || '-';
-            const tiktok = document.getElementById('tiktok').value;
-            const follower = document.getElementById('followers').value;
-            const wa = document.getElementById('wa').value;
-            const usia = document.getElementById('age').value;
-            const pengalaman = document.getElementById('experience').value || '-';
-            const kategori = Array.from(document.querySelectorAll('input[type=checkbox]:checked'))
-                .map(c => c.value).join(', ') || 'Tidak dipilih';
-            const pesan = `📋 PENDAFTARAN EHEY AGENCY
-━━━━━━━━━━━━━━━━━━
-👤 Nama Lengkap: ${nama}
-🏷️ Nama Panggilan: ${panggilan}
-🎵 Username TikTok: ${tiktok}
-👥 Jumlah Followers: ${follower}
-📱 No. WhatsApp: ${wa}
-🎂 Usia: ${usia} tahun
-📂 Kategori Konten: ${kategori}
-✍️ Pengalaman Live: ${pengalaman}
-━━━━━━━━━━━━━━━━━━
-Terima kasih mendaftar! Kami akan segera hubungi Anda.`;
-            window.open(`https://wa.me/6285398557520?text=${encodeURIComponent(pesan)}`, '_blank');
-        });
+        // Jumlah member disesuaikan otomatis
+        fetch('followers.html')
+            .then(r => r.text())
+            .then(html => {
+                const hitung = (html.match(/class="follower-card"/g) || []).length;
+                if (hitung > 0) document.getElementById('jumlahMember').textContent = hitung;
+            })
+            .catch(() => {});
     </script>
 </body>
 </html>
