@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Kreator & Member | EHEY AGENCY</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <div class="bg-gradient"></div>
 
-    <!-- HEADER — PERSIS SEPERTI GAMBAR -->
+    <!-- HEADER -->
     <header class="header-followers">
         <div class="header-inner-followers">
             
             <!-- Logo Kiri: AQ -->
             <div class="logo-aq-wrap">
-                <img src="AQ.png" alt="AL QAQA MANAGEMENT" class="logo-aq-img">
+                <img src="AQ.png" alt="AL QAQA MANAGEMENT" class="logo-aq-img"
+                     onerror="this.src='https://via.placeholder.com/100?text=AQ';this.style.border='3px solid gold'">
             </div>
 
             <!-- Teks Tengah -->
@@ -24,7 +25,6 @@
                 <h1 class="judul-ehey">EHEY AGENCY</h1>
                 <p class="part-of-teks">PART OF</p>
                 <h2 class="judul-alqaqa">AL QAQA MANAGEMENT</h2>
-                
                 <h3 class="judul-daftar-besar">
                     Daftar <span class="kuning-teks">Kreator & Member</span> Kami 👥
                 </h3>
@@ -33,7 +33,8 @@
 
             <!-- Logo Kanan: EHEY -->
             <div class="logo-ehey-wrap">
-                <img src="ehey.png" alt="EHEY AGENCY" class="logo-ehey-img">
+                <img src="ehey.png" alt="EHEY AGENCY" class="logo-ehey-img"
+                     onerror="this.src='https://via.placeholder.com/100?text=EHEY';this.style.border='3px solid gold'">
             </div>
 
         </div>
@@ -52,6 +53,7 @@
                 <div class="follower-info">
                     <p class="nama-sendiri">AL QAQA</p>
                     <span class="jabatan-member">DIRUT AL QAQA MANAGEMENT</span>
+                    <p class="stat-member">— Following • — Followers • — Likes</p>
                 </div>
             </a>
 
@@ -64,6 +66,7 @@
                 <div class="follower-info">
                     <p class="nama-sendiri">UN IBRAHIM</p>
                     <span class="jabatan-member">FOUNDER EHEY AGENCY</span>
+                    <p class="stat-member">2.9K Following • 78.7K Followers • 1.1M Likes</p>
                 </div>
             </a>
 
@@ -76,6 +79,7 @@
                 <div class="follower-info">
                     <p class="nama-sendiri">JEMZ LAMATO</p>
                     <span class="jabatan-member">SUPER ADMIN</span>
+                    <p class="stat-member">— Following • — Followers • — Likes</p>
                 </div>
             </a>
 
@@ -88,6 +92,7 @@
                 <div class="follower-info">
                     <p class="nama-sendiri">RIL IBRAHIM</p>
                     <span class="jabatan-member">ADMIN EHEY AGENCY</span>
+                    <p class="stat-member">85 Following • 1.8K Followers • 0 Likes</p>
                 </div>
             </a>
 
@@ -100,13 +105,18 @@
                 <div class="follower-info">
                     <p class="nama-sendiri">KOKO LTF</p>
                     <span class="jabatan-member">MEMBER</span>
+                    <p class="stat-member">98 Following • 637 Followers • 585 Likes</p>
                 </div>
             </a>
 
         </div>
 
+        <div class="total-member-box">
+            <p class="total-member-teks">🎭 Total Member: <strong id="jumlahMember">5</strong> Orang</p>
+        </div>
+
         <div class="back-btn">
-            <a href="index.html" class="btn-secondary"><i class="fa fa-arrow-left"></i> Kembali ke Beranda</a>
+            <a href="index.html" class="btn-secondary"><i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda</a>
         </div>
     </section>
 
@@ -118,19 +128,42 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const daftarKartu = document.querySelectorAll('.follower-card');
+            
+            // Hitung jumlah member otomatis
+            document.getElementById('jumlahMember').textContent = daftarKartu.length;
+
             daftarKartu.forEach(kartu => {
                 const username = kartu.getAttribute('data-tiktok-user');
                 const fotoSendiri = kartu.getAttribute('data-foto-sendiri');
                 const tempatFoto = kartu.querySelector('.foto-tempat');
+                
                 if (!username || !tempatFoto) return;
 
+                // Prioritas 1: unavatar.io
                 const fotoTikTok = new Image();
                 fotoTikTok.src = `https://unavatar.io/tiktok/${username}`;
+                
                 fotoTikTok.onload = () => {
-                    tempatFoto.innerHTML = `<img src="${fotoTikTok.src}" alt="Foto" class="follower-avatar">`;
+                    tempatFoto.innerHTML = `<img src="${fotoTikTok.src}" alt="@${username}" class="follower-avatar">`;
                 };
+                
                 fotoTikTok.onerror = () => {
-                    tempatFoto.innerHTML = `<img src="${fotoSendiri || 'AQ.png'}" alt="Foto" class="follower-avatar">`;
+                    // Prioritas 2: foto lokal sendiri
+                    if (fotoSendiri) {
+                        const lokal = new Image();
+                        lokal.src = fotoSendiri;
+                        lokal.onload = () => {
+                            tempatFoto.innerHTML = `<img src="${fotoSendiri}" alt="@${username}" class="follower-avatar">`;
+                        };
+                        lokal.onerror = () => {
+                            // Prioritas 3: placeholder
+                            const inisial = kartu.querySelector('.nama-sendiri').textContent.slice(0,2);
+                            tempatFoto.innerHTML = `<img src="https://via.placeholder.com/100?text=${inisial}" alt="Foto" class="follower-avatar">`;
+                        };
+                    } else {
+                        const inisial = kartu.querySelector('.nama-sendiri').textContent.slice(0,2);
+                        tempatFoto.innerHTML = `<img src="https://via.placeholder.com/100?text=${inisial}" alt="Foto" class="follower-avatar">`;
+                    }
                 };
             });
         });
