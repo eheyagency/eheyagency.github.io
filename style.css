@@ -904,3 +904,129 @@ footer {
         height: 80px;
     }
     .header-container {
+
+   /* Batasi lebar teks agar tidak keluar bingkai */
+.username-tiktok {
+  font-size: 0.9rem;
+  color: #fff;
+  margin: 6px 0 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.nama-sendiri {
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: #fff;
+  margin: 0 0 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.jabatan-member {
+  font-size: 0.8rem;
+  color: #ffd700;
+  margin: 0 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.25);
+  display: inline-block;
+}
+
+/* Frame hitam untuk tombol Follow */
+.frame-tombol {
+  background: #000;
+  border-radius: 20px;
+  padding: 6px 14px;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.btn-follow {
+  color: #fff !important;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-follow i {
+  font-size: 0.95rem;
+}
+
+.follower-card {
+  padding: 18px 12px;
+  box-sizing: border-box;
+}
+
+.follower-info {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 8px;
+}
+
+/* Username TikTok — ukuran kecil agar muat, TIDAK dipotong */
+.username-tiktok {
+  font-size: 0.8rem;
+  color: #ffffff;
+  margin: 4px 0;
+  line-height: 1.2;
+}
+
+/* Nama — ukuran sedang */
+.nama-sendiri {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 2px 0;
+  line-height: 1.2;
+}
+
+/* Jabatan — warna emas, ukuran disesuaikan */
+.jabatan-member {
+  font-size: 0.75rem;
+  color: #ffd700;
+  margin: 4px 0 8px;
+  line-height: 1.2;
+}
+
+/* Frame hitam untuk tombol Follow */
+.frame-tombol {
+  background-color: #000000;
+  border-radius: 20px;
+  padding: 5px 15px;
+  display: inline-block;
+}
+
+.btn-follow {
+  color: #ffffff !important;
+  text-decoration: none;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-follow i {
+  font-size: 0.9rem;
+}
+
+.follower-card {
+  padding: 15px 10px;
+  box-sizing: border-box;
+}
+
+.follower-info {
+  padding: 0 5px;
+}
+       
