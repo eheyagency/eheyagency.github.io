@@ -10,30 +10,32 @@
 <body>
     <div class="bg-gradient"></div>
 
-    <!-- HEADER — SAMA PERSIS SEPERTI GAMBAR -->
+    <!-- HEADER — PERSIS SEPERTI GAMBAR -->
     <header class="header-followers">
-        <div class="header-inner">
-            <!-- Logo Kiri -->
-            <div class="header-logo-left">
-                <img src="AQ.png" alt="AL QAQA MANAGEMENT" class="logo-aq">
+        <div class="header-inner-followers">
+            
+            <!-- Logo Kiri: AQ -->
+            <div class="logo-aq-wrap">
+                <img src="AQ.png" alt="AL QAQA MANAGEMENT" class="logo-aq-img">
             </div>
 
-            <!-- Tengah Judul -->
-            <div class="header-title-center">
-                <h1 class="judul-utama">EHEY AGENCY</h1>
-                <p class="sub-judul">PART OF</p>
-                <p class="judul-bawah">AL QAQA MANAGEMENT</p>
-
-                <h2 class="judul-daftar">
-                    Daftar <span class="kuning">Kreator & Member</span> Kami 👥
-                </h2>
-                <p class="deskripsi-header">Klik foto untuk menuju profil TikTok!</p>
+            <!-- Teks Tengah -->
+            <div class="header-text-center-followers">
+                <h1 class="judul-ehey">EHEY AGENCY</h1>
+                <p class="part-of-teks">PART OF</p>
+                <h2 class="judul-alqaqa">AL QAQA MANAGEMENT</h2>
+                
+                <h3 class="judul-daftar-besar">
+                    Daftar <span class="kuning-teks">Kreator & Member</span> Kami 👥
+                </h3>
+                <p class="sub-teks">Klik foto untuk menuju profil TikTok!</p>
             </div>
 
-            <!-- Logo Kanan -->
-            <div class="header-logo-right">
-                <img src="ehey.png" alt="EHEY AGENCY" class="logo-ehey">
+            <!-- Logo Kanan: EHEY -->
+            <div class="logo-ehey-wrap">
+                <img src="ehey.png" alt="EHEY AGENCY" class="logo-ehey-img">
             </div>
+
         </div>
     </header>
 
@@ -48,7 +50,6 @@
                 <span class="nomor-urut">1</span>
                 <div class="foto-tempat">Memuat...</div>
                 <div class="follower-info">
-                    <h4 class="username-tiktok">@alqaqa999</h4>
                     <p class="nama-sendiri">AL QAQA</p>
                     <span class="jabatan-member">DIRUT AL QAQA MANAGEMENT</span>
                 </div>
@@ -61,7 +62,6 @@
                 <span class="nomor-urut">2</span>
                 <div class="foto-tempat">Memuat...</div>
                 <div class="follower-info">
-                    <h4 class="username-tiktok">@unibrahim95</h4>
                     <p class="nama-sendiri">UN IBRAHIM</p>
                     <span class="jabatan-member">FOUNDER EHEY AGENCY</span>
                 </div>
@@ -74,7 +74,6 @@
                 <span class="nomor-urut">3</span>
                 <div class="foto-tempat">Memuat...</div>
                 <div class="follower-info">
-                    <h4 class="username-tiktok">@jemzlamato.eheyagency</h4>
                     <p class="nama-sendiri">JEMZ LAMATO</p>
                     <span class="jabatan-member">SUPER ADMIN</span>
                 </div>
@@ -87,7 +86,6 @@
                 <span class="nomor-urut">4</span>
                 <div class="foto-tempat">Memuat...</div>
                 <div class="follower-info">
-                    <h4 class="username-tiktok">@rilibrahim01</h4>
                     <p class="nama-sendiri">RIL IBRAHIM</p>
                     <span class="jabatan-member">ADMIN EHEY AGENCY</span>
                 </div>
@@ -100,25 +98,11 @@
                 <span class="nomor-urut">5</span>
                 <div class="foto-tempat">Memuat...</div>
                 <div class="follower-info">
-                    <h4 class="username-tiktok">@koko.ltf</h4>
                     <p class="nama-sendiri">KOKO LTF</p>
                     <span class="jabatan-member">MEMBER</span>
                 </div>
             </a>
 
-            <!-- TAMBAH MEMBER BARU DI BAWAH INI
-            <a href="LINK_TIKTOK" target="_blank" class="follower-card"
-               data-tiktok-user="username_tanpa_@"
-               data-foto-sendiri="nama_foto.png">
-                <span class="nomor-urut">6</span>
-                <div class="foto-tempat">Memuat...</div>
-                <div class="follower-info">
-                    <h4 class="username-tiktok">@username_tiktok</h4>
-                    <p class="nama-sendiri">NAMA SENDIRI</p>
-                    <span class="jabatan-member">MEMBER</span>
-                </div>
-            </a>
-            -->
         </div>
 
         <div class="back-btn">
@@ -140,7 +124,6 @@
                 const tempatFoto = kartu.querySelector('.foto-tempat');
                 if (!username || !tempatFoto) return;
 
-                // Foto TikTok dulu, gagal pakai foto sendiri
                 const fotoTikTok = new Image();
                 fotoTikTok.src = `https://unavatar.io/tiktok/${username}`;
                 fotoTikTok.onload = () => {
