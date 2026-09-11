@@ -282,9 +282,14 @@ ul {
 }
 
 .creators-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Perintah utama untuk membuat baris bawah ke tengah */
     gap: 25px;
+}
+.creator-card {
+    flex: 1 1 220px;
+    max-width: 280px; /* Menyesuaikan agar kartu tidak terlalu melar */
 }
 
 .creator-card {
