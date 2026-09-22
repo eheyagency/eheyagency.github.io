@@ -1042,13 +1042,13 @@ footer {
    ================================================== */
 .policy-app-header {
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto 20px;
-    padding: 14px 18px;
+    padding: 12px 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 14px;
+    gap: 10px;
     background: rgba(0, 0, 0, 0.35);
     border: 1px solid rgba(255, 215, 0, 0.45);
     border-radius: 14px;
@@ -1056,12 +1056,12 @@ footer {
 }
 
 .policy-app-logo {
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
     flex: 0 0 64px;
     object-fit: contain;
     border-radius: 50%;
-    border: 2px solid #ffd700;
+    border: 8px solid #ffd700;
     background: #000;
 }
 
