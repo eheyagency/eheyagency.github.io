@@ -1038,7 +1038,7 @@ footer {
 
 /* ==================================================
    IKON APLIKASI — HALAMAN KEBIJAKAN & KETENTUAN
-   Ikon dibuat terlihat jelas di bagian atas halaman.
+   Diperbaiki: logo bulat sempurna, semua rata tengah, tampilan konsisten HP & Desktop
    ================================================== */
 .policy-app-header {
     width: 100%;
@@ -1047,8 +1047,8 @@ footer {
     padding: 12px 15px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
+    justify-content: center; /* ✅ Semua elemen TENGAH */
+    gap: 12px;
     background: rgba(0, 0, 0, 0.35);
     border: 1px solid rgba(255, 215, 0, 0.45);
     border-radius: 14px;
@@ -1058,17 +1058,19 @@ footer {
 .policy-app-logo {
     width: 48px;
     height: 48px;
-    flex: 0 0 64px;
-    object-fit: contain;
-    border-radius: 50%;
-    border: 8px solid #ffd700;
+    flex: 0 0 48px; /* Ukuran tetap, tidak membesar/mengecil */
+    object-fit: cover; /* ✅ Gambar rapi, tidak terdistorsi */
+    border-radius: 50%; /* ✅ BULAT SEMPURNA */
+    border: 3px solid #ffd700; /* Perbaiki ketebalan bingkai agar proporsional */
     background: #000;
+    overflow: hidden; /* ✅ Potong bagian luar lingkaran */
 }
 
 .policy-app-brand {
     display: flex;
     flex-direction: column;
-    text-align: left;
+    text-align: center; /* ✅ Teks rata TENGAH */
+    align-items: center; /* Pastikan teks benar-benar tengah */
 }
 
 .policy-app-brand strong {
@@ -1085,23 +1087,28 @@ footer {
     margin-top: 3px;
 }
 
+/* ==================================================
+   HP & LAYAR KECIL — TAMPILAN SAMA PERSIS
+   ================================================== */
 @media (max-width: 600px) {
     .policy-app-header {
         margin-bottom: 15px;
         padding: 12px 14px;
+        justify-content: center; /* Tetap tengah di HP */
     }
 
     .policy-app-logo {
-        width: 54px;
-        height: 54px;
-        flex-basis: 54px;
+        width: 48px; /* ✅ SAMA UKURAN di HP & Desktop */
+        height: 48px;
+        flex-basis: 48px;
+        border-width: 3px; /* Bingkai sama tebal */
     }
 
     .policy-app-brand strong {
-        font-size: 1rem;
+        font-size: 1.15rem; /* ✅ Ukuran teks sama, tidak berubah */
     }
 
     .policy-app-brand span {
-        font-size: 0.7rem;
+        font-size: 0.78rem; /* ✅ Tetap sama */
     }
 }
