@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <!-- Ikon lengkap dengan ukuran -->
+    <!-- Ikon lengkap dengan ukuran → muncul di tab browser -->
     <link rel="icon" type="image/png" sizes="1024x1024" href="ehey-1024.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
@@ -22,9 +22,81 @@
             line-height: 1.8;
             margin: 0;
         }
+
+        /* ==================================================
+           HEADER — Ikon muncul di bagian atas halaman
+           Sama persis tampilan HP & Desktop
+           ================================================== */
+        .policy-app-header {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 20px;
+            padding: 12px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 215, 0, 0.45);
+            border-radius: 14px;
+            box-shadow: 0 0 18px rgba(255, 215, 0, 0.10);
+        }
+
+        .policy-app-logo {
+            width: 48px;
+            height: 48px;
+            flex: 0 0 48px;
+            object-fit: cover;
+            border-radius: 50%; /* ✅ Bulat sempurna */
+            border: 3px solid #ffd700;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .policy-app-brand {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+        }
+
+        .policy-app-brand strong {
+            color: #ffd700;
+            font-size: 1.15rem;
+            line-height: 1.25;
+            letter-spacing: 0.5px;
+        }
+
+        .policy-app-brand span {
+            color: #fff;
+            opacity: 0.75;
+            font-size: 0.78rem;
+            margin-top: 3px;
+        }
+
+        /* Tampilan sama persis di HP & Desktop */
+        @media (max-width: 600px) {
+            .policy-app-header {
+                margin-bottom: 15px;
+                padding: 12px 14px;
+                justify-content: center;
+            }
+            .policy-app-logo {
+                width: 48px;
+                height: 48px;
+                flex-basis: 48px;
+            }
+            .policy-app-brand strong {
+                font-size: 1.15rem;
+            }
+            .policy-app-brand span {
+                font-size: 0.78rem;
+            }
+        }
+
         .container {
             max-width: 800px;
-            margin: 0 auto; /* ⭐ BENAR-BENAR DI TENGAH */
+            margin: 0 auto;
             background: rgba(0,0,0,0.3);
             padding: 2.5rem 2rem;
             border-radius: 16px;
@@ -72,6 +144,7 @@
     </style>
 </head>
 <body>
+    <!-- Ikon muncul di bagian atas halaman → syarat TikTok Developer -->
     <header class="policy-app-header">
         <img src="ehey-1024.png" alt="EHEY AGENCY" class="policy-app-logo">
         <div class="policy-app-brand">
@@ -79,6 +152,7 @@
             <span>PART OF AL QAQA MANAGEMENT</span>
         </div>
     </header>
+
     <div class="container">
         <h1><i class="fa-solid fa-file-contract"></i> Ketentuan Layanan</h1>
         <p style="text-align: center; opacity: 0.8;">Terakhir diperbarui: 13 September 2026</p>
