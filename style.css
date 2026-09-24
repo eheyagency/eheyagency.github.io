@@ -1306,6 +1306,128 @@ footer {
         ) !important;
     }
 }
+
+/* =====================================================
+   FIX FINAL NAVIGASI
+   SEMBUNYIKAN NAVIGASI LAMA
+   TAMPILKAN HANYA FLOATING MENU
+   ===================================================== */
+
+.header-nav {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+}
+
+
+/* FLOATING MENU */
+body > .floating-menu {
+    display: block !important;
+
+    position: fixed !important;
+
+    top: 50vh !important;
+    right: 0 !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    width: 0 !important;
+    height: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    transform: translateY(-50%) !important;
+
+    z-index: 2147483647 !important;
+
+    overflow: visible !important;
+}
+
+
+/* TOMBOL */
+body > .floating-menu > .menu-toggle {
+    display: flex !important;
+
+    position: absolute !important;
+
+    top: 0 !important;
+    right: -26px !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    width: 52px !important;
+    height: 52px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    transform: translateY(-50%) !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+
+    border-radius: 50% !important;
+}
+
+
+/* MENU YANG TERBUKA */
+body > .floating-menu > .menu-content {
+    position: absolute !important;
+
+    top: 50% !important;
+    right: 60px !important;
+    left: auto !important;
+    bottom: auto !important;
+
+    transform: translate(10px, -50%) !important;
+}
+
+
+/* =====================================================
+   DESKTOP
+   ===================================================== */
+
+@media (min-width: 769px) {
+
+    body > .floating-menu {
+        top: 50vh !important;
+        right: 0 !important;
+        left: auto !important;
+        bottom: auto !important;
+
+        transform: translateY(-50%) !important;
+    }
+
+    body > .floating-menu > .menu-toggle {
+        top: 0 !important;
+        right: -26px !important;
+        left: auto !important;
+        bottom: auto !important;
+    }
+}
+
+
+/* =====================================================
+   HP
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+    body > .floating-menu {
+        top: 50vh !important;
+        right: 0 !important;
+        left: auto !important;
+        bottom: auto !important;
+
+        transform: translateY(-50%) !important;
+    }
+}   
     
 
 
