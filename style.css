@@ -627,16 +627,15 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 13px;
-    color: var(--kuning);
+    overflow: hidden; /* ← Sembunyikan bagian gambar yang melebihi batas */
     border: 2px dashed rgba(250, 204, 21, 0.3);
 }
 .follower-avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    width: 100%;       /* ← Isi seluruh lebar wadah */
+    height: 100%;      /* ← Isi seluruh tinggi wadah */
     object-fit: cover;
-    border: 3px solid var(--kuning);
+    border: none;      /* ← Hapus garis ganda — garis sudah ada di .foto-tempat */
+    display: block;    /* ← Hilangkan celah kosong di bawah gambar */
 }
 
 .follower-info {
