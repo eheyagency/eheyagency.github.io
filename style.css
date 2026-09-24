@@ -787,7 +787,7 @@ footer {
 
 /* Followers.html */
 .header-followers {
-    position: sticky !important;
+    position: fixed !important;
     top: 0 !important;
     z-index: 9999 !important;
     background:
