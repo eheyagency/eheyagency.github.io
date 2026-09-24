@@ -1035,116 +1035,119 @@ footer {
   padding: 0 5px;
 }
 
-/* ==================================================
-   MENU NAVIGASI — TENGAH KANAN MENGAMBANG
-   ================================================== */
+/* ================================
+   FLOATING NAVIGATION MENU
+================================ */
 
-.nav-float-toggle {
-    position: fixed !important;
-    top: 50% !important;
-    right: 15px !important;
-    left: auto !important;
-    transform: translateY(-50%) !important;
-    width: 56px !important;
-    height: 56px !important;
-    background: rgba(15, 10, 31, 0.95) !important;
-    border: 2px solid rgba(250, 204, 21, 0.4) !important;
-    border-radius: 12px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 7px !important;
-    cursor: pointer !important;
-    z-index: 99999 !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important;
+.floating-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
 }
 
-.nav-float-toggle:hover {
-    border-color: #facc15 !important;
-    transform: translateY(-50%) scale(1.05) !important;
-    background: rgba(26, 16, 51, 0.98) !important;
+.menu-toggle {
+    width: 52px;
+    height: 52px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+
+    transition: 0.3s ease;
 }
 
-.nav-float-toggle span {
-    display: block !important;
-    width: 28px !important;
-    height: 3px !important;
-    background: #facc15 !important;
-    border-radius: 2px !important;
-    margin: 0 !important;
-    padding: 0 !important;
+.menu-toggle:hover {
+    transform: scale(1.08);
 }
 
-.nav-float-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px) !important;
-}
-.nav-float-toggle.active span:nth-child(2) {
-    opacity: 0 !important;
-}
-.nav-float-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px) !important;
-}
-
-.nav-float-menu {
-    position: fixed !important;
-    top: 50% !important;
-    right: 85px !important;
-    transform: translateY(-50%) translateX(-10px) !important;
-    background: rgba(15, 10, 31, 0.95) !important;
-    border: 2px solid rgba(250, 204, 21, 0.35) !important;
-    border-radius: 14px !important;
-    padding: 12px 0 !important;
-    z-index: 99998 !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    min-width: 180px !important;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.4) !important;
+.menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 5px;
+    transition: 0.3s ease;
 }
 
-.nav-float-menu.active {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: translateY(-50%) translateX(0) !important;
+.menu-content {
+    position: absolute;
+    top: 62px;
+    right: 0;
+
+    width: 210px;
+    padding: 10px;
+
+    background: rgba(10, 10, 10, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px) scale(0.95);
+
+    transition: 0.25s ease;
 }
 
-.nav-float-menu ul {
-    list-style: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
+.menu-content.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
 }
 
-.nav-float-menu li {
-    margin: 0 !important;
-    padding: 0 !important;
+.menu-content a {
+    display: block;
+    padding: 13px 15px;
+
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+
+    border-radius: 10px;
+    transition: 0.25s ease;
 }
 
-.nav-float-menu a {
-    display: block !important;
-    padding: 12px 22px !important;
-    color: #fff !important;
-    text-decoration: none !important;
-    font-size: 15px !important;
-    transition: all 0.25s ease !important;
+.menu-content a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(3px);
 }
 
-.nav-float-menu a:hover {
-    background: rgba(250, 204, 21, 0.15) !important;
-    color: #facc15 !important;
-    padding-left: 26px !important;
+.menu-content .join-btn {
+    margin-top: 6px;
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #25f4ee,
+        #fe2c55
+    );
+
+    color: #ffffff;
+
+    box-shadow: 0 5px 15px rgba(254, 44, 85, 0.25);
 }
 
-.nav-float-menu a.btn-bergabung {
-    margin: 8px 12px !important;
-    background: linear-gradient(135deg, #fe2c55, #25f4ee) !important;
-    color: #fff !important;
-    border-radius: 10px !important;
-    text-align: center !important;
-    font-weight: bold !important;
-    padding: 10px 15px !important;
+.menu-content .join-btn:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(
+        135deg,
+        #fe2c55,
+        #25f4ee
+    );
 }
-
-.nav-float-menu a.btn-bergabung:hover {
-    transform: scale(1.03) !important;
-    padding-left: 15px !important;
-}       
