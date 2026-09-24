@@ -1034,17 +1034,39 @@ footer {
   padding: 0 5px;
 }
 
-/* ================================
-   FLOATING NAVIGATION MENU
+  /* ================================
+   FLOATING NAVIGATION MENU — DIPERBAIKI
 ================================ */
 
 .floating-menu {
     position: fixed;
-    top: 20px;
+    top: 70px; /* ← TEPAT DI BAWAH HEADER — sesuaikan angka ini jika tinggi header berbeda! */
     right: 20px;
-    transform: translateY(-50%); /* ← Geser ke atas setengah ukuran = TEPAT TENGAH */
     z-index: 9999;
+    /* Hapus transform: translateY(-50%) agar tidak ke tengah vertikal */
 }
+
+/* --- Tampilan HP — posisi kiri/bawah, gaya TETAP SAMA --- */
+@media (max-width: 768px) {
+    .floating-menu {
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+        width: auto;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .menu-content {
+        right: 0;
+        left: auto;
+        bottom: 62px;
+        top: auto;
+    }
+}
+
+/* --- Sisanya TETAP SAMA — TIDAK DIUBAH --- */
 
 .menu-toggle {
     width: 52px;
@@ -1150,4 +1172,10 @@ footer {
         #fe2c55,
         #25f4ee
     );
-}
+   }
+     
+
+
+    
+
+    
