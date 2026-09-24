@@ -17,21 +17,27 @@
 </head>
 <body>
     <!-- MENU NAVIGASI MENGAMBANG -->
-<div class="nav-float-toggle" id="navFloatToggle">
-    <span></span>
-    <span></span>
-    <span></span>
+<div<!-- FLOATING MENU -->
+<div class="floating-menu">
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Buka Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="menu-content" id="menuContent">
+        <a href="index.html">Beranda</a>
+        <a href="privasi.html">Privasi</a>
+        <a href="syarat.html">Syarat</a>
+        <a href="#daftar" class="join-btn">Bergabung Sekarang</a>
+    </div>
 </div>
 
-<div class="nav-float-menu" id="navFloatMenu">
-    <ul>
-        <li><a href="index.html">Beranda</a></li>
-        <li><a href="privasi.html">Privasi</a></li>
-        <li><a href="syarat.html">Syarat</a></li>
-        <li><a href="#daftar" class="btn-bergabung">Bergabung Sekarang</a></li>
-    </ul>
-</div>
-<!-- AKHIR MENU -->
+<script>
+function toggleMenu() {
+    document.getElementById("menuContent").classList.toggle("active");
+}
+</script>
 
     <div class="bg-gradient"></div>
 
