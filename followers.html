@@ -1736,28 +1736,57 @@
             // Sisa fitur dihapus — gambar & link sudah diatur manual langsung di HTML
         });
     </script>
+   
+    <!-- FLOATING NAVIGATION -->
+    <div class="floating-menu" aria-label="Navigasi utama">
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Buka menu navigasi"
+            aria-expanded="false"
+            aria-controls="menuContent">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="menu-content" id="menuContent" aria-label="Menu navigasi">
+            <a href="index.html">Beranda</a>
+            <a href="followers.html">Staff &amp; Member</a>
+            <a href="privasi.html">Privasi</a>
+            <a href="syarat.html">Syarat &amp; Ketentuan</a>
+            <a href="#daftar" class="join-btn">Bergabung Sekarang</a>
+        </nav>
+    </div>
+
     <script>
-       document.addEventListener('DOMContentLoaded', function() {
-       const toggle = document.getElementById('navFloatToggle');
-       const menu = document.getElementById('navFloatMenu');
-       if (!toggle || !menu) return;
+        (() => {
+            const toggle = document.getElementById('menuToggle');
+            const content = document.getElementById('menuContent');
 
-      toggle.addEventListener('click', function(e) {
-        e.stopPropagation();
-        this.classList.toggle('active');
-        menu.classList.toggle('active');
-    });
+            if (!toggle || !content) return;
 
-      document.addEventListener('click', function() {
-        toggle.classList.remove('active');
-        menu.classList.remove('active');
-    });
+            toggle.addEventListener('click', () => {
+                const isOpen = toggle.classList.toggle('active');
+                content.classList.toggle('active', isOpen);
+                toggle.setAttribute('aria-expanded', String(isOpen));
+                toggle.setAttribute(
+                    'aria-label',
+                    isOpen ? 'Tutup menu navigasi' : 'Buka menu navigasi'
+                );
+            });
 
-      menu.addEventListener('click', function(e) {
-        e.stopPropagation();
-    });
-   });
-</script>
+            document.addEventListener('click', (event) => {
+                if (!event.target.closest('.floating-menu')) {
+                    toggle.classList.remove('active');
+                    content.classList.remove('active');
+                    toggle.setAttribute('aria-expanded', 'false');
+                    toggle.setAttribute('aria-label', 'Buka menu navigasi');
+                }
+            });
+        })();
+    </script>
 </body> 
 </html>
                         
