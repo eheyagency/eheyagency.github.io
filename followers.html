@@ -1620,15 +1620,38 @@
             const daftarKartu = document.querySelectorAll('.follower-card');
             document.getElementById('jumlahMember').textContent = daftarKartu.length;
 
-            // Tampilkan foto dari berkas lokal
-            const kartu = document.querySelectorAll('.follower-card');
-            kartu.forEach(card => {
-                const username = card.getAttribute('data-tiktok-user');
-                const fotoLokal = card.getAttribute('data-foto-lokal');
-                const tempat = card.querySelector('.foto-tempat');
-                tempat.innerHTML = `<img src="${fotoLokal}" alt="Foto ${username}" class="follower-avatar">`;
-            });
-        });
+            daftarKartu.forEach(card => {
+        const username = card.dataset.tiktokUser;
+        const fotoCadangan = card.dataset.fotoLokal;
+        const tempat = card.querySelector('.foto-tempat');
+
+        if (!tempat) return;
+
+        // 📸 Foto utama: Avatar TikTok (menggunakan API publik)
+        const fotoUtama = `https://p16-amd-va.tiktokcdn.com/user-avatar/${username}.jpeg`;
+
+        // Buat elemen gambar
+        const img = document.createElement('img');
+        img.alt = `Foto ${username}`;
+        img.className = 'follower-avatar';
+        img.loading = 'lazy';
+
+        // ✅ Jika foto TikTok gagal dimuat → ganti pakai foto lokal
+        img.onerror = function() {
+            console.warn(`Foto TikTok gagal, pakai cadangan: ${fotoCadangan}`);
+            this.src = fotoCadangan;
+            // Hapus error agar tidak berulang
+            this.onerror = null;
+        };
+
+        // Mulai muat foto TikTok
+        img.src = fotoUtama;
+
+        // Tampilkan ke halaman
+        tempat.innerHTML = '';
+        tempat.appendChild(img);
+    });
+});
     </script>
 </body>
 </html>
