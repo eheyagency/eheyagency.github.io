@@ -773,22 +773,16 @@ footer {
 
 /* RESPONSIF HP */
 /* ==================================================
-   HEADER TETAP MENGIKUTI SAAT DI-GULIR — KEDUA HALAMAN
+   HEADER KHUSUS FOLLOWERS.HTML SAJA
+   Tetap di atas — TIDAK ikut bergulir
+   Navigasi dihapus — yang lain TETAP SAMA
    ================================================== */
-/* Index.html */
-.header-container {
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 9999 !important;
-    background: rgba(0, 0, 0, 0.95) !important;
-    backdrop-filter: blur(8px) !important;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3) !important;
-}
 
-/* Followers.html */
 .header-followers {
     position: fixed !important;
     top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
     z-index: 9999 !important;
     background:
         radial-gradient(ellipse at top left, rgba(139, 92, 246, 0.25), transparent 50%),
@@ -799,36 +793,23 @@ footer {
     box-shadow: 0 2px 12px rgba(0,0,0,0.35) !important;
 }
 
-/* Navigasi di Followers.html — sama persis gaya Index */
-.header-nav-followers {
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding: 12px 0;
-    margin-top: 10px;
-}
-.header-nav-followers ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px 30px;
-    margin: 0;
-    padding: 0;
-}
+/* ==================================================
+   NAVIGASI — DIHAPUS
+   ================================================== */
+.header-nav-followers,
+.header-nav-followers ul,
 .header-nav-followers a {
-    color: var(--putih);
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s;
+    display: none !important;
 }
-.header-nav-followers a:hover { color: var(--kuning); }
 
-/* Teks berjalan tetap terlihat di bawah header */
+/* Jarak agar konten tidak tertutup header */
 .marquee-container {
     position: relative;
     z-index: 1;
+    margin-top: 140px;
 }
 
+/* Responsif — TETAP SAMA */
 @media (max-width: 600px) {
     .header-inner-followers {
         flex-wrap: nowrap !important;
@@ -844,6 +825,11 @@ footer {
     .form-row { grid-template-columns: 1fr; }
     .followers-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; }
     .foto-tempat, .follower-avatar { width: 80px; height: 80px; }
+    
+    .marquee-container {
+        margin-top: 120px;
+    }
+}
 
     .policy-app-header {
         margin-bottom: 15px;
