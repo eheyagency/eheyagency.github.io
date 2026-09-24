@@ -1043,36 +1043,53 @@ footer {
     display: none !important;
 }
 
-/* ==============================================
+/* ==================================================
    FLOATING NAVIGATION
-   KANAN TENGAH — TOMBOL HANYA TERLIHAT SEPARUH
-   ============================================== */
+   DESKTOP + HP = KANAN TENGAH
+   ================================================== */
 
 .floating-menu {
     position: fixed !important;
+
     top: 50% !important;
     right: 0 !important;
-    transform: translateY(-50%) !important;
+    left: auto !important;
+    bottom: auto !important;
+
     width: 0 !important;
     height: 0 !important;
+
+    transform: translateY(-50%) !important;
+
     z-index: 999999 !important;
+
     overflow: visible !important;
 }
 
+
+/* ==============================
+   TOMBOL HAMBURGER
+   ============================== */
+
 .menu-toggle {
     position: absolute !important;
+
     top: 0 !important;
     right: -26px !important;
-    transform: translateY(-50%) !important;
+    left: auto !important;
+    bottom: auto !important;
 
     width: 52px !important;
     height: 52px !important;
+
     padding: 0 !important;
     margin: 0 !important;
 
-    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    border: 1px solid rgba(255,255,255,0.25) !important;
     border-radius: 50% !important;
-    background: rgba(0, 0, 0, 0.88) !important;
+
+    background: rgba(0,0,0,0.88) !important;
+
     backdrop-filter: blur(10px) !important;
     -webkit-backdrop-filter: blur(10px) !important;
 
@@ -1080,29 +1097,47 @@ footer {
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
+
     gap: 5px !important;
 
     cursor: pointer !important;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.45) !important;
-    transition: right 0.25s ease, transform 0.25s ease !important;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.45) !important;
+
+    transform: translateY(-50%) !important;
+
+    transition: right 0.25s ease,
+                transform 0.25s ease !important;
 }
 
+
+/* Hover / aktif */
 .menu-toggle:hover,
 .menu-toggle.active {
     right: 0 !important;
     transform: translateY(-50%) scale(1.05) !important;
 }
 
+
+/* Garis hamburger */
 .menu-toggle span {
     display: block !important;
+
     width: 22px !important;
     height: 2px !important;
+
     background: #ffffff !important;
+
     border-radius: 5px !important;
+
     transition: 0.25s ease !important;
 }
 
-/* Animasi hamburger menjadi X */
+
+/* ==============================
+   ANIMASI HAMBURGER → X
+   ============================== */
+
 .menu-toggle.active span:nth-child(1) {
     transform: translateY(7px) rotate(45deg) !important;
 }
@@ -1115,68 +1150,147 @@ footer {
     transform: translateY(-7px) rotate(-45deg) !important;
 }
 
+
+/* ==============================
+   PANEL MENU
+   ============================== */
+
 .menu-content {
     position: absolute !important;
+
     top: 50% !important;
     right: 60px !important;
+    left: auto !important;
+
     width: 220px !important;
+
     padding: 10px !important;
 
-    background: rgba(10, 10, 10, 0.96) !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    background: rgba(10,10,10,0.96) !important;
+
+    border: 1px solid rgba(255,255,255,0.15) !important;
     border-radius: 16px !important;
+
     backdrop-filter: blur(15px) !important;
     -webkit-backdrop-filter: blur(15px) !important;
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5) !important;
+
+    box-shadow: 0 10px 35px rgba(0,0,0,0.5) !important;
 
     opacity: 0 !important;
     visibility: hidden !important;
+
     pointer-events: none !important;
-    transform: translate(10px, -50%) !important;
-    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease !important;
+
+    transform: translate(10px,-50%) !important;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease !important;
 }
+
 
 .menu-content.active {
     opacity: 1 !important;
     visibility: visible !important;
+
     pointer-events: auto !important;
-    transform: translate(0, -50%) !important;
+
+    transform: translate(0,-50%) !important;
 }
 
+
+/* Link menu */
 .menu-content a {
     display: block !important;
+
     padding: 13px 15px !important;
+
     color: #ffffff !important;
+
     text-decoration: none !important;
+
     font-size: 15px !important;
     font-weight: 600 !important;
+
     border-radius: 10px !important;
+
     transition: 0.25s ease !important;
 }
 
 .menu-content a:hover {
-    background: rgba(255, 255, 255, 0.1) !important;
+    background: rgba(255,255,255,0.1) !important;
     transform: translateX(3px) !important;
 }
 
+
+/* Tombol bergabung */
 .menu-content .join-btn {
     margin-top: 6px !important;
+
     text-align: center !important;
-    background: linear-gradient(135deg, #25f4ee, #fe2c55) !important;
+
+    background: linear-gradient(
+        135deg,
+        #25f4ee,
+        #fe2c55
+    ) !important;
+
     color: #ffffff !important;
-    box-shadow: 0 5px 15px rgba(254, 44, 85, 0.25) !important;
+
+    box-shadow: 0 5px 15px rgba(254,44,85,0.25) !important;
 }
 
-.menu-content .join-btn:hover {
-    transform: translateY(-2px) !important;
-    background: linear-gradient(135deg, #fe2c55, #25f4ee) !important;
-}
 
-/* HP & DESKTOP: POSISI SAMA */
-@media (max-width: 768px) {
+/* ==================================================
+   DESKTOP — PAKSA KANAN TENGAH
+   ================================================== */
+
+@media (min-width: 769px) {
+
     .floating-menu {
+        position: fixed !important;
+
         top: 50% !important;
         right: 0 !important;
+        left: auto !important;
+        bottom: auto !important;
+
+        width: 0 !important;
+        height: 0 !important;
+
+        transform: translateY(-50%) !important;
+    }
+
+    .menu-toggle {
+        position: absolute !important;
+
+        top: 0 !important;
+        right: -26px !important;
+        left: auto !important;
+        bottom: auto !important;
+
+        width: 52px !important;
+        height: 52px !important;
+    }
+}
+
+
+/* ==================================================
+   HP — TETAP KANAN TENGAH
+   ================================================== */
+
+@media (max-width: 768px) {
+
+    .floating-menu {
+        position: fixed !important;
+
+        top: 50% !important;
+        right: 0 !important;
+        left: auto !important;
+        bottom: auto !important;
+
+        transform: translateY(-50%) !important;
     }
 
     .menu-toggle {
@@ -1185,6 +1299,13 @@ footer {
 
     .menu-content {
         right: 60px !important;
-        width: min(220px, calc(100vw - 80px)) !important;
+
+        width: min(
+            220px,
+            calc(100vw - 80px)
+        ) !important;
     }
 }
+    
+
+
