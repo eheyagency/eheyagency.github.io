@@ -32,6 +32,7 @@
     </ul>
 </div>
 <!-- AKHIR MENU -->
+
     <div class="bg-gradient"></div>
 
     <!-- HEADER -->
@@ -357,29 +358,6 @@ document.addEventListener('DOMContentLoaded', function() {
         e.stopPropagation();
     });
 });
-    </script>
-   <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const toggle = document.getElementById('navFloatToggle');
-    const menu = document.getElementById('navFloatMenu');
-    if (!toggle || !menu) return;
-
-    toggle.addEventListener('click', function(e) {
-        e.stopPropagation();
-        this.classList.toggle('active');
-        menu.classList.toggle('active');
-    });
-
-    document.addEventListener('click', function() {
-        toggle.classList.remove('active');
-        menu.classList.remove('active');
-    });
-
-    menu.addEventListener('click', function(e) {
-        e.stopPropagation();
-    });
-});
-   </script>
-    
+</script>
 </body>
 </html>
