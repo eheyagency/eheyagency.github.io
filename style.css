@@ -1036,10 +1036,9 @@ footer {
 }
 
 /* ==================================================
-   MENU NAVIGASI — TEPAT TENGAH KANAN MENGAMBANG
+   MENU NAVIGASI — TENGAH KANAN MENGAMBANG
    ================================================== */
 
-/* IKON GARIS TIGA */
 .nav-float-toggle {
     position: fixed !important;
     top: 50% !important;
@@ -1062,23 +1061,21 @@ footer {
 }
 
 .nav-float-toggle:hover {
-    border-color: var(--kuning, #facc15) !important;
+    border-color: #facc15 !important;
     transform: translateY(-50%) scale(1.05) !important;
     background: rgba(26, 16, 51, 0.98) !important;
 }
 
-/* GARIS TIGA — INI YANG MEMBENTUK IKON */
 .nav-float-toggle span {
     display: block !important;
     width: 28px !important;
     height: 3px !important;
-    background: var(--kuning, #facc15) !important;
+    background: #facc15 !important;
     border-radius: 2px !important;
     margin: 0 !important;
     padding: 0 !important;
 }
 
-/* ANIMASI JADI TANDA SILANG */
 .nav-float-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(6px, 6px) !important;
 }
@@ -1089,7 +1086,6 @@ footer {
     transform: rotate(-45deg) translate(6px, -6px) !important;
 }
 
-/* KOTAK MENU */
 .nav-float-menu {
     position: fixed !important;
     top: 50% !important;
@@ -1126,7 +1122,7 @@ footer {
 .nav-float-menu a {
     display: block !important;
     padding: 12px 22px !important;
-    color: var(--putih, #fff) !important;
+    color: #fff !important;
     text-decoration: none !important;
     font-size: 15px !important;
     transition: all 0.25s ease !important;
@@ -1134,7 +1130,7 @@ footer {
 
 .nav-float-menu a:hover {
     background: rgba(250, 204, 21, 0.15) !important;
-    color: var(--kuning, #facc15) !important;
+    color: #facc15 !important;
     padding-left: 26px !important;
 }
 
@@ -1151,5 +1147,5 @@ footer {
 .nav-float-menu a.btn-bergabung:hover {
     transform: scale(1.03) !important;
     padding-left: 15px !important;
-}
-             
+   }
+       
