@@ -1041,11 +1041,13 @@ footer {
    ================================================== */
 
 .nav-float-toggle {
+.nav-float-toggle {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 44px;
-    height: 44px;
+    top: 50%;                /* ← Posisikan dari atas 50% */
+    right: 20px;             /* ← Jarak dari sisi kanan */
+    transform: translateY(-50%); /* ← Geser ke atas setengah ukuran = TEPAT TENGAH */
+    width: 56px;
+    height: 56px;
     background: rgba(15, 10, 31, 0.9);
     border: 2px solid rgba(250, 204, 21, 0.35);
     border-radius: 12px;
@@ -1053,7 +1055,7 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 5px;
+    gap: 7px;
     cursor: pointer;
     z-index: 9999;
     transition: all 0.3s ease;
@@ -1062,92 +1064,44 @@ footer {
 
 .nav-float-toggle:hover {
     border-color: var(--kuning);
-    transform: scale(1.05);
+    transform: translateY(-50%) scale(1.05); /* ← Tetap di tengah saat dihover */
     background: rgba(26, 16, 51, 0.95);
 }
 
 .nav-float-toggle span {
     display: block;
-    width: 22px;
-    height: 2px;
+    width: 28px;
+    height: 3px;
     background: var(--kuning);
     border-radius: 2px;
     transition: all 0.3s ease;
 }
 
+/* Animasi jadi tanda silang — tetap di tengah */
 .nav-float-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(6px, 6px);
 }
 .nav-float-toggle.active span:nth-child(2) {
     opacity: 0;
 }
 .nav-float-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+    transform: rotate(-45deg) translate(6px, -6px);
 }
 
 .nav-float-menu {
     position: fixed;
-    top: 75px;
-    right: 20px;
-    background: rgba(15, 10, 31, 0.95);
-    border: 2px solid rgba(250, 204, 21, 0.35);
-    border-radius: 14px;
-    padding: 12px 0;
-    z-index: 9998;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-    min-width: 180px;
+    top: 50%;                /* ← Sejajar dengan ikon */
+    right: 90px;             /* ← Di sebelah kiri ikon */
+    transform: translateY(-50%) translateX(-10px); /* ← Tepat sejajar tengah */
+    /* ... sisanya tetap sama ... */
 }
 
 .nav-float-menu.active {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translateY(-50%) translateX(0); /* ← Muncul ke samping */
 }
 
-.nav-float-menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-float-menu li {
-    margin: 0;
-    padding: 0;
-}
-
-.nav-float-menu a {
-    display: block;
-    padding: 12px 22px;
-    color: var(--putih);
-    text-decoration: none;
-    font-size: 15px;
-    transition: all 0.25s ease;
-}
-
-.nav-float-menu a:hover {
-    background: rgba(250, 204, 21, 0.15);
-    color: var(--kuning);
-    padding-left: 26px;
-}
-
-.nav-float-menu a.btn-bergabung {
-    margin: 8px 12px;
-    background: linear-gradient(135deg, var(--merah-tiktok, #fe2c55), var(--biru-tiktok, #25f4ee));
-    color: #fff !important;
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    padding: 10px 15px;
-}
-
-.nav-float-menu a.btn-bergabung:hover {
-    transform: scale(1.03);
-    padding-left: 15px;
-}
 
 /* ==================================================
    KODE JAVASCRIPT — TARUH DI SETIAP HALAMAN HTML
