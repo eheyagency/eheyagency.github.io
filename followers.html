@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-   <!-- MENU NAVIGASI MENGAMBANG - GARIS TIGA -->
+   <!-- MENU NAVIGASI MENGAMBANG -->
 <div class="nav-float-toggle" id="navFloatToggle">
     <span></span>
     <span></span>
@@ -30,7 +30,8 @@
         <li><a href="#daftar" class="btn-bergabung">Bergabung Sekarang</a></li>
     </ul>
 </div>
-<!-- AKHIR MENU NAVIGASI -->
+<!-- AKHIR MENU -->
+
    
     <div class="bg-gradient"></div>
 
@@ -1658,5 +1659,28 @@
     });
 });
     </script>
+   <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.getElementById('navFloatToggle');
+    const menu = document.getElementById('navFloatMenu');
+    if (!toggle || !menu) return;
+
+    toggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        this.classList.toggle('active');
+        menu.classList.toggle('active');
+    });
+
+    document.addEventListener('click', function() {
+        toggle.classList.remove('active');
+        menu.classList.remove('active');
+    });
+
+    menu.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+});
+</script>
+
 </body>
 </html>
