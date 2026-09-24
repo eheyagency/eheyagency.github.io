@@ -338,26 +338,26 @@
         }
     </script>
     <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const toggle = document.getElementById('navFloatToggle');
-    const menu = document.getElementById('navFloatMenu');
-    if (!toggle || !menu) return;
+       document.addEventListener('DOMContentLoaded', function() {
+       const toggle = document.getElementById('navFloatToggle');
+       const menu = document.getElementById('navFloatMenu');
+       if (!toggle || !menu) return;
 
-    toggle.addEventListener('click', function(e) {
+      toggle.addEventListener('click', function(e) {
         e.stopPropagation();
         this.classList.toggle('active');
         menu.classList.toggle('active');
     });
 
-    document.addEventListener('click', function() {
+      document.addEventListener('click', function() {
         toggle.classList.remove('active');
         menu.classList.remove('active');
     });
 
-    menu.addEventListener('click', function(e) {
+      menu.addEventListener('click', function(e) {
         e.stopPropagation();
     });
-});
+   });
 </script>
 </body>
 </html>
