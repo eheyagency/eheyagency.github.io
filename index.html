@@ -16,6 +16,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
+    <!-- MENU NAVIGASI MENGAMBANG -->
+<div class="nav-float-toggle" id="navFloatToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div class="nav-float-menu" id="navFloatMenu">
+    <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="privasi.html">Privasi</a></li>
+        <li><a href="syarat.html">Syarat</a></li>
+        <li><a href="#daftar" class="btn-bergabung">Bergabung Sekarang</a></li>
+    </ul>
+</div>
+<!-- AKHIR MENU -->
+    
     <div class="bg-gradient"></div>
 
     <!-- HEADER -->
@@ -320,5 +337,28 @@
             window.open(`https://wa.me/${nomorTujuan}?text=${encodeURIComponent(pesan)}`, '_blank');
         }
     </script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.getElementById('navFloatToggle');
+    const menu = document.getElementById('navFloatMenu');
+    if (!toggle || !menu) return;
+
+    toggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        this.classList.toggle('active');
+        menu.classList.toggle('active');
+    });
+
+    document.addEventListener('click', function() {
+        toggle.classList.remove('active');
+        menu.classList.remove('active');
+    });
+
+    menu.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+});
+    </script>
+    
 </body>
 </html>
