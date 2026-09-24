@@ -1042,6 +1042,7 @@ footer {
     position: fixed;
     top: 20px;
     right: 20px;
+    transform: translateY(-50%); /* ← Geser ke atas setengah ukuran = TEPAT TENGAH */
     z-index: 9999;
 }
 
