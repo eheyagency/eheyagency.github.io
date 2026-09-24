@@ -1034,41 +1034,42 @@ footer {
   padding: 0 5px;
 }
 
-  /* ================================
-   FLOATING NAVIGATION MENU — DIPERBAIKI
-================================ */
+/* ==============================================
+   FLOATING NAV — KANAN TENGAH, SETENGAH TERLIHAT
+============================================== */
+
+/* Sembunyikan menu bawaan situs */
+.menu-toggle-icon,
+[class*="menu-toggle"],
+button[aria-label*="menu"],
+.nav-toggle,
+.header-menu-toggle,
+.primary-menu,
+.main-navigation,
+.nav-menu,
+#site-navigation,
+.header-nav {
+    display: none !important;
+}
 
 .floating-menu {
     position: fixed;
-    top: 70px; /* ← TEPAT DI BAWAH HEADER — sesuaikan angka ini jika tinggi header berbeda! */
-    right: 20px;
-    z-index: 9999;
-    /* Hapus transform: translateY(-50%) agar tidak ke tengah vertikal */
+    top: 50%;
+    right: 0; /* Tempel ke tepi kanan layar */
+    transform: translateY(-50%); /* Tepat tengah vertikal */
+    z-index: 99999;
+    
+    /* HANYA SETENGAH TERLIHAT */
+    width: 76px; /* Tombol 52px + ruang */
+    height: auto;
+    overflow: visible;
 }
 
-/* --- Tampilan HP — posisi kiri/bawah, gaya TETAP SAMA --- */
-@media (max-width: 768px) {
-    .floating-menu {
-        top: auto;
-        bottom: 20px;
-        right: 20px;
-        left: 20px;
-        width: auto;
-        display: flex;
-        justify-content: flex-end;
-    }
-
-    .menu-content {
-        right: 0;
-        left: auto;
-        bottom: 62px;
-        top: auto;
-    }
-}
-
-/* --- Sisanya TETAP SAMA — TIDAK DIUBAH --- */
-
+/* Tombol — dorong setengah keluar */
 .menu-toggle {
+    margin-left: auto;
+    margin-right: -24px; /* Dorong ke kanan → setengah keluar layar */
+    
     width: 52px;
     height: 52px;
     border: 1px solid rgba(255, 255, 255, 0.25);
@@ -1089,8 +1090,10 @@ footer {
     transition: 0.3s ease;
 }
 
+/* Saat di-hover → tarik masuk penuh */
 .menu-toggle:hover {
-    transform: scale(1.08);
+    transform: scale(1.08) translateX(-24px);
+    margin-right: 0;
 }
 
 .menu-toggle span {
@@ -1102,10 +1105,11 @@ footer {
     transition: 0.3s ease;
 }
 
+/* Kotak menu — muncul ke kiri */
 .menu-content {
     position: absolute;
-    top: 62px;
-    right: 0;
+    top: 0;
+    right: 60px; /* Muncul ke kiri tombol */
 
     width: 210px;
     padding: 10px;
@@ -1121,7 +1125,7 @@ footer {
 
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-10px) scale(0.95);
+    transform: translateX(10px);
 
     transition: 0.25s ease;
 }
@@ -1129,7 +1133,7 @@ footer {
 .menu-content.active {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0) scale(1);
+    transform: translateX(0);
 }
 
 .menu-content a {
@@ -1161,7 +1165,6 @@ footer {
     );
 
     color: #ffffff;
-
     box-shadow: 0 5px 15px rgba(254, 44, 85, 0.25);
 }
 
@@ -1172,10 +1175,23 @@ footer {
         #fe2c55,
         #25f4ee
     );
-   }
-     
+}
 
+/* HP & Desktop SAMA PERSIS */
+@media (max-width: 768px) {
+    .floating-menu {
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 76px;
+    }
+    .menu-toggle {
+        margin-right: -24px;
+    }
+    .menu-content {
+        right: 60px;
+        top: 0;
+    }
+}
+   
 
-    
-
-    
