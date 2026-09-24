@@ -344,26 +344,13 @@ function toggleMenu() {
         }
     </script>
     <script>
-       document.addEventListener('DOMContentLoaded', function() {
-       const toggle = document.getElementById('navFloatToggle');
-       const menu = document.getElementById('navFloatMenu');
-       if (!toggle || !menu) return;
-
-      toggle.addEventListener('click', function(e) {
-        e.stopPropagation();
-        this.classList.toggle('active');
-        menu.classList.toggle('active');
-    });
-
-      document.addEventListener('click', function() {
-        toggle.classList.remove('active');
-        menu.classList.remove('active');
-    });
-
-      menu.addEventListener('click', function(e) {
-        e.stopPropagation();
-    });
-   });
+function toggleMenu() {
+    document
+        .getElementById("menuContent")
+        .classList.toggle("active");
+}
 </script>
+
+</body>
 </body>
 </html>
