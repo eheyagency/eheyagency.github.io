@@ -16,6 +16,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
+    <!-- FLOATING NAVIGATION -->
+    <div class="floating-menu" aria-label="Navigasi utama">
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Buka menu navigasi"
+            aria-expanded="false"
+            aria-controls="menuContent">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="menu-content" id="menuContent" aria-label="Menu navigasi">
+            <a href="index.html">Beranda</a>
+            <a href="followers.html">Staff &amp; Member</a>
+            <a href="privasi.html">Privasi</a>
+            <a href="syarat.html">Syarat &amp; Ketentuan</a>
+            <a href="index.html#daftar" class="join-btn">Bergabung Sekarang</a>
+        </nav>
+    </div>
     <div class="bg-gradient"></div>
     
 
@@ -1704,31 +1726,7 @@
             <p class="total-member-teks">🎭 Total Member 🎭: <strong id="jumlahMember">5</strong> Orang</p>
         </div>
 
-        <!-- FLOATING NAVIGATION -->
-    <div class="floating-menu" aria-label="Navigasi utama">
-        <button
-            class="menu-toggle"
-            id="menuToggle"
-            type="button"
-            aria-label="Buka menu navigasi"
-            aria-expanded="false"
-            aria-controls="menuContent">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <nav class="menu-content" id="menuContent" aria-label="Menu navigasi">
-            <a href="index.html">Beranda</a>
-            <a href="followers.html">Staff &amp; Member</a>
-            <a href="privasi.html">Privasi</a>
-            <a href="syarat.html">Syarat &amp; Ketentuan</a>
-            <a href="index.html#daftar" class="join-btn">Bergabung Sekarang</a>
-        </nav>
-    </div>
-        
-
-        <div class="back-btn">
+       <div class="back-btn">
             <a href="index.html" class="btn-secondary"><i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda</a>
         </div>
      </section>
