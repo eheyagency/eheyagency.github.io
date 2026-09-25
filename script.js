@@ -41,33 +41,43 @@ document.getElementById('formDaftar').addEventListener('submit', e => {
 });
 
 // ==================================================
-// FUNGSI MENU NAVIGASI — SAMA DI SEMUA HALAMAN
+// MENU NAVIGASI — SUDAH DIPASANGKAN DENGAN CSS KAMU
 // ==================================================
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menuToggle');
     const menuContent = document.getElementById('menuContent');
 
-    if (menuToggle && menuContent) {
-        // Klik tombol → buka/tutup
-        menuToggle.addEventListener('click', function(e) {
-            e.stopPropagation();
-            this.classList.toggle('active');
-            menuContent.classList.toggle('active');
-            this.setAttribute('aria-expanded', this.classList.contains('active'));
-        });
-
-        // Klik di luar → tutup
-        document.addEventListener('click', function(e) {
-            if (!menuToggle.contains(e.target) && !menuContent.contains(e.target)) {
-                menuToggle.classList.remove('active');
-                menuContent.classList.remove('active');
-                menuToggle.setAttribute('aria-expanded', 'false');
-            }
-        });
-
-        // Klik di dalam menu → tetap terbuka
-        menuContent.addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
+    if (!menuToggle || !menuContent) {
+        console.log('⚠️ Elemen menu tidak ditemukan!');
+        return;
     }
+    console.log('✅ Menu siap — CSS & JS sudah cocok!');
+
+    // Buka / Tutup saat klik tombol
+    menuToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        // TAMBAH/HAPUS .active di TOMBOL dan di PANEL
+        this.classList.toggle('active');
+        menuContent.classList.toggle('active');
+
+        // Status aksesibilitas
+        const isActive = this.classList.contains('active');
+        this.setAttribute('aria-expanded', isActive);
+    });
+
+    // Klik di luar → tutup
+    document.addEventListener('click', function(e) {
+        if (!menuToggle.contains(e.target) && !menuContent.contains(e.target)) {
+            menuToggle.classList.remove('active');
+            menuContent.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    // Klik di dalam menu → jangan tutup
+    menuContent.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
 });
