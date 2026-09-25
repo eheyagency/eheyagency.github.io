@@ -1035,18 +1035,18 @@ footer {
 }
 
 /* ==================================================
-   MENU — DIKUNCI KANAN TENGAH, TIDAK BERGESER
+   MENU — HP & DEKSTOP SAMA PERSIS
    ================================================== */
+
+/* Wadah — DIKUNCI KANAN TENGAH */
 .floating-menu {
     position: fixed !important;
     top: 50% !important;
     right: 0 !important;
-    left: auto !important; /* ❌ Kunci kiri agar tidak pindah ke atas kiri */
+    left: auto !important;  /* ❌ TIDAK BOLEH KE KIRI */
     bottom: auto !important;
     transform: translateY(-50%) !important;
     z-index: 999999 !important;
-    width: auto !important;
-    height: auto !important;
     margin: 0 !important;
     padding: 0 !important;
 }
@@ -1071,7 +1071,6 @@ footer {
     gap: 5px !important;
     cursor: pointer !important;
     transition: all 0.25s ease !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
 }
 
 .menu-toggle:hover,
@@ -1116,7 +1115,6 @@ footer {
     visibility: hidden !important;
     transition: all 0.25s ease !important;
     backdrop-filter: blur(15px) !important;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4) !important;
     z-index: 999998 !important;
 }
 
@@ -1135,13 +1133,11 @@ footer {
     font-size: 15px !important;
     border-radius: 8px !important;
     margin-bottom: 4px !important;
-    transition: 0.2s ease !important;
 }
 
 .menu-content a:hover {
     background: rgba(250, 204, 21, 0.15) !important;
     color: #facc15 !important;
-    padding-left: 18px !important;
 }
 
 .menu-content a.join-btn {
@@ -1150,15 +1146,30 @@ footer {
     font-weight: bold !important;
     text-align: center !important;
     margin-top: 8px !important;
-    margin-bottom: 0 !important;
 }
 
-.menu-content a.join-btn:hover {
-    background: #facc15 !important;
-    color: #000 !important;
+/* ==================================================
+   DEKSTOP — DIKUNCI SAMA DENGAN HP
+   ================================================== */
+@media (min-width: 769px) {
+    .floating-menu {
+        top: 50% !important;
+        right: 0 !important;
+        left: auto !important;
+        transform: translateY(-50%) !important;
+    }
+    .menu-toggle {
+        right: -26px !important;
+    }
+    .menu-content {
+        right: 65px !important;
+        width: 220px !important;
+    }
 }
 
-/* HP — tombol penuh */
+/* ==================================================
+   HP — TOMBOL PENUH
+   ================================================== */
 @media (max-width: 768px) {
     .menu-toggle {
         right: 0 !important;
@@ -1168,5 +1179,5 @@ footer {
         max-width: 220px !important;
         right: 60px !important;
     }
-   }
+}
    
