@@ -1035,37 +1035,37 @@ footer {
 }
 
 /* ==================================================
-   MENU — HP & DEKSTOP SAMA PERSIS
+   MENU NAVIGASI — SAMA PERSIS: HP & DEKSTOP
+   Digunakan di: index.html, followers.html, privasi.html, syarat.html
    ================================================== */
 
-/* Wadah menu — selalu kanan tengah */
+/* Wadah — Dikunci Kanan Tengah */
 .floating-menu {
     position: fixed !important;
     top: 50% !important;
     right: 0 !important;
     left: auto !important;
     bottom: auto !important;
-    width: 52px !important;
-    height: 52px !important;
     transform: translateY(-50%) !important;
     z-index: 999999 !important;
     margin: 0 !important;
     padding: 0 !important;
 }
 
-/* Tombol bulat 3 garis — desktop & HP sama */
+/* Tombol Bulat — Ukuran Tetap */
 .menu-toggle {
     position: absolute !important;
-    top: 0 !important;
-    right: 0 !important;
+    top: 50% !important;
+    right: -26px !important;
     left: auto !important;
-    transform: none !important;
+    transform: translateY(-50%) !important;
     width: 52px !important;
     height: 52px !important;
     border-radius: 50% !important;
     background: rgba(0, 0, 0, 0.88) !important;
     border: 1px solid rgba(250, 204, 21, 0.45) !important;
     backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -1073,12 +1073,13 @@ footer {
     gap: 5px !important;
     cursor: pointer !important;
     transition: all 0.25s ease !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
 }
 
 .menu-toggle:hover,
 .menu-toggle.active {
     right: 0 !important;
-    transform: scale(1.05) !important;
+    transform: translateY(-50%) scale(1.05) !important;
     background: rgba(15, 15, 15, 0.95) !important;
 }
 
@@ -1101,14 +1102,16 @@ footer {
     transform: translateY(-7px) rotate(-45deg) !important;
 }
 
-/* Panel menu */
+/* Panel Menu — Lebar Tetap */
 .menu-content {
     position: absolute !important;
     top: 50% !important;
-    right: 60px !important;
+    right: 65px !important;
     left: auto !important;
     transform: translateY(-50%) translateX(10px) !important;
     width: 220px !important;
+    min-width: 220px !important;
+    max-width: 220px !important;
     background: rgba(10, 10, 10, 0.96) !important;
     border: 1px solid rgba(250, 204, 21, 0.35) !important;
     border-radius: 16px !important;
@@ -1117,6 +1120,8 @@ footer {
     visibility: hidden !important;
     transition: all 0.25s ease !important;
     backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4) !important;
     z-index: 999998 !important;
 }
 
@@ -1126,7 +1131,7 @@ footer {
     transform: translateY(-50%) translateX(0) !important;
 }
 
-/* Tautan menu */
+/* Tautan Menu */
 .menu-content a {
     display: block !important;
     padding: 12px 15px !important;
@@ -1135,11 +1140,13 @@ footer {
     font-size: 15px !important;
     border-radius: 8px !important;
     margin-bottom: 4px !important;
+    transition: 0.2s ease !important;
 }
 
 .menu-content a:hover {
     background: rgba(250, 204, 21, 0.15) !important;
     color: #facc15 !important;
+    padding-left: 18px !important;
 }
 
 .menu-content a.join-btn {
@@ -1148,60 +1155,31 @@ footer {
     font-weight: bold !important;
     text-align: center !important;
     margin-top: 8px !important;
+    margin-bottom: 0 !important;
 }
 
-/* Desktop — tetap tombol bulat kanan tengah */
-@media (min-width: 769px) {
+.menu-content a.join-btn:hover {
+    background: #facc15 !important;
+    color: #000 !important;
+}
+
+/* ==================================================
+   KUNCI PAKSA — HP & DEKSTOP SAMA PERSIS
+   ================================================== */
+@media (min-width: 1px) {
     .floating-menu {
         top: 50% !important;
         right: 0 !important;
         left: auto !important;
-        width: 52px !important;
-        height: 52px !important;
         transform: translateY(-50%) !important;
     }
-
     .menu-toggle {
-        top: 0 !important;
-        right: 0 !important;
         width: 52px !important;
         height: 52px !important;
-        transform: none !important;
+        right: -26px !important;
     }
-
-    .menu-toggle:hover,
-    .menu-toggle.active {
-        right: 0 !important;
-        transform: scale(1.05) !important;
-    }
-
     .menu-content {
-        top: 50% !important;
-        right: 60px !important;
         width: 220px !important;
+        right: 65px !important;
     }
-}
-
-/* HP — tetap kanan tengah */
-@media (max-width: 768px) {
-    .floating-menu {
-        top: 50% !important;
-        right: 0 !important;
-        width: 52px !important;
-        height: 52px !important;
-        transform: translateY(-50%) !important;
-    }
-
-    .menu-toggle {
-        right: 0 !important;
-        width: 52px !important;
-        height: 52px !important;
-    }
-
-    .menu-content {
-        width: calc(100vw - 90px) !important;
-        max-width: 220px !important;
-        right: 60px !important;
-    }
-}
-
+   }    
