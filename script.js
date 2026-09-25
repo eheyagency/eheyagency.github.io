@@ -41,30 +41,29 @@ document.getElementById('formDaftar').addEventListener('submit', e => {
 });
 
 // ==================================================
-// MENU NAVIGASI — SUDAH DIPASANGKAN DENGAN CSS KAMU
+// MENU NAVIGASI — VERSI PASTI BERJALAN
 // ==================================================
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menuToggle');
     const menuContent = document.getElementById('menuContent');
 
-    if (!menuToggle || !menuContent) {
-        console.log('⚠️ Elemen menu tidak ditemukan!');
-        return;
-    }
-    console.log('✅ Menu siap — CSS & JS sudah cocok!');
+    if (!menuToggle || !menuContent) return;
 
-    // Buka / Tutup saat klik tombol
+    // Klik tombol → buka/tutup
     menuToggle.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
-
-        // TAMBAH/HAPUS .active di TOMBOL dan di PANEL
-        this.classList.toggle('active');
-        menuContent.classList.toggle('active');
-
-        // Status aksesibilitas
-        const isActive = this.classList.contains('active');
-        this.setAttribute('aria-expanded', isActive);
+        
+        // Cek & ganti status
+        const sedangBuka = menuContent.classList.contains('active');
+        
+        if (sedangBuka) {
+            menuToggle.classList.remove('active');
+            menuContent.classList.remove('active');
+        } else {
+            menuToggle.classList.add('active');
+            menuContent.classList.add('active');
+        }
     });
 
     // Klik di luar → tutup
@@ -72,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!menuToggle.contains(e.target) && !menuContent.contains(e.target)) {
             menuToggle.classList.remove('active');
             menuContent.classList.remove('active');
-            menuToggle.setAttribute('aria-expanded', 'false');
         }
     });
 
