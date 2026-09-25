@@ -40,22 +40,34 @@ document.getElementById('formDaftar').addEventListener('submit', e => {
     kirimKeWhatsApp();
 });
 
-// === FLOATING NAVIGATION ===
-const openBtn = document.getElementById('openMenu');
-const closeBtn = document.getElementById('closeMenu');
-const menu = document.getElementById('sideMenu');
-const overlay = document.getElementById('overlay');
+// ==================================================
+// FUNGSI MENU NAVIGASI — SAMA DI SEMUA HALAMAN
+// ==================================================
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menuToggle');
+    const menuContent = document.getElementById('menuContent');
 
-function bukaMenu() {
-  menu.classList.add('active');
-  overlay.classList.add('active');
-}
+    if (menuToggle && menuContent) {
+        // Klik tombol → buka/tutup
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            this.classList.toggle('active');
+            menuContent.classList.toggle('active');
+            this.setAttribute('aria-expanded', this.classList.contains('active'));
+        });
 
-function tutupMenu() {
-  menu.classList.remove('active');
-  overlay.classList.remove('active');
-}
+        // Klik di luar → tutup
+        document.addEventListener('click', function(e) {
+            if (!menuToggle.contains(e.target) && !menuContent.contains(e.target)) {
+                menuToggle.classList.remove('active');
+                menuContent.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
 
-if (openBtn) openBtn.addEventListener('click', bukaMenu);
-if (closeBtn) closeBtn.addEventListener('click', tutupMenu);
-if (overlay) overlay.addEventListener('click', tutupMenu);
+        // Klik di dalam menu → tetap terbuka
+        menuContent.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
+});
