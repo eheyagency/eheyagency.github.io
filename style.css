@@ -1035,30 +1035,28 @@ footer {
 }
 
 /* ==================================================
-   MENU MELAYANG — TETAP DI TENGAH, TIDAK TERGESER
+   MENU — DIKUNCI KANAN TENGAH, TIDAK BERGESER
    ================================================== */
 .floating-menu {
     position: fixed !important;
     top: 50% !important;
     right: 0 !important;
+    left: auto !important; /* ❌ Kunci kiri agar tidak pindah ke atas kiri */
+    bottom: auto !important;
     transform: translateY(-50%) !important;
-    z-index: 999999 !important; /* Selalu di atas segalanya */
+    z-index: 999999 !important;
     width: auto !important;
     height: auto !important;
     margin: 0 !important;
     padding: 0 !important;
-    pointer-events: none !important; /* Biar tidak blokir klik di bawah */
 }
 
-.floating-menu * {
-    pointer-events: auto !important;
-}
-
-/* Tombol Lingkaran */
+/* Tombol Bulat */
 .menu-toggle {
     position: absolute !important;
     top: 50% !important;
     right: -26px !important;
+    left: auto !important;
     transform: translateY(-50%) !important;
     width: 52px !important;
     height: 52px !important;
@@ -1079,8 +1077,8 @@ footer {
 .menu-toggle:hover,
 .menu-toggle.active {
     right: 0 !important;
-    background: rgba(15, 15, 15, 0.95) !important;
     transform: translateY(-50%) scale(1.05) !important;
+    background: rgba(15, 15, 15, 0.95) !important;
 }
 
 /* Garis 3 */
@@ -1107,6 +1105,7 @@ footer {
     position: absolute !important;
     top: 50% !important;
     right: 65px !important;
+    left: auto !important;
     transform: translateY(-50%) translateX(10px) !important;
     width: 220px !important;
     background: rgba(10, 10, 10, 0.96) !important;
@@ -1169,72 +1168,5 @@ footer {
         max-width: 220px !important;
         right: 60px !important;
     }
-}
-
-/* ==================================================
-   FOOTER — TIDAK MENGGESER MENU
-   ================================================== */
-footer {
-    position: relative !important;
-    z-index: 1 !important; /* Lebih rendah dari menu */
-    background: rgba(0, 0, 0, 0.5);
-    padding: 50px 20px 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-brand {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.footer-logo-wrapper {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 15px;
-}
-
-.footer-logo-circle {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #facc15;
-}
-
-.footer-brand h4 {
-    font-size: 22px;
-    color: #facc15;
-    margin-bottom: 5px;
-}
-
-.footer-brand .part-of {
-    font-size: 14px;
-    opacity: 0.7;
-}
-
-.footer-brand .aq-text {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.footer-brand .location {
-    font-size: 14px;
-    opacity: 0.8;
-}
-
-.footer-social-wrapper {
-    text-align: center;
-    margin: 30px 0;
-}
-
-.footer-social-wrapper h5 {
-    margin-bottom: 15px;
-    font-size: 16px;
-}
+   }
+   
