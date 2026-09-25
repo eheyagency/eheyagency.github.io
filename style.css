@@ -1034,145 +1034,207 @@ footer {
   padding: 0 5px;
 }
 
-/* =====================================================
-   FLOATING MENU — EHEY AGENCY
-   Tombol bulat melayang kanan tengah — HP & Dekstop SAMA
-   ===================================================== */
-
-/* Wadah Utama */
-body > .floating-menu {
-    display: block !important;
+/* ==================================================
+   MENU MELAYANG — TETAP DI TENGAH, TIDAK TERGESER
+   ================================================== */
+.floating-menu {
     position: fixed !important;
-    top: 50vh !important;
+    top: 50% !important;
     right: 0 !important;
-    width: 0 !important;
-    height: 0 !important;
+    transform: translateY(-50%) !important;
+    z-index: 999999 !important; /* Selalu di atas segalanya */
+    width: auto !important;
+    height: auto !important;
     margin: 0 !important;
     padding: 0 !important;
-    transform: translateY(-50%) !important;
-    z-index: 2147483647 !important;
-    overflow: visible !important;
+    pointer-events: none !important; /* Biar tidak blokir klik di bawah */
+}
+
+.floating-menu * {
+    pointer-events: auto !important;
 }
 
 /* Tombol Lingkaran */
-body > .floating-menu > .menu-toggle {
-    display: flex !important;
+.menu-toggle {
     position: absolute !important;
-    top: 0 !important;
+    top: 50% !important;
     right: -26px !important;
+    transform: translateY(-50%) !important;
     width: 52px !important;
     height: 52px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: 1px solid rgba(255, 215, 0, 0.45) !important;
     border-radius: 50% !important;
     background: rgba(0, 0, 0, 0.88) !important;
+    border: 1px solid rgba(250, 204, 21, 0.45) !important;
     backdrop-filter: blur(10px) !important;
-    -webkit-backdrop-filter: blur(10px) !important;
+    display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     flex-direction: column !important;
     gap: 5px !important;
     cursor: pointer !important;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.45) !important;
-    transform: translateY(-50%) !important;
-    transition: right 0.25s ease, transform 0.25s ease, background-color 0.25s ease !important;
+    transition: all 0.25s ease !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
 }
 
-body > .floating-menu > .menu-toggle:hover,
-body > .floating-menu > .menu-toggle.active {
+.menu-toggle:hover,
+.menu-toggle.active {
     right: 0 !important;
+    background: rgba(15, 15, 15, 0.95) !important;
     transform: translateY(-50%) scale(1.05) !important;
-    background: rgba(20, 20, 20, 0.95) !important;
 }
 
-/* Garis di dalam tombol */
-body > .floating-menu > .menu-toggle span {
-    display: block !important;
+/* Garis 3 */
+.menu-toggle span {
     width: 22px !important;
     height: 2px !important;
-    background: #ffd700 !important;
-    border-radius: 5px !important;
+    background: #facc15 !important;
+    display: block !important;
     transition: 0.25s ease !important;
 }
 
-body > .floating-menu > .menu-toggle.active span:nth-child(1) {
+.menu-toggle.active span:nth-child(1) {
     transform: translateY(7px) rotate(45deg) !important;
 }
-body > .floating-menu > .menu-toggle.active span:nth-child(2) {
+.menu-toggle.active span:nth-child(2) {
     opacity: 0 !important;
 }
-body > .floating-menu > .menu-toggle.active span:nth-child(3) {
+.menu-toggle.active span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg) !important;
 }
 
 /* Panel Menu */
-body > .floating-menu > .menu-content {
+.menu-content {
     position: absolute !important;
     top: 50% !important;
     right: 65px !important;
+    transform: translateY(-50%) translateX(10px) !important;
     width: 220px !important;
-    padding: 12px !important;
     background: rgba(10, 10, 10, 0.96) !important;
-    border: 1px solid rgba(255, 215, 0, 0.35) !important;
+    border: 1px solid rgba(250, 204, 21, 0.35) !important;
     border-radius: 16px !important;
-    backdrop-filter: blur(15px) !important;
-    -webkit-backdrop-filter: blur(15px) !important;
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5) !important;
+    padding: 15px !important;
     opacity: 0 !important;
     visibility: hidden !important;
-    pointer-events: none !important;
-    transform: translate(10px, -50%) !important;
-    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease !important;
-    z-index: 2147483646 !important;
+    transition: all 0.25s ease !important;
+    backdrop-filter: blur(15px) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4) !important;
+    z-index: 999998 !important;
 }
 
-body > .floating-menu > .menu-content.active {
+.menu-content.active {
     opacity: 1 !important;
     visibility: visible !important;
-    pointer-events: auto !important;
-    transform: translate(0, -50%) !important;
+    transform: translateY(-50%) translateX(0) !important;
 }
 
 /* Tautan Menu */
-body > .floating-menu > .menu-content a {
+.menu-content a {
     display: block !important;
-    padding: 13px 15px !important;
-    color: #ffffff !important;
+    padding: 12px 15px !important;
+    color: #fff !important;
     text-decoration: none !important;
     font-size: 15px !important;
-    font-weight: 500 !important;
-    border-radius: 10px !important;
-    transition: 0.25s ease !important;
+    border-radius: 8px !important;
+    margin-bottom: 4px !important;
+    transition: 0.2s ease !important;
 }
 
-body > .floating-menu > .menu-content a:hover {
-    background: rgba(255, 215, 0, 0.15) !important;
-    color: #ffd700 !important;
-    transform: translateX(3px) !important;
+.menu-content a:hover {
+    background: rgba(250, 204, 21, 0.15) !important;
+    color: #facc15 !important;
+    padding-left: 18px !important;
 }
 
-body > .floating-menu > .menu-content .join-btn {
-    margin-top: 8px !important;
-    text-align: center !important;
-    background: linear-gradient(135deg, #ffd700, #ffb300) !important;
+.menu-content a.join-btn {
+    background: linear-gradient(90deg, #facc15, #eab308) !important;
     color: #000 !important;
     font-weight: bold !important;
-    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.25) !important;
+    text-align: center !important;
+    margin-top: 8px !important;
+    margin-bottom: 0 !important;
 }
 
-body > .floating-menu > .menu-content .join-btn:hover {
-    background: #ffd700 !important;
+.menu-content a.join-btn:hover {
+    background: #facc15 !important;
     color: #000 !important;
 }
 
-/* Responsif HP */
+/* HP — tombol penuh */
 @media (max-width: 768px) {
-    body > .floating-menu > .menu-toggle {
-        right: 0 !important; /* Di HP tombol selalu muncul penuh */
+    .menu-toggle {
+        right: 0 !important;
     }
-    body > .floating-menu > .menu-content {
-        width: min(220px, calc(100vw - 80px)) !important;
+    .menu-content {
+        width: calc(100vw - 90px) !important;
+        max-width: 220px !important;
         right: 60px !important;
     }
+}
+
+/* ==================================================
+   FOOTER — TIDAK MENGGESER MENU
+   ================================================== */
+footer {
+    position: relative !important;
+    z-index: 1 !important; /* Lebih rendah dari menu */
+    background: rgba(0, 0, 0, 0.5);
+    padding: 50px 20px 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-brand {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.footer-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.footer-logo-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #facc15;
+}
+
+.footer-brand h4 {
+    font-size: 22px;
+    color: #facc15;
+    margin-bottom: 5px;
+}
+
+.footer-brand .part-of {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.footer-brand .aq-text {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.footer-brand .location {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.footer-social-wrapper {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.footer-social-wrapper h5 {
+    margin-bottom: 15px;
+    font-size: 16px;
 }
