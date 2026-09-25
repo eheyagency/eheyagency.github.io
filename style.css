@@ -1034,59 +1034,19 @@ footer {
   padding: 0 5px;
 }
 
-/* ==============================================
-   BAGIAN 1: MENGAKTIFKAN KEMBALI NAVIGASI HEADER
-   ============================================== */
-.header-nav {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    position: relative !important;
-    width: auto !important;
-    height: auto !important;
-    overflow: visible !important;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding: 12px 0;
-    margin-top: 5px;
-}
-
-.header-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px 30px;
-    margin: 0;
-    padding: 0;
-}
-
-.header-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s;
-}
-
-.header-nav a:hover {
-    color: #facc15;
-}
-
-
 /* =====================================================
-   BAGIAN 2: FLOATING MENU SEPARUH LAYAR (HP & DESKTOP)
+   FLOATING MENU — EHEY AGENCY
+   Tombol bulat melayang kanan tengah — HP & Dekstop SAMA
    ===================================================== */
 
-/* Wadah Utama Pembungkus Menu (Tetap Melayang Saat Dites/Diusap) */
+/* Wadah Utama */
 body > .floating-menu {
     display: block !important;
     position: fixed !important;
     top: 50vh !important;
-    right: 0 !important; /* Menempel di batas paling kanan layar */
-    bottom: auto !important;
-    left: auto !important;
-    width: 0 !important;  /* Dibuat 0 agar overflow-nya bekerja dari sisi luar */
-    height: 0 !important; 
+    right: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
     margin: 0 !important;
     padding: 0 !important;
     transform: translateY(-50%) !important;
@@ -1094,21 +1054,19 @@ body > .floating-menu {
     overflow: visible !important;
 }
 
-/* Tombol Lingkaran Hamburger (Tampil Separuh: -26px) */
+/* Tombol Lingkaran */
 body > .floating-menu > .menu-toggle {
     display: flex !important;
     position: absolute !important;
     top: 0 !important;
-    right: -26px !important; /* Menyembunyikan separuh badan tombol (Lebar 52px / 2 = 26px) */
-    bottom: auto !important;
-    left: auto !important;
+    right: -26px !important;
     width: 52px !important;
     height: 52px !important;
     margin: 0 !important;
     padding: 0 !important;
-    border: 1px solid rgba(255,255,255,0.25) !important;
+    border: 1px solid rgba(255, 215, 0, 0.45) !important;
     border-radius: 50% !important;
-    background: rgba(0,0,0,0.88) !important;
+    background: rgba(0, 0, 0, 0.88) !important;
     backdrop-filter: blur(10px) !important;
     -webkit-backdrop-filter: blur(10px) !important;
     align-items: center !important;
@@ -1116,17 +1074,16 @@ body > .floating-menu > .menu-toggle {
     flex-direction: column !important;
     gap: 5px !important;
     cursor: pointer !important;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.45) !important;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.45) !important;
     transform: translateY(-50%) !important;
     transition: right 0.25s ease, transform 0.25s ease, background-color 0.25s ease !important;
 }
 
-/* Otomatis Muncul Penuh Saat di-Hover (Desktop) atau Saat Menu Aktif (Di-klik) */
 body > .floating-menu > .menu-toggle:hover,
 body > .floating-menu > .menu-toggle.active {
-    right: 0 !important; /* Bergeser masuk ke dalam layar sepenuhnya */
+    right: 0 !important;
     transform: translateY(-50%) scale(1.05) !important;
-    background: rgba(20,20,20,0.95) !important;
+    background: rgba(20, 20, 20, 0.95) !important;
 }
 
 /* Garis di dalam tombol */
@@ -1134,12 +1091,11 @@ body > .floating-menu > .menu-toggle span {
     display: block !important;
     width: 22px !important;
     height: 2px !important;
-    background: #ffffff !important;
+    background: #ffd700 !important;
     border-radius: 5px !important;
     transition: 0.25s ease !important;
 }
 
-/* Animasi Garis 3 saat Aktif (Menjadi X) */
 body > .floating-menu > .menu-toggle.active span:nth-child(1) {
     transform: translateY(7px) rotate(45deg) !important;
 }
@@ -1150,26 +1106,25 @@ body > .floating-menu > .menu-toggle.active span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg) !important;
 }
 
-/* Panel Menu yang Terbuka */
+/* Panel Menu */
 body > .floating-menu > .menu-content {
     position: absolute !important;
     top: 50% !important;
-    right: 65px !important; /* Muncul pas di sebelah kiri tombol bulat */
-    left: auto !important;
-    bottom: auto !important;
+    right: 65px !important;
     width: 220px !important;
-    padding: 10px !important;
-    background: rgba(10,10,10,0.96) !important;
-    border: 1px solid rgba(255,255,255,0.15) !important;
+    padding: 12px !important;
+    background: rgba(10, 10, 10, 0.96) !important;
+    border: 1px solid rgba(255, 215, 0, 0.35) !important;
     border-radius: 16px !important;
     backdrop-filter: blur(15px) !important;
     -webkit-backdrop-filter: blur(15px) !important;
-    box-shadow: 0 10px 35px rgba(0,0,0,0.5) !important;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5) !important;
     opacity: 0 !important;
     visibility: hidden !important;
     pointer-events: none !important;
     transform: translate(10px, -50%) !important;
     transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease !important;
+    z-index: 2147483646 !important;
 }
 
 body > .floating-menu > .menu-content.active {
@@ -1179,35 +1134,43 @@ body > .floating-menu > .menu-content.active {
     transform: translate(0, -50%) !important;
 }
 
-/* Link di dalam Panel Menu Melayang */
+/* Tautan Menu */
 body > .floating-menu > .menu-content a {
     display: block !important;
     padding: 13px 15px !important;
     color: #ffffff !important;
     text-decoration: none !important;
     font-size: 15px !important;
-    font-weight: 600 !important;
+    font-weight: 500 !important;
     border-radius: 10px !important;
     transition: 0.25s ease !important;
 }
 
 body > .floating-menu > .menu-content a:hover {
-    background: rgba(255,255,255,0.1) !important;
+    background: rgba(255, 215, 0, 0.15) !important;
+    color: #ffd700 !important;
     transform: translateX(3px) !important;
 }
 
 body > .floating-menu > .menu-content .join-btn {
-    margin-top: 6px !important;
+    margin-top: 8px !important;
     text-align: center !important;
-    background: linear-gradient(135deg, #25f4ee, #fe2c55) !important;
-    color: #ffffff !important;
-    box-shadow: 0 5px 15px rgba(254,44,85,0.25) !important;
+    background: linear-gradient(135deg, #ffd700, #ffb300) !important;
+    color: #000 !important;
+    font-weight: bold !important;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.25) !important;
 }
 
-/* =====================================================
-   BAGIAN 3: RESPONSIVE HP (MEDIA QUERY)
-   ===================================================== */
+body > .floating-menu > .menu-content .join-btn:hover {
+    background: #ffd700 !important;
+    color: #000 !important;
+}
+
+/* Responsif HP */
 @media (max-width: 768px) {
+    body > .floating-menu > .menu-toggle {
+        right: 0 !important; /* Di HP tombol selalu muncul penuh */
+    }
     body > .floating-menu > .menu-content {
         width: min(220px, calc(100vw - 80px)) !important;
         right: 60px !important;
