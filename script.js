@@ -41,28 +41,21 @@ document.getElementById('formDaftar').addEventListener('submit', e => {
 });
 
 // === FLOATING NAVIGATION ===
-(() => {
-    const toggle = document.getElementById('menuToggle');
-    const content = document.getElementById('menuContent');
+const openBtn = document.getElementById('openMenu');
+const closeBtn = document.getElementById('closeMenu');
+const menu = document.getElementById('sideMenu');
+const overlay = document.getElementById('overlay');
 
-    if (!toggle || !content) return;
+function bukaMenu() {
+  menu.classList.add('active');
+  overlay.classList.add('active');
+}
 
-    toggle.addEventListener('click', () => {
-        const isOpen = toggle.classList.toggle('active');
-        content.classList.toggle('active', isOpen);
-        toggle.setAttribute('aria-expanded', String(isOpen));
-        toggle.setAttribute(
-            'aria-label',
-            isOpen ? 'Tutup menu navigasi' : 'Buka menu navigasi'
-        );
-    });
+function tutupMenu() {
+  menu.classList.remove('active');
+  overlay.classList.remove('active');
+}
 
-    document.addEventListener('click', (event) => {
-        if (!event.target.closest('.floating-menu')) {
-            toggle.classList.remove('active');
-            content.classList.remove('active');
-            toggle.setAttribute('aria-expanded', 'false');
-            toggle.setAttribute('aria-label', 'Buka menu navigasi');
-        }
-    });
-})();
+if (openBtn) openBtn.addEventListener('click', bukaMenu);
+if (closeBtn) closeBtn.addEventListener('click', tutupMenu);
+if (overlay) overlay.addEventListener('click', tutupMenu);
