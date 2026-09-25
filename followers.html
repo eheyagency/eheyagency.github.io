@@ -1704,25 +1704,7 @@
             <p class="total-member-teks">🎭 Total Member 🎭: <strong id="jumlahMember">5</strong> Orang</p>
         </div>
 
-        <div class="back-btn">
-            <a href="index.html" class="btn-secondary"><i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda</a>
-        </div>
-     </section>
-
-    <!-- FOOTER - TIDAK DIUBAH -->
-    <footer class="simple-footer">
-        <p>© 2026 EHEY AGENCY — Part of AL QAQA MANAGEMENT</p>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const daftarKartu = document.querySelectorAll('.follower-card');
-            document.getElementById('jumlahMember').textContent = daftarKartu.length;
-            // Sisa fitur dihapus — gambar & link sudah diatur manual langsung di HTML
-        });
-    </script>
-   
-    <!-- FLOATING NAVIGATION -->
+        <!-- FLOATING NAVIGATION -->
     <div class="floating-menu" aria-label="Navigasi utama">
         <button
             class="menu-toggle"
@@ -1744,7 +1726,27 @@
             <a href="index.html#daftar" class="join-btn">Bergabung Sekarang</a>
         </nav>
     </div>
+        
 
+        <div class="back-btn">
+            <a href="index.html" class="btn-secondary"><i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda</a>
+        </div>
+     </section>
+
+    <!-- FOOTER - TIDAK DIUBAH -->
+    <footer class="simple-footer">
+        <p>© 2026 EHEY AGENCY — Part of AL QAQA MANAGEMENT</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const daftarKartu = document.querySelectorAll('.follower-card');
+            document.getElementById('jumlahMember').textContent = daftarKartu.length;
+            // Sisa fitur dihapus — gambar & link sudah diatur manual langsung di HTML
+        });
+    </script>
+   
+    
     <script>
         (() => {
             const toggle = document.getElementById('menuToggle');
