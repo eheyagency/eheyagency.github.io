@@ -1182,4 +1182,14 @@ footer {
         width: 220px !important;
         right: 65px !important;
     }
-   }    
+   }
+   /* ==================================================
+   PAKSA MENU MUNCUL — TARUH PALING BAWAH!
+   ================================================== */
+.menu-content.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(-50%) translateX(0) !important;
+    transition: all 0.25s ease !important;
+   }
+   
