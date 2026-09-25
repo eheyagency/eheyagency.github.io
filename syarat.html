@@ -145,23 +145,54 @@
 </head>
 <body>
     <!-- ==================================================
-   MENU NAVIGASI — SAMA DI SEMUA HALAMAN
-   ================================================== -->
-<div class="floating-menu" aria-label="Navigasi utama">
-    <button class="menu-toggle" id="menuToggle" type="button"
-            aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="menuContent">
+   M<!-- =========================================
+     NAVIGASI MELAYANG
+========================================= -->
+<div class="floating-nav">
+
+    <!-- Tombol Hamburger -->
+    <button
+        class="floating-nav-toggle"
+        id="floatingNavToggle"
+        type="button"
+        aria-label="Buka menu navigasi"
+        aria-expanded="false"
+    >
         <span></span>
         <span></span>
         <span></span>
     </button>
 
-    <nav class="menu-content" id="menuContent" aria-label="Menu utama">
-        <a href="index.html">Beranda</a>
-        <a href="followers.html">Staff & Member</a>
-        <a href="privasi.html">Privasi</a>
-        <a href="syarat.html">Syarat & Ketentuan</a>
-        <a href="index.html#daftar" class="join-btn">Bergabung Sekarang</a>
+    <!-- Panel Menu -->
+    <nav class="floating-nav-menu" id="floatingNavMenu" aria-hidden="true">
+
+        <a href="index.html" class="floating-nav-link">
+            <span class="nav-icon">⌂</span>
+            <span>Halaman Utama</span>
+        </a>
+
+        <a href="followers.html" class="floating-nav-link">
+            <span class="nav-icon">♟</span>
+            <span>Staff &amp; Member</span>
+        </a>
+
+        <a href="privasi.html" class="floating-nav-link">
+            <span class="nav-icon">🔒</span>
+            <span>Kebijakan</span>
+        </a>
+
+        <a href="syarat.html" class="floating-nav-link">
+            <span class="nav-icon">📄</span>
+            <span>Ketentuan</span>
+        </a>
+
+        <a href="index.html#daftar" class="floating-nav-join">
+            <span>AYO GABUNG</span>
+            <span class="join-arrow">→</span>
+        </a>
+
     </nav>
+
 </div>
     <div class="bg-gradient"></div>
     <!-- Ikon muncul di bagian atas halaman → syarat TikTok Developer -->
