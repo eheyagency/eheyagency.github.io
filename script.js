@@ -54,81 +54,12 @@ if (formDaftar) {
     });
 }
 
-// =========================================================
-// 3. FLOATING NAVIGATION (TETAP AMAN)
-// =========================================================
-document.addEventListener("DOMContentLoaded", function () {
+function tampilkanIzin() {
+    document.getElementById('halaman-web').classList.add('hidden');
+    document.getElementById('layar-izin-tiktok').classList.remove('hidden');
+}
 
-    const floatingNav = document.querySelector(".floating-nav");
-    const toggleButton = document.getElementById("floatingNavToggle");
-    const menu = document.getElementById("floatingNavMenu");
-
-    if (!floatingNav || !toggleButton || !menu) {
-        return;
-    }
-
-    /* BUKA / TUTUP MENU */
-    toggleButton.addEventListener("click", function (event) {
-        event.stopPropagation();
-        const isActive = floatingNav.classList.toggle("active");
-
-        toggleButton.setAttribute("aria-expanded", isActive ? "true" : "false");
-        toggleButton.setAttribute("aria-label", isActive ? "Tutup menu navigasi" : "Buka menu navigasi");
-        menu.setAttribute("aria-hidden", isActive ? "false" : "true");
-    });
-
-    /* KLIK DI LUAR MENU */
-    document.addEventListener("click", function (event) {
-        if (!floatingNav.contains(event.target)) {
-            floatingNav.classList.remove("active");
-            toggleButton.setAttribute("aria-expanded", "false");
-            toggleButton.setAttribute("aria-label", "Buka menu navigasi");
-            menu.setAttribute("aria-hidden", "true");
-        }
-    });
-
-    /* ESC UNTUK MENUTUP MENU */
-    document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-            floatingNav.classList.remove("active");
-            toggleButton.setAttribute("aria-expanded", "false");
-            toggleButton.setAttribute("aria-label", "Buka menu navigasi");
-            menu.setAttribute("aria-hidden", "true");
-            toggleButton.focus();
-        }
-    });
-
-    /* KLIK LINK MENU */
-    const menuLinks = menu.querySelectorAll("a");
-    menuLinks.forEach(function (link) {
-        link.addEventListener("click", function () {
-            floatingNav.classList.remove("active");
-            toggleButton.setAttribute("aria-expanded", "false");
-            menu.setAttribute("aria-hidden", "true");
-        });
-    });
-});
-
-/**
- * Memulai alur otorisasi Sandbox Login Kit TikTok
- */
-function startTikTokLogin() {
-    // Kredensial sandbox aktif EHEY AGENCY Anda
-    const clientKey = 'sbawbsenpxelimpj3k'; 
-    const redirectUri = 'https://eheyagency.web.id'; 
-    const scope = 'user.info.basic';
-    
-    // Membuat state acak unik untuk keamanan validasi CSRF
-    const state = 'ehey_secure_' + Math.random().toString(36).substring(2, 15);
-
-    // Endpoint URL Gerbang Otorisasi V2 Resmi TikTok
-    const tiktokAuthUrl = `https://tiktok.com` +
-                          `?client_key=${clientKey}` +
-                          `&scope=${scope}` +
-                          `&response_type=code` +
-                          `&redirect_uri=${encodeURIComponent(redirectUri)}` +
-                          `&state=${state}`;
-
-    // Alihkan halaman pengguna menuju gerbang masuk TikTok
-    window.location.href = tiktokAuthUrl;
+function prosesCallback() {
+    document.getElementById('layar-izin-tiktok').classList.add('hidden');
+    document.getElementById('halaman-sukses').classList.remove('hidden');
 }
