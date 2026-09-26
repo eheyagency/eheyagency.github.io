@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>EHEY AGENCY - Login Test</title>
+</head>
+<body style="font-family: Arial, sans-serif; text-align: center; padding-top: 100px;">
+
+    <h2>EHEY AGENCY - PENGUJIAN LOGIN TIKTOK</h2>
+    <p>Silakan klik tombol di bawah untuk menguji layar persetujuan sandbox.</p>
+    
+    <button onclick="jalankanLogin()" style="padding: 15px 35px; font-size: 16px; background-color: #000; color: #fff; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">
+        Masuk dengan TikTok
+    </button>
+
+<script>
+function jalankanLogin() {
+    const clientKey = 'sbawbsenpxpj3k'; 
+    const redirectUri = 'https://eheyagency.web.id'; 
+    const scope = 'user.info.basic';
+    const state = 'ehey_agency_secure_state_123';
+
+    // ENDPOINT RESMI V2 YANG WAJIB DIGUNAKAN
+    const url = 'https://tiktok.com' +
+                '?client_key=' + clientKey +
+                '&scope=' + scope +
+                '&response_type=code' +
+                '&redirect_uri=' + encodeURIComponent(redirectUri) +
+                '&state=' + state;
+
+    // Membuka URL di tab yang sama
+    window.location.href = url;
+}
+</script>
+
+</body>
+</html>
