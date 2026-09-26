@@ -1040,17 +1040,29 @@ footer {
 ========================================================= */
 
 .floating-nav {
-    position: fixed;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    z-index: 99999;
+    position: fixed !important; /* Memaksa menu tetap melayang di kanan */
+    top: 50% !important;
+    right: 0 !important;
+    transform: translateY(-50%) !important;
+    z-index: 999999 !important; /* Memastikan berada di lapisan paling atas */
 
-    width: 62px;
-    height: 62px;
+    width: 62px !important;
+    height: 62px !important;
 
     pointer-events: none;
 }
+
+/* Biarkan konten di dalamnya tetap bisa diklik */
+.floating-nav-toggle, 
+.floating-nav-menu {
+    pointer-events: auto;
+}
+
+/* Pastikan saat menu aktif, ukurannya melebar di kanan dan tidak merusak layout */
+.floating-nav.active {
+    width: auto !important;
+    height: auto !important;
+   }
 
 /* =========================================================
    TOMBOL HAMBURGER
