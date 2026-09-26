@@ -109,32 +109,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const tiktokButton = document.getElementById("btn-tiktok-login");
+function redirectToTikTok() {
+    // 1. GANTI DENGAN KREDENSIAL SANDBOX ANDA (Ambil dari tab App Details)
+    const clientKey = 'sbawbsenpxelimpj3k'; 
+    
+    // 2. GANTI DENGAN REDIRECT URI YANG ANDA DAFTARKAN (Sesuai di screenshot Anda)
+    const redirectUri = 'https://eheyagency.web.id'; 
+    
+    // 3. Tentukan Scope/Izin data yang diminta (user.info.basic adalah standar dasar)
+    const scope = 'user.info.basic';
+    
+    // 4. State digunakan untuk keamanan anti-CSRF (isikan teks acak bebas)
+    const state = 'ehey_agency_secure_state_123';
 
-  if (tiktokButton) {
-    tiktokButton.addEventListener("click", function () {
-      // ✅ Client Key kamu = dipakai sebagai client_id
-      const clientId = "sbawbsenpxelimpj3k";
-      
-      // ✅ Redirect URI MURNI — TIDAK ada tambahan apapun
-      const redirectUri = encodeURIComponent("https://eheyagency.web.id");
-      
-      const scope = "user.info.basic,user.info.profile";
-      const responseType = "code";
-      const state = "ehey_agency_123";
+    // Menyusun URL Otorisasi Resmi TikTok v2
+    const tiktokAuthUrl = `https://tiktok.com` +
+                          `?client_key=${clientKey}` +
+                          `&scope=${scope}` +
+                          `&response_type=code` +
+                          `&redirect_uri=${encodeURIComponent(redirectUri)}` +
+                          `&state=${state}`;
 
-      // ✅ Susun URL BENAR
-      const tiktokAuthUrl = 
-        "https://www.tiktok.com/auth/authorize/" +
-        "?client_id=" + clientId +
-        "&scope=" + scope +
-        "&redirect_uri=" + redirectUri +
-        "&response_type=" + responseType +
-        "&state=" + state;
-
-      console.log("🔗 URL Benar:", tiktokAuthUrl);
-      window.location.href = tiktokAuthUrl;
-    });
-  }
-});
+    // Alihkan halaman ke TikTok login
+    window.location.href = tiktokAuthUrl;
+}
