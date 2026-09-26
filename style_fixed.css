@@ -1,0 +1,1366 @@
+/* ==================================================
+   BAGIAN DASAR — DIPAKAI KEDUA HALAMAN
+   ================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    color: #fff;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.bg-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #000000 0%, #1a1a0f 50%, #0f0f00 100%);
+    z-index: -1;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.yellow, .kuning-teks {
+    color: #facc15;
+}
+
+/* ==================================================
+   BAGIAN INDEX.HTML — TAMPILAN UTAMA & FORM
+   ================================================== */
+
+/* HEADER */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+.header-logo-left, .header-logo-right {
+    flex: 0 0 90px;
+}
+.header-logo-right { text-align: right; }
+
+.logo-round {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #facc15;
+}
+
+.header-text-center {
+    flex: 1;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.ehey-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #facc15;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.part-of-line {
+    color: #ffffff;
+    font-size: 16px;
+    margin: 5px 0;
+    opacity: 0.8;
+}
+
+.alqaqa-title {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.header-nav {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 12px 0;
+    margin-top: 5px;
+}
+
+.header-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.header-nav a:hover {
+    color: #facc15;
+}
+
+.btn-join-header {
+    background: linear-gradient(to right, #facc15, #eab308);
+    color: #000 !important;
+    padding: 10px 25px !important;
+    border-radius: 8px;
+    font-weight: bold !important;
+}
+
+/* TEKS BERJALAN */
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    background: rgba(250, 204, 21, 0.1);
+    padding: 10px 0;
+    margin: 10px 0 20px;
+}
+
+.marquee-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 15s linear infinite;
+    color: #facc15;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* LOGO BERKEDIP */
+.blinking-logo {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.blinking-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #facc15;
+    object-fit: cover;
+    animation: blink 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes blink {
+    0% { opacity: 0.4; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 30px 20px 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, #facc15, #eab308);
+    color: #000;
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: transform 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #facc15;
+    border: 2px solid #facc15;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background: #facc15;
+    color: #000;
+}
+
+/* STATISTIK */
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(250, 204, 21, 0.3);
+    transition: transform 0.3s;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    border-color: #facc15;
+}
+
+.stat-item h3 {
+    font-size: 36px;
+    color: #facc15;
+}
+
+.stat-link {
+    display: block;
+}
+
+/* JUDUL BAGIAN */
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    opacity: 0.7;
+}
+
+/* GALERI KREATOR */
+.creators-section {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.creators-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.creator-card {
+    flex: 1 1 220px;
+    max-width: 280px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    border: 1px solid rgba(250, 204, 21, 0.2);
+    transition: all 0.3s;
+}
+
+.creator-card:hover {
+    transform: translateY(-5px);
+    border-color: #facc15;
+    background: rgba(250, 204, 21, 0.05);
+}
+
+.creator-card .nomor-urut {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #facc15, #eab308);
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 15px;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(250, 204, 21, 0.4);
+}
+
+.creator-avatar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #facc15;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.creator-info h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.role-badge {
+    display: inline-block;
+    background: rgba(250, 204, 21, 0.2);
+    color: #facc15;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.creator-follow {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    border: 1px solid #facc15;
+    transition: all 0.3s;
+}
+
+.creator-follow:hover {
+    background: #facc15;
+    color: #000;
+}
+
+.view-all-btn {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* KEUNGGULAN */
+section {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid rgba(250, 204, 21, 0.2);
+    transition: all 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: #facc15;
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(250, 204, 21, 0.15);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: #facc15;
+    margin-bottom: 20px;
+}
+
+.feature-card h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    opacity: 0.7;
+    font-size: 15px;
+}
+
+/* FORM PENDAFTARAN */
+.join-section {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.form-container {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 35px;
+    border: 1px solid rgba(250, 204, 21, 0.2);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(250, 204, 21, 0.3);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 15px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #facc15;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    margin-top: 10px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.checkbox-agree {
+    margin: 25px 0;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to right, #facc15, #eab308);
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.submit-btn:hover {
+    transform: scale(1.02);
+}
+
+/* FOOTER INDEX */
+footer {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 50px 20px 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-brand {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.footer-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.footer-logo-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #facc15;
+}
+
+.footer-brand h4 {
+    font-size: 22px;
+    color: #facc15;
+    margin-bottom: 5px;
+}
+
+.footer-brand .part-of {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.footer-brand .aq-text {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.footer-brand .location {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.footer-social-wrapper {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.footer-social-wrapper h5 {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 22px;
+}
+
+.social-icons a {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(250, 204, 21, 0.1);
+    color: #facc15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.social-icons a:hover {
+    background: #facc15;
+    color: #000;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0.6;
+    font-size: 14px;
+}
+
+/* ==================================================
+   BAGIAN kreator.HTML — DAFTAR KREATOR / MEMBER
+   ================================================== */
+
+.header-kreator {
+    width: 100%;
+    padding: 20px 15px;
+    background:
+        radial-gradient(ellipse at top left, rgba(139, 92, 246, 0.25), transparent 50%),
+        radial-gradient(ellipse at top right, rgba(250, 204, 21, 0.15), transparent 50%),
+        linear-gradient(135deg, #1a1033 0%, #0f0a1f 50%, #000000 100%);
+    border-bottom: 1px solid rgba(250, 204, 21, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.header-inner-kreator {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+
+.logo-aq-wrap, .logo-ehey-wrap {
+    flex: 0 0 auto;
+    text-align: center;
+}
+.logo-aq-wrap { text-align: left; }
+.logo-ehey-wrap { text-align: right; }
+
+.logo-aq-img, .logo-ehey-img {
+    width: 9vw;
+    height: 9vw;
+    max-width: 110px;
+    max-height: 110px;
+    min-width: 60px;
+    min-height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #facc15;
+}
+
+.header-text-center-kreator {
+    flex: 1;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.judul-ehey {
+    font-size: clamp(22px, 5vw, 42px);
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 2px;
+    margin: 0 0 4px;
+    text-shadow: 0 0 15px rgba(250, 204, 21, 0.4);
+}
+
+.part-of-teks {
+    font-size: clamp(13px, 2.5vw, 18px);
+    color: #facc15;
+    font-style: italic;
+    margin: 0 0 5px;
+    letter-spacing: 2px;
+}
+
+.judul-alqaqa {
+    font-size: clamp(18px, 4vw, 32px);
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 15px;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 10px rgba(96, 165, 250, 0.4);
+}
+
+.judul-daftar-besar {
+    font-size: clamp(16px, 3.5vw, 30px);
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 6px;
+}
+
+.sub-teks {
+    font-size: clamp(12px, 2vw, 16px);
+    color: #cccccc;
+    margin: 0;
+}
+
+.kreator-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+}
+
+.kreator-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.follower-card {
+    display: block;
+    background: white;
+    border: 1px solid rgba(250, 204, 21, 0.25);
+    border-radius: 16px;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.follower-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+}
+
+.follower-card .nomor-urut {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: linear-gradient(135deg, #facc15, #eab308);
+    color: #000;
+    font-weight: bold;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(250, 204, 21, 0.35);
+}
+
+.foto-tempat {
+    margin-bottom: 10px;
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    border-radius: 50%;
+    background: rgba(250, 204, 21, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #facc15;
+    border: 2px dashed rgba(250, 204, 21, 0.3);
+}
+
+.follower-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid gold;
+}
+
+/* Teks kartu member versi desktop */
+.username-tiktok {
+    font-weight: 600;
+    color: #fe2c55;
+    margin: 4px 0;
+    font-size: 0.9rem;
+}
+
+.nama-sendiri {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #000000;
+    margin: 2px 0 10px;
+}
+
+.jabatan-member {
+    display: inline-block;
+    background: rgba(250, 204, 21, 0.15);
+    color: #ff0000;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.stat-member {
+    font-size: 11px;
+    color: #888;
+    margin: 0;
+}
+
+.frame-tombol {
+    display: inline-block;
+    margin-top: 4px;
+}
+
+.btn-follow {
+    display: inline-block;
+    background: linear-gradient(135deg, #fe2c55, #25f4ee);
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-follow:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(254, 44, 85, 0.3);
+}
+
+.btn-follow i {
+    margin-right: 6px;
+}
+
+.total-member-box {
+    text-align: center;
+    margin: 30px 0 10px;
+    padding: 15px;
+    background: rgba(250, 204, 21, 0.08);
+    border-radius: 12px;
+    border: 1px solid rgba(250, 204, 21, 0.2);
+}
+
+.total-member-teks {
+    font-size: 18px;
+}
+
+.back-btn {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.simple-footer {
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid rgba(250, 204, 21, 0.2);
+    color: #999;
+    font-size: 14px;
+}
+
+/* =========================================================
+   RESPONSIF HP (HANYA BERLAKU DI LAYAR MAKSIMAL 600PX)
+   ========================================================= */
+@media (max-width: 600px) {
+    .header-inner-kreator {
+        flex-wrap: nowrap !important;
+        gap: 5px;
+    }
+    .logo-aq-img, .logo-ehey-img {
+        width: 12vw;
+        height: 12vw;
+        min-width: 50px;
+        min-height: 50px;
+    }
+    .judul-ehey { letter-spacing: 1px; }
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    .kreator-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    .foto-tempat, .follower-avatar {
+        width: 80px;
+        height: 80px;
+    }
+
+    .username-tiktok {
+        font-size: 0.9rem;
+        color: #ffffff;
+        margin: 6px 0 4px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
+
+    .nama-sendiri {
+        font-size: 1.05rem;
+        font-weight: bold;
+        color: #000000;
+        margin: 0 0 6px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
+
+    .jabatan-member {
+        font-size: 0.8rem;
+        color: #ff0000;
+        margin: 0 0 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+        padding: 4px 10px;
+        border-radius: 12px;
+        background: rgba(0,0,0,0.25);
+        display: inline-block;
+    }
+
+    .frame-tombol {
+        background: #000;
+        border-radius: 20px;
+        padding: 6px 14px;
+        display: inline-block;
+        margin-top: 4px;
+    }
+
+    .btn-follow {
+        color: #fff !important;
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background: transparent;
+    }
+
+    .btn-follow i {
+        font-size: 0.95rem;
+        margin-right: 0;
+    }
+
+    .follower-card {
+        padding: 18px 12px;
+        box-sizing: border-box;
+    }
+
+    .follower-info {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 8px;
+    }
+}
+
+/* =========================================================
+   FLOATING NAVIGATION - ISOLASI TOTAL (KEDUA VERSI MOBILE/DESKTOP)
+   ========================================================= */
+body .floating-nav {
+    position: fixed !important;
+    top: 50% !important;
+    right: 0 !important;
+    left: auto !important;
+    bottom: auto !important;
+    transform: translateY(-50%) !important;
+    z-index: 999999 !important;
+    display: block !important;
+    width: 62px !important;
+    height: 62px !important;
+    text-align: left !important;
+    pointer-events: none !important;
+}
+
+body .floating-nav.active {
+    width: auto !important;
+    height: auto !important;
+}
+
+body .floating-nav-toggle {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 5px !important;
+    
+    position: absolute !important;
+    top: 50% !important;
+    right: -31px !important;
+    width: 62px !important;
+    height: 62px !important;
+    transform: translateY(-50%) !important;
+    
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    border-radius: 50% !important;
+    background: linear-gradient(145deg, rgba(30, 30, 30, 0.97), rgba(5, 5, 5, 0.97)) !important;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 8px 30px rgba(0, 0, 0, 0.55), 0 0 18px rgba(255, 255, 255, 0.08) !important;
+    
+    cursor: pointer !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    pointer-events: auto !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transition: right 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+body .floating-nav.active .floating-nav-toggle {
+    right: 12px !important;
+}
+
+body .floating-nav-toggle span {
+    display: block !important;
+    width: 23px !important;
+    height: 2px !important;
+    border-radius: 10px !important;
+    background: #ffffff !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease !important;
+}
+
+body .floating-nav.active .floating-nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg) !important; }
+body .floating-nav.active .floating-nav-toggle span:nth-child(2) { opacity: 0 !important; width: 0 !important; }
+body .floating-nav.active .floating-nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg) !important; }
+
+body .floating-nav-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    
+    position: absolute !important;
+    top: 50% !important;
+    right: 0 !important;
+    left: auto !important;
+    width: 270px !important;
+    padding: 15px !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 20px !important;
+    background: linear-gradient(145deg, rgba(20, 20, 20, 0.98), rgba(5, 5, 5, 0.98)) !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 0, 0, 0.4) !important;
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+    
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translate(100%, -50%) scale(0.96) !important;
+    transform-origin: right center !important;
+    transition: transform 0.35s ease, opacity 0.25s ease, visibility 0.25s ease !important;
+}
+
+body .floating-nav.active .floating-nav-menu {
+    transform: translate(-82px, -50%) scale(1) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+body .floating-nav-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    width: 100% !important;
+    min-height: 48px !important;
+    padding: 10px 13px !important;
+    margin: 0 0 6px 0 !important;
+    box-sizing: border-box !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-family: 'Segoe UI', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    border-radius: 12px !important;
+    background: transparent !important;
+}
+
+body .floating-nav-link:hover {
+    background: rgba(255, 255, 255, 0.09) !important;
+    transform: translateX(-3px) !important;
+}
+
+body .floating-nav-link i, 
+body .floating-nav-link .fa-brands, 
+body .floating-nav-link .fa-solid {
+    font-family: "Font Awesome 6 Brands", "Font Awesome 6 Free", sans-serif !important;
+    font-style: normal !important;
+    font-weight: 900 !important;
+    font-size: 16px !important;
+    color: #ffffff !important;
+    display: inline-block !important;
+    text-align: center !important;
+    width: 20px !important;
+}
+
+body .nav-icon {
+    width: 28px !important;
+    height: 28px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 8px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    font-size: 15px !important;
+    flex-shrink: 0 !important;
+}
+
+body .floating-nav-join {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    min-height: 48px !important;
+    padding: 0 15px !important;
+    margin: 10px 0 0 0 !important;
+    box-sizing: border-box !important;
+    border-radius: 12px !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-family: 'Segoe UI', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 800 !important;
+    background: linear-gradient(135deg, #111111, #2a2a2a) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+}
+
+body .floating-nav-join:hover {
+    transform: translateY(-2px) !important;
+    background: linear-gradient(135deg, #222222, #3a3a3a) !important;
+}
+
+body .floating-nav::before {
+    content: "" !important;
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(0, 0, 0, 0.28) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    z-index: -1 !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease !important;
+}
+
+body .floating-nav.active::before {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+@media (max-width: 768px) {
+    body .floating-nav { width: 56px !important; height: 56px !important; }
+    body .floating-nav-toggle { width: 56px !important; height: 56px !important; right: -28px !important; }
+    body .floating-nav-toggle span { width: 21px !important; }
+    body .floating-nav.active .floating-nav-toggle { right: 10px !important; }
+    body .floating-nav-menu { width: 245px !important; padding: 13px !important; }
+    body .floating-nav.active .floating-nav-menu { transform: translate(-70px, -50%) scale(1) !important; }
+}
+
+@media (max-width: 480px) {
+    body .floating-nav { width: 52px !important; height: 52px !important; }
+    body .floating-nav-toggle { width: 52px !important; height: 52px !important; right: -26px !important; }
+    body .floating-nav-toggle span { width: 20px !important; }
+    body .floating-nav.active .floating-nav-toggle { right: 8px !important; }
+    body .floating-nav-menu { width: min(240px, calc(100vw - 30px)) !important; padding: 12px !important; }
+    body .floating-nav.active .floating-nav-menu { transform: translate(-62px, -50%) scale(1) !important; }
+}
+
+/* Container Utama */
+.tiktok-login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+}
+
+/* Tombol Utama Standar TikTok */
+.tiktok-brand-btn {
+    background-color: #010101;
+    color: #ffffff;
+    border: none;
+    padding: 0 24px;
+    height: 48px; /* Tinggi standar komponen tombol modern */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600; /* Font semi-bold sesuai branding TikTok */
+    letter-spacing: -0.3px;
+    border-radius: 4px; /* Sudut agak tajam khas tombol korporat TikTok */
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    max-width: 320px; /* Batas lebar tombol agar proporsional di HP */
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Penataan Jarak Ikon */
+.tiktok-btn-icon {
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+/* Penataan Teks */
+.tiktok-btn-text {
+    line-height: 1;
+}
+
+/* Efek Interaksi Hover (Saat disentuh/diarahkan kursor) */
+@media (hover: hover) {
+    .tiktok-brand-btn:hover {
+        background-color: #121212;
+        /* Efek kilatan neon cyan dan magenta khas logo TikTok pada border bawah luar */
+        box-shadow: -2px 0 0 #25f4ee, 2px 0 0 #fe2c55;
+    }
+}
+
+/* Efek Saat Tombol Ditekan/Klik (Active State) */
+.tiktok-brand-btn:active {
+    transform: scale(0.98); /* Sedikit mengecil memberikan efek feedback menekan tombol fisik */
+    background-color: #1a1a1a;
+}
+
+ /* Body khusus halaman/area login — tidak menimpa layout global */
+body:has(.main-box) {
+     font-family: sans-serif;
+     background: #f8f9fa;
+     margin: 0;
+     padding: 15px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
+     box-sizing: border-box;
+}
+
+/* ✅ KOTAK UTAMA — Responsive HP + Desktop */
+.main-box {
+    background: #000000;
+    border: 2px solid #d4af37;
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
+}
+
+.box {
+    padding: 24px 20px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 360px;
+    width: 100%;
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+/* ✅ TOMBOL LOGIN — TETAP SAMA */
+.btn-tiktok-login {
+    background: #000000;
+    color: #ffffff;
+    border: 2px solid #d4af37;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 900;
+    border-radius: 999px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-sizing: border-box;
+}
+
+.tiktok-icon {
+    width: 18px;
+    height: 18px;
+    color: #ffffff;
+    flex-shrink: 0;
+}
+
+.btn-black {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+
+.btn-red {
+    background: #fe2c55;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 15px;
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none;
+}
+
+.info-box {
+    background: #1a1a1a;
+    padding: 12px;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 12px;
+    text-align: left;
+    word-break: break-all;
+    margin-top: 10px;
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+/* ✅ PENYESUAIAN OTOMATIS — VERSI HP */
+@media (max-width: 480px) {
+    body:has(.main-box) {
+         padding: 12px;
+    }
+    .box {
+        padding: 20px 16px;
+        border-radius: 10px;
+    }
+    .box h2 {
+        font-size: 20px;
+        margin-top: 8px;
+        margin-bottom: 12px;
+    }
+    .box p {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    .btn-tiktok-login {
+        padding: 11px 16px;
+        font-size: 15px;
+    }
+    .tiktok-icon {
+        width: 16px;
+        height: 16px;
+    }
+    .info-box {
+        padding: 10px;
+        font-size: 11px;
+    }
+}
+
+/* ✅ PENYESUAIAN OTOMATIS — VERSI DEKSTOP LEBAR */
+@media (min-width: 768px) {
+    .box {
+        max-width: 400px;
+        padding: 32px 28px;
+    }
+    .btn-tiktok-login {
+        padding: 13px 20px;
+        font-size: 16px;
+    }
+       }
