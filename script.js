@@ -110,26 +110,34 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // =========================================================
-// 4. LOGIKA TOMBOL LOGIN TIKTOK (PERBAIKAN MUTLAK)
+// LOGIN KIT TIKTOK — EHEY AGENCY
+// Client Key: sbawbsenpxelimpj3k
+// Redirect URI: https://eheyagency.web.id
 // =========================================================
 document.addEventListener("DOMContentLoaded", function () {
   const tiktokButton = document.getElementById("btn-tiktok-login");
 
   if (tiktokButton) {
     tiktokButton.addEventListener("click", function () {
-      // Menggunakan Client Key yang terdaftar di Sandbox Anda
-      const clientKey = "XXXXXXXXXX";
+      // ✅ Client Key milikmu
+      const clientKey = "sbawbsenpxelimpj3k";
       
-      // Wajib disamakan dengan isian Web di Login Kit Sandbox Anda
+      // ✅ Harus sama persis dengan yang terdaftar di Sandbox
       const redirectUri = encodeURIComponent("https://eheyagency.web.id");
       const scope = "user.info.basic,user.info.profile";
       const responseType = "code";
-      const state = "xyz"; 
+      const state = "ehey_agency_123";
 
-      // STRUKTUR URL RESMI TIKTOK YANG SUDAH DIPERBAIKI (MENGGUNAKAN WWW DAN TANDA \$)
-      const tiktokAuthUrl = `https://tiktok.com{clientKey}&scope=${scope}&redirect_uri=${redirectUri}&response_type=${responseType}&state=${state}`;
+      // ✅ Format URL resmi TikTok Login Kit
+      const tiktokAuthUrl = 
+        `https://www.tiktok.com/auth/authorize/` +
+        `?client_key=${clientKey}` +
+        `&scope=${scope}` +
+        `&redirect_uri=${redirectUri}` +
+        `&response_type=${responseType}` +
+        `&state=${state}`;
 
-      // Mengarahkan pengguna langsung ke halaman Login TikTok resmi
+      console.log("🔗 URL Auth:", tiktokAuthUrl);
       window.location.href = tiktokAuthUrl;
     });
   }
