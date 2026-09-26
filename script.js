@@ -109,35 +109,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// =========================================================
-// LOGIN KIT TIKTOK — EHEY AGENCY
-// Client Key: sbawbsenpxelimpj3k
-// Redirect URI: https://eheyagency.web.id
-// =========================================================
 document.addEventListener("DOMContentLoaded", function () {
   const tiktokButton = document.getElementById("btn-tiktok-login");
 
   if (tiktokButton) {
     tiktokButton.addEventListener("click", function () {
-      // ✅ Client Key milikmu
-      const clientKey = "sbawbsenpxelimpj3k";
-      
-      // ✅ Harus sama persis dengan yang terdaftar di Sandbox
+      const clientId = "sbawbsenpxelimpj3k";
       const redirectUri = encodeURIComponent("https://eheyagency.web.id");
       const scope = "user.info.basic,user.info.profile";
       const responseType = "code";
       const state = "ehey_agency_123";
 
-      // ✅ Format URL resmi TikTok Login Kit
+      // ✅ Pakai client_id (bukan client_key)
       const tiktokAuthUrl = 
         `https://www.tiktok.com/auth/authorize/` +
-        `?client_key=${clientKey}` +
+        `?client_id=${clientId}` +
         `&scope=${scope}` +
         `&redirect_uri=${redirectUri}` +
         `&response_type=${responseType}` +
         `&state=${state}`;
 
-      console.log("🔗 URL Auth:", tiktokAuthUrl);
+      console.log("URL Auth:", tiktokAuthUrl);
       window.location.href = tiktokAuthUrl;
     });
   }
