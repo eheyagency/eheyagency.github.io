@@ -1,21 +1,32 @@
-// Hitung jumlah member otomatis
+// =========================================================
+// 1. HITUNG JUMLAH MEMBER OTOMATIS (BUNGKUS AGAR AMAN)
+// =========================================================
+const elemenJumlahMember = document.getElementById('jumlahMember');
+
 fetch('followers.html')
     .then(r => r.text())
     .then(html => {
         const hitung = (html.match(/class="follower-card"/g) || []).length;
-        if (hitung > 0) document.getElementById('jumlahMember').textContent = hitung;
+        if (hitung > 0 && elemenJumlahMember) {
+            elemenJumlahMember.textContent = hitung;
+        }
     })
     .catch(() => {
-        document.getElementById('jumlahMember').textContent = '97';
+        if (elemenJumlahMember) {
+            elemenJumlahMember.textContent = '97';
+        }
     });
 
-// Kirim ke WhatsApp
+// =========================================================
+// 2. KIRIM KE WHATSAPP & FORM SUBMIT
+//    (DIBUNGKUS KONDISI AGAR TIDAK CRASH DI HALAMAN LAIN)
+// =========================================================
 function kirimKeWhatsApp() {
-    const nama = document.getElementById('nama').value;
-    const tiktok = document.getElementById('tiktok').value;
-    const wa = document.getElementById('wa').value;
-    const usia = document.getElementById('usia').value;
-    const alasan = document.getElementById('alasan').value;
+    const nama = document.getElementById('nama')?.value || '';
+    const tiktok = document.getElementById('tiktok')?.value || '';
+    const wa = document.getElementById('wa')?.value || '';
+    const usia = document.getElementById('usia')?.value || '';
+    const alasan = document.getElementById('alasan')?.value || '';
 
     const kategoriCheck = document.querySelectorAll('input[name="kategori"]:checked');
     let kategori = [];
@@ -34,16 +45,18 @@ function kirimKeWhatsApp() {
     window.open(`https://wa.me/${nomorTujuan}?text=${encodeURIComponent(pesan)}`, '_blank');
 }
 
-// Pasang event submit form
-document.getElementById('formDaftar').addEventListener('submit', e => {
-    e.preventDefault();
-    kirimKeWhatsApp();
-});
+// Perbaikan Utama: Cek apakah formDaftar ada di halaman ini
+const formDaftar = document.getElementById('formDaftar');
+if (formDaftar) {
+    formDaftar.addEventListener('submit', e => {
+        e.preventDefault();
+        kirimKeWhatsApp();
+    });
+}
 
-/* =========================================================
-   FLOATING NAVIGATION
-========================================================= */
-
+// =========================================================
+// 3. FLOATING NAVIGATION (TETAP AMAN)
+// =========================================================
 document.addEventListener("DOMContentLoaded", function () {
 
     const floatingNav = document.querySelector(".floating-nav");
@@ -54,117 +67,44 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    /* =========================================
-       BUKA / TUTUP MENU
-    ========================================= */
-
+    /* BUKA / TUTUP MENU */
     toggleButton.addEventListener("click", function (event) {
-
         event.stopPropagation();
-
         const isActive = floatingNav.classList.toggle("active");
 
-        toggleButton.setAttribute(
-            "aria-expanded",
-            isActive ? "true" : "false"
-        );
-
-        toggleButton.setAttribute(
-            "aria-label",
-            isActive
-                ? "Tutup menu navigasi"
-                : "Buka menu navigasi"
-        );
-
-        menu.setAttribute(
-            "aria-hidden",
-            isActive ? "false" : "true"
-        );
+        toggleButton.setAttribute("aria-expanded", isActive ? "true" : "false");
+        toggleButton.setAttribute("aria-label", isActive ? "Tutup menu navigasi" : "Buka menu navigasi");
+        menu.setAttribute("aria-hidden", isActive ? "false" : "true");
     });
 
-
-    /* =========================================
-       KLIK DI LUAR MENU
-    ========================================= */
-
+    /* KLIK DI LUAR MENU */
     document.addEventListener("click", function (event) {
-
         if (!floatingNav.contains(event.target)) {
-
             floatingNav.classList.remove("active");
-
-            toggleButton.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-            toggleButton.setAttribute(
-                "aria-label",
-                "Buka menu navigasi"
-            );
-
-            menu.setAttribute(
-                "aria-hidden",
-                "true"
-            );
+            toggleButton.setAttribute("aria-expanded", "false");
+            toggleButton.setAttribute("aria-label", "Buka menu navigasi");
+            menu.setAttribute("aria-hidden", "true");
         }
     });
 
-
-    /* =========================================
-       ESC UNTUK MENUTUP MENU
-    ========================================= */
-
+    /* ESC UNTUK MENUTUP MENU */
     document.addEventListener("keydown", function (event) {
-
         if (event.key === "Escape") {
-
             floatingNav.classList.remove("active");
-
-            toggleButton.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-            toggleButton.setAttribute(
-                "aria-label",
-                "Buka menu navigasi"
-            );
-
-            menu.setAttribute(
-                "aria-hidden",
-                "true"
-            );
-
+            toggleButton.setAttribute("aria-expanded", "false");
+            toggleButton.setAttribute("aria-label", "Buka menu navigasi");
+            menu.setAttribute("aria-hidden", "true");
             toggleButton.focus();
         }
     });
 
-
-    /* =========================================
-       KLIK MENU
-       MENU AKAN MENUTUP SEBELUM PINDAH HALAMAN
-    ========================================= */
-
+    /* KLIK LINK MENU */
     const menuLinks = menu.querySelectorAll("a");
-
     menuLinks.forEach(function (link) {
-
         link.addEventListener("click", function () {
-
             floatingNav.classList.remove("active");
-
-            toggleButton.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-            menu.setAttribute(
-                "aria-hidden",
-                "true"
-            );
+            toggleButton.setAttribute("aria-expanded", "false");
+            menu.setAttribute("aria-hidden", "true");
         });
-
     });
-
 });
