@@ -111,22 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-      // === FUNGSI LOGIN TIKTOK SANDBOX ===
-function bukaLayarIzin() {
-    document.getElementById('kotak-login-utama').classList.remove('tampilan-aktif');
-    document.getElementById('kotak-login-utama').classList.add('tampilan-tersembunyi');
-    document.getElementById('layar-otorisasi').classList.remove('tampilan-tersembunyi');
-    document.getElementById('layar-otorisasi').classList.add('tampilan-aktif');
-}
-
-function prosesOtorisasi() {
-    document.getElementById('layar-otorisasi').classList.remove('tampilan-aktif');
-    document.getElementById('layar-otorisasi').classList.add('tampilan-tersembunyi');
-    document.getElementById('layar-berhasil').classList.remove('tampilan-tersembunyi');
-    document.getElementById('layar-berhasil').classList.add('tampilan-aktif');
-}
-
-function tampilkanIzin() {
+  function tampilkanIzin() {
     document.getElementById('halaman-web').classList.add('hidden');
     document.getElementById('layar-izin-tiktok').classList.remove('hidden');
 }
@@ -135,5 +120,4 @@ function prosesCallback() {
     document.getElementById('layar-izin-tiktok').classList.add('hidden');
     document.getElementById('halaman-sukses').classList.remove('hidden');
 }
-
-
+    
