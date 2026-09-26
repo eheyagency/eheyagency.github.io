@@ -1224,14 +1224,15 @@ body .floating-nav.active::before {
     font-family: sans-serif;
     background: #f8f9fa;
     margin: 0;
-    padding: 20px;
+    padding: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    box-sizing: border-box;
 }
 
-/* ✅ KOTAK UTAMA — HITAM PEKAT + BINGKAI EMAS */
+/* ✅ KOTAK UTAMA — Responsive HP + Desktop */
 .main-box {
     background: #000000;
     border: 2px solid #d4af37;
@@ -1239,15 +1240,16 @@ body .floating-nav.active::before {
 }
 
 .box {
-    padding: 30px;
+    padding: 24px 20px;
     border-radius: 12px;
     text-align: center;
     max-width: 360px;
     width: 100%;
-    color: #ffffff; /* teks jadi putih agar terbaca di latar hitam */
+    color: #ffffff;
+    box-sizing: border-box;
 }
 
-/* ✅ TOMBOL LOGIN — TETAP SAMA PERSIS */
+/* ✅ TOMBOL LOGIN — TETAP SAMA */
 .btn-tiktok-login {
     background: #000000;
     color: #ffffff;
@@ -1263,6 +1265,7 @@ body .floating-nav.active::before {
     align-items: center;
     justify-content: center;
     gap: 8px;
+    box-sizing: border-box;
 }
 
 .tiktok-icon {
@@ -1272,7 +1275,6 @@ body .floating-nav.active::before {
     flex-shrink: 0;
 }
 
-/* ⬇️ SEMUA DI BAWAH TETAP SAMA, TIDAK DIUBAH */
 .btn-black {
     background: #000;
     color: #fff;
@@ -1284,6 +1286,7 @@ body .floating-nav.active::before {
     font-weight: bold;
     width: 100%;
     margin-top: 20px;
+    box-sizing: border-box;
 }
 
 .btn-red {
@@ -1297,6 +1300,7 @@ body .floating-nav.active::before {
     font-weight: bold;
     width: 100%;
     margin-top: 15px;
+    box-sizing: border-box;
 }
 
 .hidden {
@@ -1305,7 +1309,7 @@ body .floating-nav.active::before {
 
 .info-box {
     background: #1a1a1a;
-    padding: 10px;
+    padding: 12px;
     border-radius: 6px;
     font-family: monospace;
     font-size: 12px;
@@ -1313,5 +1317,49 @@ body .floating-nav.active::before {
     word-break: break-all;
     margin-top: 10px;
     color: #ffffff;
+    box-sizing: border-box;
 }
-   
+
+/* ✅ PENYESUAIAN OTOMATIS — VERSI HP */
+@media (max-width: 480px) {
+    body {
+        padding: 12px;
+    }
+    .box {
+        padding: 20px 16px;
+        border-radius: 10px;
+    }
+    .box h2 {
+        font-size: 20px;
+        margin-top: 8px;
+        margin-bottom: 12px;
+    }
+    .box p {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    .btn-tiktok-login {
+        padding: 11px 16px;
+        font-size: 15px;
+    }
+    .tiktok-icon {
+        width: 16px;
+        height: 16px;
+    }
+    .info-box {
+        padding: 10px;
+        font-size: 11px;
+    }
+}
+
+/* ✅ PENYESUAIAN OTOMATIS — VERSI DEKSTOP LEBAR */
+@media (min-width: 768px) {
+    .box {
+        max-width: 400px;
+        padding: 32px 28px;
+    }
+    .btn-tiktok-login {
+        padding: 13px 20px;
+        font-size: 16px;
+    }
+       }
