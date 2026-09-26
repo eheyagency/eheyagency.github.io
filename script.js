@@ -109,20 +109,19 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-function redirectToTikTok() {
-    // 1. Kredensial Sandbox Anda sudah benar
+/**
+ * Memulai alur otorisasi Sandbox Login Kit TikTok
+ */
+function startTikTokLogin() {
+    // Kredensial sandbox aktif EHEY AGENCY Anda
     const clientKey = 'sbawbsenpxelimpj3k'; 
-    
-    // 2. Redirect URI Anda sudah benar
     const redirectUri = 'https://eheyagency.web.id'; 
-    
-    // 3. Scope data dasar
     const scope = 'user.info.basic';
     
-    // 4. Teks acak keamanan
-    const state = 'ehey_agency_secure_state_123';
+    // Membuat state acak unik untuk keamanan validasi CSRF
+    const state = 'ehey_secure_' + Math.random().toString(36).substring(2, 15);
 
-    // PERBAIKAN DI SINI: Menggunakan endpoint URL otorisasi v2 yang resmi dan tepat
+    // Endpoint URL Gerbang Otorisasi V2 Resmi TikTok
     const tiktokAuthUrl = `https://tiktok.com` +
                           `?client_key=${clientKey}` +
                           `&scope=${scope}` +
@@ -130,6 +129,6 @@ function redirectToTikTok() {
                           `&redirect_uri=${encodeURIComponent(redirectUri)}` +
                           `&state=${state}`;
 
-    // Jalankan pengalihan sistem login
+    // Alihkan halaman pengguna menuju gerbang masuk TikTok
     window.location.href = tiktokAuthUrl;
 }
