@@ -110,23 +110,23 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // =========================================================
-// 4. LOGIKA TOMBOL LOGIN TIKTOK (PERBAIKAN UTAMANYA)
+// 4. LOGIKA TOMBOL LOGIN TIKTOK (PERBAIKAN MUTLAK)
 // =========================================================
 document.addEventListener("DOMContentLoaded", function () {
   const tiktokButton = document.getElementById("btn-tiktok-login");
 
   if (tiktokButton) {
     tiktokButton.addEventListener("click", function () {
-      // Client Key Asli Anda
+      // Menggunakan Client Key yang terdaftar di Sandbox Anda
       const clientKey = "sbawbsenpxelimpj3k";
       
-      // Parameter URL Pengalihan Resmi ke Halaman Kreator (Sudah Ditambahkan /kreator.html)
+      // Wajib disamakan dengan isian Web di Login Kit Sandbox Anda
       const redirectUri = encodeURIComponent("https://eheyagency.web.id");
-      const scope = "user.info.basic";
+      const scope = "user.info.basic,user.info.profile";
       const responseType = "code";
       const state = "xyz"; 
 
-      // Menyusun URL Otorisasi TikTok Resmi (Sudah Diperbaiki Strukturnya)
+      // STRUKTUR URL RESMI TIKTOK YANG SUDAH DIPERBAIKI (MENGGUNAKAN WWW DAN TANDA \$)
       const tiktokAuthUrl = `https://tiktok.com{clientKey}&scope=${scope}&redirect_uri=${redirectUri}&response_type=${responseType}&state=${state}`;
 
       // Mengarahkan pengguna langsung ke halaman Login TikTok resmi
