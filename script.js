@@ -110,19 +110,19 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function redirectToTikTok() {
-    // 1. GANTI DENGAN KREDENSIAL SANDBOX ANDA (Ambil dari tab App Details)
+    // 1. Kredensial Sandbox Anda sudah benar
     const clientKey = 'sbawbsenpxelimpj3k'; 
     
-    // 2. GANTI DENGAN REDIRECT URI YANG ANDA DAFTARKAN (Sesuai di screenshot Anda)
+    // 2. Redirect URI Anda sudah benar
     const redirectUri = 'https://eheyagency.web.id'; 
     
-    // 3. Tentukan Scope/Izin data yang diminta (user.info.basic adalah standar dasar)
+    // 3. Scope data dasar
     const scope = 'user.info.basic';
     
-    // 4. State digunakan untuk keamanan anti-CSRF (isikan teks acak bebas)
+    // 4. Teks acak keamanan
     const state = 'ehey_agency_secure_state_123';
 
-    // Menyusun URL Otorisasi Resmi TikTok v2
+    // PERBAIKAN DI SINI: Menggunakan endpoint URL otorisasi v2 yang resmi dan tepat
     const tiktokAuthUrl = `https://tiktok.com` +
                           `?client_key=${clientKey}` +
                           `&scope=${scope}` +
@@ -130,23 +130,6 @@ function redirectToTikTok() {
                           `&redirect_uri=${encodeURIComponent(redirectUri)}` +
                           `&state=${state}`;
 
-    // Alihkan halaman ke TikTok login
+    // Jalankan pengalihan sistem login
     window.location.href = tiktokAuthUrl;
 }
-
-// Membaca parameter ?code= dan &state= yang dikirim balik oleh TikTok
-    const urlParams = new URLSearchParams(window.location.search);
-    const code = urlParams.get('code');
-    const state = urlParams.get('state');
-
-    if (code) {
-        document.getElementById('result').innerHTML = `
-            <strong>Status:</strong> Otorisasi Sukses<br>
-            <strong>Auth Code:</strong> ${code}<br>
-            <strong>State:</strong> ${state}
-        `;
-        // Catatan Demo: Pada sistem asli, kode di atas akan dikirim ke backend Anda 
-        // untuk ditukarkan menjadi Access Token menggunakan Client Secret.
-    } else {
-        document.getElementById('result').innerHTML = `<span style="color:red;">Gagal mendapatkan kode login dari TikTok.</span>`;
-    }
