@@ -53,13 +53,3 @@ if (formDaftar) {
         kirimKeWhatsApp();
     });
 }
-
-function tampilkanIzin() {
-    document.getElementById('halaman-web').classList.add('hidden');
-    document.getElementById('layar-izin-tiktok').classList.remove('hidden');
-}
-
-function prosesCallback() {
-    document.getElementById('layar-izin-tiktok').classList.add('hidden');
-    document.getElementById('halaman-sukses').classList.remove('hidden');
-}
