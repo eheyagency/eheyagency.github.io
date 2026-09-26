@@ -133,3 +133,20 @@ function redirectToTikTok() {
     // Alihkan halaman ke TikTok login
     window.location.href = tiktokAuthUrl;
 }
+
+// Membaca parameter ?code= dan &state= yang dikirim balik oleh TikTok
+    const urlParams = new URLSearchParams(window.location.search);
+    const code = urlParams.get('code');
+    const state = urlParams.get('state');
+
+    if (code) {
+        document.getElementById('result').innerHTML = `
+            <strong>Status:</strong> Otorisasi Sukses<br>
+            <strong>Auth Code:</strong> ${code}<br>
+            <strong>State:</strong> ${state}
+        `;
+        // Catatan Demo: Pada sistem asli, kode di atas akan dikirim ke backend Anda 
+        // untuk ditukarkan menjadi Access Token menggunakan Client Secret.
+    } else {
+        document.getElementById('result').innerHTML = `<span style="color:red;">Gagal mendapatkan kode login dari TikTok.</span>`;
+    }
