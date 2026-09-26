@@ -110,3 +110,19 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+      // === FUNGSI LOGIN TIKTOK SANDBOX ===
+function bukaLayarIzin() {
+    document.getElementById('kotak-login-utama').classList.remove('tampilan-aktif');
+    document.getElementById('kotak-login-utama').classList.add('tampilan-tersembunyi');
+    document.getElementById('layar-otorisasi').classList.remove('tampilan-tersembunyi');
+    document.getElementById('layar-otorisasi').classList.add('tampilan-aktif');
+}
+
+function prosesOtorisasi() {
+    document.getElementById('layar-otorisasi').classList.remove('tampilan-aktif');
+    document.getElementById('layar-otorisasi').classList.add('tampilan-tersembunyi');
+    document.getElementById('layar-berhasil').classList.remove('tampilan-tersembunyi');
+    document.getElementById('layar-berhasil').classList.add('tampilan-aktif');
+}
+
