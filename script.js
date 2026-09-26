@@ -111,13 +111,13 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-  function tampilkanIzin() {
-    document.getElementById('halaman-web').classList.add('hidden');
-    document.getElementById('layar-izin-tiktok').classList.remove('hidden');
+function tampilkanIzin() {
+    document.getElementById('kotak-login-kit').classList.add('tersembunyi');
+    document.getElementById('layar-izin-tiktok').classList.remove('tersembunyi');
 }
 
 function prosesCallback() {
-    document.getElementById('layar-izin-tiktok').classList.add('hidden');
-    document.getElementById('halaman-sukses').classList.remove('hidden');
+    document.getElementById('layar-izin-tiktok').classList.add('tersembunyi');
+    document.getElementById('halaman-sukses').classList.remove('tersembunyi');
 }
-    
+  
