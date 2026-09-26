@@ -82,8 +82,13 @@
             </a>
         </div>
         <!-- === BAGIAN LOGIN TIKTOK - SIAP DITEMPEL DI HERO === -->
-<!-- TAMPILAN AWAL WEB ANDA -->
-<div id="halaman-web" class="box main-box">
+<!-- ==============================================
+     KOTAK LOGIN KIT — DISISIPKAN DI BAGIAN HERO
+     TIDAK MENGGANTI SELURUH HALAMAN
+============================================== -->
+
+<!-- KOTAK LOGIN AWAL -->
+<div id="kotak-login-kit" class="kotak-login-sisipan">
     <h2>WELCOME MEMBER EHEY AGENCY</h2>
     <p>Silakan masuk menggunakan akun TikTok untuk mengakses direktori anggota.</p>
     <button class="btn-tiktok-login" onclick="tampilkanIzin()">
@@ -94,15 +99,15 @@
     </button>
 </div>
 
-<!-- TAMPILAN SIMULASI LAYAR PERSETUJUAN TIKTOK -->
-<div id="layar-izin-tiktok" class="box hidden main-box" style="border-top: 4px solid #fe2c55;">
+<!-- LAYAR PERSETUJUAN TIKTOK -->
+<div id="layar-izin-tiktok" class="kotak-login-sisipan tersembunyi" style="border-top: 4px solid #fe2c55;">
     <h3 style="margin: 0;">Otorisasi Aplikasi</h3>
     <p style="font-size: 14px; color: #ccc;"><strong>EHEY AGENCY Sandbox</strong> meminta izin untuk mengakses informasi dasar akun TikTok Anda (@jemzlamato).</p>
     <button class="btn-red" onclick="prosesCallback()">Authorize (Izinkan)</button>
 </div>
 
-<!-- TAMPILAN HALAMAN SUKSES -->
-<div id="halaman-sukses" class="box hidden main-box">
+<!-- HALAMAN SUKSES -->
+<div id="halaman-sukses" class="kotak-login-sisipan tersembunyi">
     <h2 style="color: #2bde73;">✓ Otorisasi Sukses!</h2>
     <p style="font-size: 14px; color: #aaa;">Aplikasi EHEY AGENCY berhasil menangkap parameter respon otorisasi Sandbox.</p>
     <div class="info-box">
@@ -110,8 +115,6 @@
         <strong>Auth Code:</strong> clt.sandbox.code.eheyagency777xyz<br>
         <strong>State:</strong> ehey_agency_secure_state_123
     </div>
-</div>
-
 
 </section>
 
