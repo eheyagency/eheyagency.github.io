@@ -1525,3 +1525,94 @@ footer {
         transition: none !important;
     }
    }
+
+   /* =========================================================
+   PERBAIKAN FORCE FLOATING UNTUK VERSI DESKTOP
+========================================================= */
+@media (min-width: 769px) {
+    /* 1. Paksa kontainer utama tetap menjadi kotak bulat melayang di kanan */
+    .floating-nav {
+        position: fixed !important;
+        top: 50% !important;
+        right: 0 !important;
+        left: auto !important; /* Mencegah tertarik ke kiri */
+        bottom: auto !important; /* Mencegah tertarik ke bawah */
+        transform: translateY(-50%) !important;
+        z-index: 999999 !important;
+        
+        display: block !important;
+        width: 62px !important;
+        height: 62px !important;
+        pointer-events: none !important;
+    }
+
+    .floating-nav.active {
+        width: 350px !important;
+        height: auto !important;
+    }
+
+    /* 2. Paksa tombol hamburger muncul kembali berbentuk bulat hitam */
+    .floating-nav-toggle {
+        display: flex !important; /* Memunculkan kembali garis hamburger */
+        position: absolute !important;
+        top: 50% !important;
+        right: -31px !important; /* Sesuai desain awal Anda */
+        width: 62px !important;
+        height: 62px !important;
+        transform: translateY(-50%) !important;
+        border-radius: 50% !important;
+        pointer-events: auto !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    /* Paksa 3 garis hamburger di dalam tombol muncul dan berwarna putih */
+    .floating-nav-toggle span {
+        display: block !important;
+        width: 23px !important;
+        height: 2px !important;
+        background: #ffffff !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    /* 3. Kembalikan Menu Panel ke posisi melayang di kanan */
+    .floating-nav-menu {
+        display: flex !important;
+        flex-direction: column !important;
+        position: absolute !important;
+        top: 50% !important;
+        right: 0 !important;
+        left: auto !important;
+        width: 270px !important;
+        padding: 15px !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+        
+        /* Kembalikan efek sembunyi bawaan sebelum diklik */
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        transform: translate(100%, -50%) scale(0.96) !important;
+        transform-origin: right center !important;
+    }
+
+    /* Saat aktif di desktop, geser menu ke kiri agar terlihat */
+    .floating-nav.active .floating-nav-menu {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        transform: translate(-82px, -50%) scale(1) !important;
+    }
+
+    /* 4. Kembalikan bentuk Link Menu menjadi list vertikal ke bawah */
+    .floating-nav-link, 
+    .floating-nav-join {
+        display: flex !important;
+        width: 100% !important;
+        color: #ffffff !important;
+        font-size: 14px !important;
+        text-align: left !important;
+    }
+}
+   
