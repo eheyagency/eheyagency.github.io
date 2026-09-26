@@ -53,3 +53,60 @@ if (formDaftar) {
         kirimKeWhatsApp();
     });
 }
+
+// =========================================================
+// 3. FLOATING NAVIGATION (TETAP AMAN)
+// =========================================================
+document.addEventListener("DOMContentLoaded", function () {
+  const floatingNav = document.querySelector(".floating-nav");
+  const toggleButton = document.getElementById("floatingNavToggle");
+  const menu = document.getElementById("floatingNavMenu");
+
+  if (!floatingNav || !toggleButton || !menu) {
+    return;
+  }
+
+  /* BUKA / TUTUP MENU */
+  toggleButton.addEventListener("click", function (event) {
+    event.stopPropagation();
+    const isActive = floatingNav.classList.toggle("active");
+
+    toggleButton.setAttribute("aria-expanded", isActive ? "true" : "false");
+    toggleButton.setAttribute(
+      "aria-label",
+      isActive ? "Tutup menu navigasi" : "Buka menu navigasi"
+    );
+    menu.setAttribute("aria-hidden", isActive ? "false" : "true");
+  });
+
+  /* KLIK DI LUAR MENU */
+  document.addEventListener("click", function (event) {
+    if (!floatingNav.contains(event.target)) {
+      floatingNav.classList.remove("active");
+      toggleButton.setAttribute("aria-expanded", "false");
+      toggleButton.setAttribute("aria-label", "Buka menu navigasi");
+      menu.setAttribute("aria-hidden", "true");
+    }
+  });
+
+  /* ESC UNTUK MENUTUP MENU */
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      floatingNav.classList.remove("active");
+      toggleButton.setAttribute("aria-expanded", "false");
+      toggleButton.setAttribute("aria-label", "Buka menu navigasi");
+      menu.setAttribute("aria-hidden", "true");
+      toggleButton.focus();
+    }
+  });
+
+  /* KLIK LINK MENU */
+  const menuLinks = menu.querySelectorAll("a");
+  menuLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      floatingNav.classList.remove("active");
+      toggleButton.setAttribute("aria-expanded", "false");
+      menu.setAttribute("aria-hidden", "true");
+    });
+  });
+});
