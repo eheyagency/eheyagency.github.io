@@ -114,17 +114,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (tiktokButton) {
     tiktokButton.addEventListener("click", function () {
-      // ✅ Pakai client_id
+      // ✅ Client Key kamu = dipakai sebagai client_id
       const clientId = "sbawbsenpxelimpj3k";
       
-      // ✅ Redirect URI MURNI — TIDAK tambah apapun
+      // ✅ Redirect URI MURNI — TIDAK ada tambahan apapun
       const redirectUri = encodeURIComponent("https://eheyagency.web.id");
       
       const scope = "user.info.basic,user.info.profile";
       const responseType = "code";
       const state = "ehey_agency_123";
 
-      // ✅ Susun URL dengan benar
+      // ✅ Susun URL BENAR
       const tiktokAuthUrl = 
         "https://www.tiktok.com/auth/authorize/" +
         "?client_id=" + clientId +
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "&response_type=" + responseType +
         "&state=" + state;
 
-      console.log("🔗 URL:", tiktokAuthUrl);
+      console.log("🔗 URL Benar:", tiktokAuthUrl);
       window.location.href = tiktokAuthUrl;
     });
   }
