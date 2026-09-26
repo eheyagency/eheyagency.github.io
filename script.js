@@ -126,3 +126,14 @@ function prosesOtorisasi() {
     document.getElementById('layar-berhasil').classList.add('tampilan-aktif');
 }
 
+function tampilkanIzin() {
+    document.getElementById('halaman-web').classList.add('hidden');
+    document.getElementById('layar-izin-tiktok').classList.remove('hidden');
+}
+
+function prosesCallback() {
+    document.getElementById('layar-izin-tiktok').classList.add('hidden');
+    document.getElementById('halaman-sukses').classList.remove('hidden');
+}
+
+
