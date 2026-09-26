@@ -1035,584 +1035,214 @@ footer {
 }
 
 /* =========================================================
-   FLOATING NAVIGATION - HAMBURGER
-   Responsive HP / TABLET / DESKTOP
+   FLOATING NAVIGATION - ISOLASI TOTAL (HP & DESKTOP)
 ========================================================= */
 
-.floating-nav {
-    position: fixed !important; /* Memaksa menu tetap melayang di kanan */
+/* Blokir semua gangguan dari properti text-align/flex layout luar */
+body .floating-nav {
+    position: fixed !important;
     top: 50% !important;
     right: 0 !important;
+    left: auto !important;
+    bottom: auto !important;
     transform: translateY(-50%) !important;
-    z-index: 999999 !important; /* Memastikan berada di lapisan paling atas */
-
+    z-index: 999999 !important;
+    display: block !important;
     width: 62px !important;
     height: 62px !important;
-
-    pointer-events: none;
+    text-align: left !important;
+    font-size: 14px !important;
+    pointer-events: none !important;
 }
 
-/* Biarkan konten di dalamnya tetap bisa diklik */
-.floating-nav-toggle, 
-.floating-nav-menu {
-    pointer-events: auto;
-}
-
-/* Pastikan saat menu aktif, ukurannya melebar di kanan dan tidak merusak layout */
-.floating-nav.active {
+body .floating-nav.active {
     width: auto !important;
     height: auto !important;
-   }
-
-/* =========================================================
-   TOMBOL HAMBURGER
-========================================================= */
-
-.floating-nav-toggle {
-    position: absolute;
-    top: 50%;
-    right: -31px;
-
-    width: 62px;
-    height: 62px;
-
-    transform: translateY(-50%);
-
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(30, 30, 30, 0.97),
-            rgba(5, 5, 5, 0.97)
-        );
-
-    box-shadow:
-        0 0 0 1px rgba(255, 255, 255, 0.05),
-        0 8px 30px rgba(0, 0, 0, 0.55),
-        0 0 18px rgba(255, 255, 255, 0.08);
-
-    cursor: pointer;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-
-    padding: 0;
-
-    pointer-events: auto;
-
-    transition:
-        right 0.3s ease,
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
 }
 
-/* Garis hamburger */
-
-.floating-nav-toggle span {
-    display: block;
-
-    width: 23px;
-    height: 2px;
-
-    border-radius: 10px;
-
-    background: #ffffff;
-
-    transition:
-        transform 0.3s ease,
-        opacity 0.3s ease,
-        width 0.3s ease;
+/* Mengembalikan tombol bulat hitam melayang di kanan tengah */
+body .floating-nav-toggle {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 5px !important;
+    
+    position: absolute !important;
+    top: 50% !important;
+    right: -31px !important;
+    width: 62px !important;
+    height: 62px !important;
+    transform: translateY(-50%) !important;
+    
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    border-radius: 50% !important;
+    background: linear-gradient(145deg, rgba(30, 30, 30, 0.97), rgba(5, 5, 5, 0.97)) !important;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 8px 30px rgba(0, 0, 0, 0.55), 0 0 18px rgba(255, 255, 255, 0.08) !important;
+    
+    cursor: pointer !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    pointer-events: auto !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    
+    transition: right 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease !important;
 }
 
-/* Hover */
-
-.floating-nav-toggle:hover {
-    box-shadow:
-        0 8px 30px rgba(0, 0, 0, 0.65),
-        0 0 22px rgba(255, 255, 255, 0.18);
+body .floating-nav.active .floating-nav-toggle {
+    right: 12px !important;
 }
 
-/* =========================================================
-   POSISI SAAT MENU DIBUKA
-========================================================= */
-
-.floating-nav.active .floating-nav-toggle {
-    right: 12px;
+/* Garis hamburger putih di dalam tombol */
+body .floating-nav-toggle span {
+    display: block !important;
+    width: 23px !important;
+    height: 2px !important;
+    border-radius: 10px !important;
+    background: #ffffff !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease !important;
 }
 
-/* Animasi hamburger menjadi X */
+/* Animasi garis menjadi X */
+body .floating-nav.active .floating-nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg) !important; }
+body .floating-nav.active .floating-nav-toggle span:nth-child(2) { opacity: 0 !important; width: 0 !important; }
+body .floating-nav.active .floating-nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg) !important; }
 
-.floating-nav.active .floating-nav-toggle span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
+/* Panel menu pop-up */
+body .floating-nav-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    
+    position: absolute !important;
+    top: 50% !important;
+    right: 0 !important;
+    left: auto !important;
+    width: 270px !important;
+    padding: 15px !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 20px !important;
+    background: linear-gradient(145deg, rgba(20, 20, 20, 0.98), rgba(5, 5, 5, 0.98)) !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 0, 0, 0.4) !important;
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+    
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translate(100%, -50%) scale(0.96) !important;
+    transform-origin: right center !important;
+    transition: transform 0.35s ease, opacity 0.25s ease, visibility 0.25s ease !important;
 }
 
-.floating-nav.active .floating-nav-toggle span:nth-child(2) {
-    opacity: 0;
-    width: 0;
+body .floating-nav.active .floating-nav-menu {
+    transform: translate(-82px, -50%) scale(1) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
 }
 
-.floating-nav.active .floating-nav-toggle span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
+/* Link item di dalam menu */
+body .floating-nav-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    width: 100% !important;
+    min-height: 48px !important;
+    padding: 10px 13px !important;
+    margin: 0 0 6px 0 !important;
+    box-sizing: border-box !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    border-radius: 12px !important;
+    background: transparent !important;
 }
 
-/* =========================================================
-   PANEL MENU
-========================================================= */
-
-.floating-nav-menu {
-    position: absolute;
-
-    top: 50%;
-    right: 0;
-
-    width: 270px;
-
-    padding: 15px;
-
-    transform:
-        translate(100%, -50%)
-        scale(0.96);
-
-    transform-origin: right center;
-
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 20px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(20, 20, 20, 0.98),
-            rgba(5, 5, 5, 0.98)
-        );
-
-    box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.6),
-        0 0 30px rgba(0, 0, 0, 0.4);
-
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    transition:
-        transform 0.35s ease,
-        opacity 0.25s ease,
-        visibility 0.25s ease;
+body .floating-nav-link:hover {
+    background: rgba(255, 255, 255, 0.09) !important;
+    transform: translateX(-3px) !important;
 }
 
-/* Menu terbuka */
-
-.floating-nav.active .floating-nav-menu {
-    transform:
-        translate(-82px, -50%)
-        scale(1);
-
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
+body .nav-icon {
+    width: 28px !important;
+    height: 28px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 8px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    font-size: 15px !important;
+    flex-shrink: 0 !important;
 }
 
-/* =========================================================
-   LINK MENU
-========================================================= */
-
-.floating-nav-link {
-    display: flex;
-
-    align-items: center;
-    gap: 12px;
-
-    width: 100%;
-
-    min-height: 48px;
-
-    padding: 10px 13px;
-
-    margin-bottom: 6px;
-
-    box-sizing: border-box;
-
-    color: #ffffff;
-    text-decoration: none;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    border-radius: 12px;
-
-    transition:
-        background 0.25s ease,
-        transform 0.25s ease,
-        color 0.25s ease;
+/* Tombol Ayo Gabung */
+body .floating-nav-join {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    min-height: 48px !important;
+    padding: 0 15px !important;
+    margin: 10px 0 0 0 !important;
+    box-sizing: border-box !important;
+    border-radius: 12px !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    background: linear-gradient(135deg, #111111, #2a2a2a) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
 }
 
-/* Hover link */
-
-.floating-nav-link:hover {
-    background: rgba(255, 255, 255, 0.09);
-
-    transform: translateX(-3px);
-
-    color: #ffffff;
+body .floating-nav-join:hover {
+    transform: translateY(-2px) !important;
+    background: linear-gradient(135deg, #222222, #3a3a3a) !important;
 }
 
-/* Icon */
+/* Latar belakang gelap saat menu aktif */
+body .floating-nav::before {
+    content: "" !important;
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(0, 0, 0, 0.28) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    z-index: -1 !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease !important;
+}
 
-.nav-icon {
-    width: 28px;
-    height: 28px;
-
-    flex-shrink: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 8px;
-
-    background: rgba(255, 255, 255, 0.08);
-
-    font-size: 15px;
+body .floating-nav.active::before {
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 /* =========================================================
-   TOMBOL AYO GABUNG
+   PENYESUAIAN KHUSUS LAYAR KECIL (MOBILE)
 ========================================================= */
-
-.floating-nav-join {
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-
-    width: 100%;
-
-    min-height: 48px;
-
-    box-sizing: border-box;
-
-    margin-top: 10px;
-    padding: 0 15px;
-
-    border-radius: 12px;
-
-    color: #ffffff;
-    text-decoration: none;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size: 13px;
-    font-weight: 800;
-
-    letter-spacing: 0.5px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #111111,
-            #2a2a2a
-        );
-
-    border: 1px solid rgba(255, 255, 255, 0.18);
-
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.35);
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        background 0.25s ease;
-}
-
-.floating-nav-join:hover {
-    transform: translateY(-2px);
-
-    background:
-        linear-gradient(
-            135deg,
-            #222222,
-            #3a3a3a
-        );
-
-    box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.5);
-}
-
-.join-arrow {
-    font-size: 20px;
-    line-height: 1;
-}
-
-/* =========================================================
-   OVERLAY SAAT MENU TERBUKA
-========================================================= */
-
-.floating-nav::before {
-    content: "";
-
-    position: fixed;
-
-    inset: 0;
-
-    background: rgba(0, 0, 0, 0.28);
-
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-
-    transition:
-        opacity 0.3s ease,
-        visibility 0.3s ease;
-
-    z-index: -1;
-}
-
-.floating-nav.active::before {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* =========================================================
-   TABLET
-========================================================= */
-
 @media (max-width: 768px) {
-
-    .floating-nav {
-        width: 56px;
-        height: 56px;
-    }
-
-    .floating-nav-toggle {
-        width: 56px;
-        height: 56px;
-
-        right: -28px;
-    }
-
-    .floating-nav-toggle span {
-        width: 21px;
-    }
-
-    .floating-nav.active .floating-nav-toggle {
-        right: 10px;
-    }
-
-    .floating-nav-menu {
-        width: 245px;
-        padding: 13px;
-    }
-
-    .floating-nav.active .floating-nav-menu {
-        transform: translate(-70px, -50%) scale(1);
-    }
-
-    .floating-nav-link {
-        min-height: 46px;
-        font-size: 13px;
-    }
-
-    .floating-nav-join {
-        min-height: 46px;
-        font-size: 12px;
-    }
+    body .floating-nav { width: 56px !important; height: 56px !important; }
+    body .floating-nav-toggle { width: 56px !important; height: 56px !important; right: -28px !important; }
+    body .floating-nav-toggle span { width: 21px !important; }
+    body .floating-nav.active .floating-nav-toggle { right: 10px !important; }
+    body .floating-nav-menu { width: 245px !important; padding: 13px !important; }
+    body .floating-nav.active .floating-nav-menu { transform: translate(-70px, -50%) scale(1) !important; }
 }
-
-/* =========================================================
-   HP
-========================================================= */
 
 @media (max-width: 480px) {
-
-    .floating-nav {
-        width: 52px;
-        height: 52px;
-    }
-
-    .floating-nav-toggle {
-        width: 52px;
-        height: 52px;
-
-        right: -26px;
-    }
-
-    .floating-nav-toggle span {
-        width: 20px;
-        height: 2px;
-    }
-
-    .floating-nav.active .floating-nav-toggle {
-        right: 8px;
-    }
-
-    .floating-nav-menu {
-        width: min(240px, calc(100vw - 30px));
-
-        padding: 12px;
-
-        border-radius: 17px;
-    }
-
-    .floating-nav.active .floating-nav-menu {
-        transform: translate(-62px, -50%) scale(1);
-    }
-
-    .floating-nav-link {
-        min-height: 44px;
-
-        padding: 9px 11px;
-
-        font-size: 13px;
-    }
-
-    .floating-nav-join {
-        min-height: 44px;
-
-        padding: 0 13px;
-
-        font-size: 12px;
-    }
-
-    .nav-icon {
-        width: 26px;
-        height: 26px;
-    }
+    body .floating-nav { width: 52px !important; height: 52px !important; }
+    body .floating-nav-toggle { width: 52px !important; height: 52px !important; right: -26px !important; }
+    body .floating-nav-toggle span { width: 20px !important; }
+    body .floating-nav.active .floating-nav-toggle { right: 8px !important; }
+    body .floating-nav-menu { width: min(240px, calc(100vw - 30px)) !important; padding: 12px !important; }
+    body .floating-nav.active .floating-nav-menu { transform: translate(-62px, -50%) scale(1) !important; }
 }
-
-/* =========================================================
-   HP KECIL
-========================================================= */
-
-@media (max-width: 360px) {
-
-    .floating-nav-menu {
-        width: 220px;
-    }
-
-    .floating-nav.active .floating-nav-menu {
-        transform: translate(-57px, -50%) scale(1);
-    }
-
-    .floating-nav-link {
-        font-size: 12px;
-    }
-}
-
-/* =========================================================
-   REDUCE MOTION
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .floating-nav *,
-    .floating-nav::before {
-        transition: none !important;
-    }
-   }
-
-   /* =========================================================
-   PERBAIKAN FORCE FLOATING UNTUK VERSI DESKTOP
-========================================================= */
-@media (min-width: 769px) {
-    /* 1. Paksa kontainer utama tetap menjadi kotak bulat melayang di kanan */
-    .floating-nav {
-        position: fixed !important;
-        top: 50% !important;
-        right: 0 !important;
-        left: auto !important; /* Mencegah tertarik ke kiri */
-        bottom: auto !important; /* Mencegah tertarik ke bawah */
-        transform: translateY(-50%) !important;
-        z-index: 999999 !important;
-        
-        display: block !important;
-        width: 62px !important;
-        height: 62px !important;
-        pointer-events: none !important;
-    }
-
-    .floating-nav.active {
-        width: 350px !important;
-        height: auto !important;
-    }
-
-    /* 2. Paksa tombol hamburger muncul kembali berbentuk bulat hitam */
-    .floating-nav-toggle {
-        display: flex !important; /* Memunculkan kembali garis hamburger */
-        position: absolute !important;
-        top: 50% !important;
-        right: -31px !important; /* Sesuai desain awal Anda */
-        width: 62px !important;
-        height: 62px !important;
-        transform: translateY(-50%) !important;
-        border-radius: 50% !important;
-        pointer-events: auto !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-
-    /* Paksa 3 garis hamburger di dalam tombol muncul dan berwarna putih */
-    .floating-nav-toggle span {
-        display: block !important;
-        width: 23px !important;
-        height: 2px !important;
-        background: #ffffff !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-
-    /* 3. Kembalikan Menu Panel ke posisi melayang di kanan */
-    .floating-nav-menu {
-        display: flex !important;
-        flex-direction: column !important;
-        position: absolute !important;
-        top: 50% !important;
-        right: 0 !important;
-        left: auto !important;
-        width: 270px !important;
-        padding: 15px !important;
-        margin: 0 !important;
-        box-sizing: border-box !important;
-        
-        /* Kembalikan efek sembunyi bawaan sebelum diklik */
-        opacity: 0 !important;
-        visibility: hidden !important;
-        pointer-events: none !important;
-        transform: translate(100%, -50%) scale(0.96) !important;
-        transform-origin: right center !important;
-    }
-
-    /* Saat aktif di desktop, geser menu ke kiri agar terlihat */
-    .floating-nav.active .floating-nav-menu {
-        opacity: 1 !important;
-        visibility: visible !important;
-        pointer-events: auto !important;
-        transform: translate(-82px, -50%) scale(1) !important;
-    }
-
-    /* 4. Kembalikan bentuk Link Menu menjadi list vertikal ke bawah */
-    .floating-nav-link, 
-    .floating-nav-join {
-        display: flex !important;
-        width: 100% !important;
-        color: #ffffff !important;
-        font-size: 14px !important;
-        text-align: left !important;
-    }
-}
-   
