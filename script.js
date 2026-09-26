@@ -108,3 +108,28 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+// LOGIKA TOMBOL LOGIN TIKTOK
+document.addEventListener("DOMContentLoaded", function () {
+  const tiktokButton = document.getElementById("btn-tiktok-login");
+
+  if (tiktokButton) {
+    tiktokButton.addEventListener("click", function () {
+      // ⚠️ GANTI TEKS DI BAWAH INI DENGAN CLIENT KEY ASLI DARI DASHBOARD TIKTOK
+      const clientKey = "awlpvei9cfj4q344";
+      
+      // Parameter URL Pengalihan Resmi ke halaman kreator Anda
+      const redirectUri = encodeURIComponent("https://eheyagency.web.id");
+      const scope = "user.info.basic";
+      const responseType = "code";
+      const state = "xyz"; // Bisa diganti string acak aman untuk keamanan CSRF
+
+      // Menyusun URL Otorisasi TikTok Resmi
+      const tiktokAuthUrl = `https://tiktok.com{clientKey}&scope=${scope}&redirect_uri=${redirectUri}&response_type=${responseType}&state=${state}`;
+
+      // Mengarahkan pengguna langsung ke halaman Login TikTok resmi
+      window.location.href = tiktokAuthUrl;
+    });
+  }
+});
+
