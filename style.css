@@ -1161,40 +1161,61 @@ body .floating-nav.active::before {
     body .floating-nav.active .floating-nav-menu { transform: translate(-62px, -50%) scale(1) !important; }
 }
 
-/* DESAIN TOMBOL LOGIN TIKTOK KUSTOM */
-.login-tiktok-wrapper {
-  margin: 25px 0;
-  text-align: center;
-  width: 100%;
+/* Container Utama */
+.tiktok-login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
 }
 
-.btn-tiktok {
-  background-color: #010101;
-  color: #ffffff;
-  border: 1px solid #ffffff;
-  padding: 12px 28px;
-  font-size: 16px;
-  font-weight: 700;
-  border-radius: 8px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-  font-family: inherit;
+/* Tombol Utama Standar TikTok */
+.tiktok-brand-btn {
+    background-color: #010101;
+    color: #ffffff;
+    border: none;
+    padding: 0 24px;
+    height: 48px; /* Tinggi standar komponen tombol modern */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600; /* Font semi-bold sesuai branding TikTok */
+    letter-spacing: -0.3px;
+    border-radius: 4px; /* Sudut agak tajam khas tombol korporat TikTok */
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    max-width: 320px; /* Batas lebar tombol agar proporsional di HP */
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+    -webkit-tap-highlight-color: transparent;
 }
 
-/* Efek saat tombol disentuh/hover di layar */
-.btn-tiktok:hover {
-  background-color: #25f4ee;
-  color: #010101;
-  border-color: #25f4ee;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(37, 244, 238, 0.4);
+/* Penataan Jarak Ikon */
+.tiktok-btn-icon {
+    margin-right: 10px;
+    flex-shrink: 0;
 }
 
-.btn-tiktok i {
-  font-size: 20px;
+/* Penataan Teks */
+.tiktok-btn-text {
+    line-height: 1;
 }
 
+/* Efek Interaksi Hover (Saat disentuh/diarahkan kursor) */
+@media (hover: hover) {
+    .tiktok-brand-btn:hover {
+        background-color: #121212;
+        /* Efek kilatan neon cyan dan magenta khas logo TikTok pada border bawah luar */
+        box-shadow: -2px 0 0 #25f4ee, 2px 0 0 #fe2c55;
+    }
+}
+
+/* Efek Saat Tombol Ditekan/Klik (Active State) */
+.tiktok-brand-btn:active {
+    transform: scale(0.98); /* Sedikit mengecil memberikan efek feedback menekan tombol fisik */
+    background-color: #1a1a1a;
+}
