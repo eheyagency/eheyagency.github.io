@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (tiktokButton) {
     tiktokButton.addEventListener("click", function () {
       // Menggunakan Client Key yang terdaftar di Sandbox Anda
-      const clientKey = "sbawbsenpxelimpj3k";
+      const clientKey = "XXXXXXXXXX";
       
       // Wajib disamakan dengan isian Web di Login Kit Sandbox Anda
       const redirectUri = encodeURIComponent("https://eheyagency.web.id");
