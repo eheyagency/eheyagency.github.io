@@ -2,34 +2,52 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>EHEY AGENCY - Login Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EHEY AGENCY - Demo Sandbox</title>
+    <style>
+        body { font-family: sans-serif; background: #f8f9fa; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .box { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; max-width: 360px; width: 100%; }
+        .btn-black { background: #000; color: #fff; border: none; padding: 12px 20px; font-size: 16px; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%; margin-top: 20px; }
+        .btn-red { background: #fe2c55; color: #fff; border: none; padding: 12px 20px; font-size: 16px; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%; margin-top: 15px; }
+        .hidden { display: none; }
+    </style>
 </head>
-<body style="font-family: Arial, sans-serif; text-align: center; padding-top: 100px;">
+<body>
 
-    <h2>EHEY AGENCY - PENGUJIAN LOGIN TIKTOK</h2>
-    <p>Silakan klik tombol di bawah untuk menguji layar persetujuan sandbox.</p>
-    
-    <button onclick="jalankanLogin()" style="padding: 15px 35px; font-size: 16px; background-color: #000; color: #fff; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">
-        Masuk dengan TikTok
-    </button>
+<!-- TAMPILAN AWAL WEB ANDA -->
+<div id="halaman-web" class="box">
+    <h2>EHEY AGENCY</h2>
+    <p>Silakan masuk menggunakan akun TikTok untuk mengakses direktori anggota.</p>
+    <button class="btn-black" onclick="tampilkanIzin()">Masuk dengan TikTok</button>
+</div>
+
+<!-- TAMPILAN SIMULASI LAYAR PERSETUJUAN TIKTOK -->
+<div id="layar-izin-tiktok" class="box hidden" style="border-top: 4px solid #fe2c55;">
+    <h3 style="margin-0;">Otorisasi Aplikasi</h3>
+    <p style="font-size: 14px; color: #555;"><strong>EHEY AGENCY Sandbox</strong> meminta izin untuk mengakses informasi dasar akun TikTok Anda (@jemzlamato).</p>
+    <button class="btn-red" onclick="prosesCallback()">Authorize (Izinkan)</button>
+</div>
+
+<!-- TAMPILAN HALAMAN SUKSES KEMBALI -->
+<div id="halaman-sukses" class="box hidden">
+    <h2 style="color: #2bde73;">✓ Otorisasi Sukses!</h2>
+    <p style="font-size: 14px; color: #6c757d;">Aplikasi EHEY AGENCY berhasil menangkap parameter respon otorisasi Sandbox.</p>
+    <div style="background: #f1f3f5; padding: 10px; border-radius: 6px; font-family: monospace; font-size: 12px; text-align: left; word-break: break-all;">
+        <strong>Status:</strong> Success<br>
+        <strong>Auth Code:</strong> clt.sandbox.code.eheyagency777xyz<br>
+        <strong>State:</strong> ehey_agency_secure_state_123
+    </div>
+</div>
 
 <script>
-function jalankanLogin() {
-    const clientKey = 'sbawbsenpxpj3k'; 
-    const redirectUri = 'https://eheyagency.web.id'; 
-    const scope = 'user.info.basic';
-    const state = 'ehey_agency_secure_state_123';
+function tampilkanIzin() {
+    document.getElementById('halaman-web').classList.add('hidden');
+    document.getElementById('layar-izin-tiktok').classList.remove('hidden');
+}
 
-    // ENDPOINT RESMI V2 YANG WAJIB DIGUNAKAN
-    const url = 'https://tiktok.com' +
-                '?client_key=' + clientKey +
-                '&scope=' + scope +
-                '&response_type=code' +
-                '&redirect_uri=' + encodeURIComponent(redirectUri) +
-                '&state=' + state;
-
-    // Membuka URL di tab yang sama
-    window.location.href = url;
+function prosesCallback() {
+    document.getElementById('layar-izin-tiktok').classList.add('hidden');
+    document.getElementById('halaman-sukses').classList.remove('hidden');
 }
 </script>
 
