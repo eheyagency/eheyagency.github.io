@@ -605,10 +605,10 @@ footer {
 }
 
 /* ==================================================
-   BAGIAN FOLLOWERS.HTML — DAFTAR KREATOR / MEMBER
+   BAGIAN kreator.HTML — DAFTAR KREATOR / MEMBER
    ================================================== */
 
-.header-followers {
+.header-kreator {
     width: 100%;
     padding: 20px 15px;
     background:
@@ -620,7 +620,7 @@ footer {
     overflow: hidden;
 }
 
-.header-inner-followers {
+.header-inner-kreator {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -649,7 +649,7 @@ footer {
     border: 3px solid #facc15;
 }
 
-.header-text-center-followers {
+.header-text-center-kreator {
     flex: 1;
     text-align: center;
     padding: 0 10px;
@@ -694,13 +694,13 @@ footer {
     margin: 0;
 }
 
-.followers-page {
+.kreator-page {
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px 60px;
 }
 
-.followers-grid {
+.kreator-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 25px;
@@ -853,7 +853,7 @@ footer {
    RESPONSIF HP (HANYA BERLAKU DI LAYAR MAKSIMAL 600PX)
    ========================================================= */
 @media (max-width: 600px) {
-    .header-inner-followers {
+    .header-inner-kreator {
         flex-wrap: nowrap !important;
         gap: 5px;
     }
@@ -867,7 +867,7 @@ footer {
     .form-row {
         grid-template-columns: 1fr;
     }
-    .followers-grid {
+    .kreator-grid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 15px;
     }

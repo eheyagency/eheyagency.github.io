@@ -3,7 +3,7 @@
 // =========================================================
 const elemenJumlahMember = document.getElementById('jumlahMember');
 
-fetch('followers.html')
+fetch('kreator.html')
     .then(r => r.text())
     .then(html => {
         const hitung = (html.match(/class="follower-card"/g) || []).length;
