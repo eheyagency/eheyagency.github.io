@@ -81,14 +81,31 @@
                 </div>
             </a>
         </div>
-        <!-- Tombol login -->
-        <section class="stats">
-        <div class="hero-login-box">
+        <!-- === BAGIAN LOGIN TIKTOK - SIAP DITEMPEL DI HERO === -->
+<div class="tiktok-login-container">
+    <div id="kotak-login-utama" class="kotak-login tampilan-aktif">
         <p>Silakan masuk menggunakan akun TikTok untuk mengakses direktori anggota.</p>
-        <button class="btn-tiktok-login" onclick="mulaiLoginTikTok()">
-      Masuk dengan TikTok
-    </button>
-  </div>
+        <button class="btn-login-emas" onclick="bukaLayarIzin()">Masuk dengan TikTok</button>
+    </div>
+
+    <div id="layar-otorisasi" class="kotak-login tampilan-tersembunyi">
+        <h3>Otorisasi Aplikasi</h3>
+        <p class="teks-keterangan"><strong>EHEY AGENCY Sandbox</strong> meminta izin untuk mengakses informasi dasar akun TikTok Anda.</p>
+        <button class="btn-tiktok-merah" onclick="prosesOtorisasi()">Authorize (Izinkan)</button>
+    </div>
+
+    <div id="layar-berhasil" class="kotak-login tampilan-tersembunyi">
+        <h2 class="warna-berhasil">✓ Otorisasi Sukses!</h2>
+        <p class="teks-keterangan">Aplikasi EHEY AGENCY berhasil menangkap parameter respon otorisasi Sandbox.</p>
+        <div class="kotak-info-kode">
+            <strong>Status:</strong> Success<br>
+            <strong>Auth Code:</strong> clt.sandbox.code.eheyagency777xyz<br>
+            <strong>State:</strong> ehey_agency_secure_state_123
+        </div>
+    </div>
+</div>
+<!-- === AKHIR BAGIAN LOGIN TIKTOK === -->
+
 </section>
         
       
