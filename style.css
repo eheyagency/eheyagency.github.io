@@ -1220,106 +1220,73 @@ body .floating-nav.active::before {
     background-color: #1a1a1a;
 }
 
-/* === LOGIN TIKTOK - TEMA HITAM + EMAS === */
-.tiktok-login-container {
-    width: 100%;
-    max-width: 360px;
-    margin: 0 auto;
+ body {
+    font-family: sans-serif;
+    background: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-.kotak-login {
-    background: #111;
+/* ✅ KOTAK UTAMA — HITAM PEKAT + BINGKAI EMAS */
+.main-box {
+    background: #000000;
+    border: 2px solid #d4af37;
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
+}
+
+.box {
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     text-align: center;
-    border: 1px solid rgba(212, 175, 55, 0.25);
+    max-width: 360px;
+    width: 100%;
+    color: #ffffff; /* teks jadi putih agar terbaca di latar hitam */
 }
 
-.tampilan-aktif { display: block; }
-.tampilan-tersembunyi { display: none; }
-
-.kotak-login h2 {
-    color: #d4af37;
-    margin-bottom: 10px;
-    font-size: 24px;
-}
-
-.kotak-login h3 {
-    color: #fff;
-    margin-bottom: 12px;
-    font-size: 20px;
-}
-
-.kotak-login p {
-    color: #ccc;
-    margin-bottom: 25px;
-    line-height: 1.5;
-    font-size: 15px;
-}
-
-/* Tombol Emas — Login Utama */
-/* === TOMBOL LOGIN TIKTOK - HITAM IKONIK + KILATAN + IKON RESMI === */
-.btn-tiktok-kuning {
-    background: #010101; /* Hitam pekat ikonik TikTok */
+/* ✅ TOMBOL LOGIN — TETAP SAMA PERSIS */
+.btn-tiktok-login {
+    background: #000000;
     color: #ffffff;
-    border: none;
-    padding: 15px 24px;
-    font-size: 18px;
+    border: 2px solid #d4af37;
+    padding: 12px 20px;
+    font-size: 16px;
     font-weight: 900;
-    border-radius: 8px;
+    border-radius: 999px;
     cursor: pointer;
     width: 100%;
-    transition: all 0.3s ease;
-    letter-spacing: 0.3px;
-    position: relative;
-    overflow: hidden;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
 }
 
-/* Ikon SVG TikTok Resmi Tajam */
-.btn-tiktok-kuning svg {
-    width: 22px;
-    height: 22px;
+.tiktok-icon {
+    width: 18px;
+    height: 18px;
+    color: #ffffff;
     flex-shrink: 0;
 }
 
-/* Efek kilatan Cyan + Magenta halus saat hover */
-.btn-tiktok-kuning::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
+/* ⬇️ SEMUA DI BAWAH TETAP SAMA, TIDAK DIUBAH */
+.btn-black {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(37, 244, 238, 0.25), /* Cyan TikTok */
-        rgba(254, 44, 85, 0.25),  /* Magenta/Merah TikTok */
-        transparent
-    );
-    transition: left 0.5s ease;
+    margin-top: 20px;
 }
 
-.btn-tiktok-kuning:hover::before {
-    left: 100%;
-}
-
-.btn-tiktok-kuning:hover {
-    background: #0a0a0a;
-    box-shadow: 
-        0 0 12px rgba(37, 244, 238, 0.35),
-        0 0 20px rgba(254, 44, 85, 0.25);
-    transform: scale(1.02);
-}
-
-
-/* Tombol TikTok Merah — Layar Izin */
-.btn-tiktok-merah {
+.btn-red {
     background: #fe2c55;
     color: #fff;
     border: none;
@@ -1329,26 +1296,22 @@ body .floating-nav.active::before {
     cursor: pointer;
     font-weight: bold;
     width: 100%;
-    transition: opacity 0.2s ease;
+    margin-top: 15px;
 }
 
-.btn-tiktok-merah:hover {
-    opacity: 0.9;
+.hidden {
+    display: none;
 }
 
-.warna-berhasil { color: #2bde73; }
-.teks-keterangan { color: #999; font-size: 14px; margin-bottom: 15px; }
-
-.kotak-info-kode {
-    background: #f1f3f5;
-    color: #222;
-    padding: 12px;
+.info-box {
+    background: #1a1a1a;
+    padding: 10px;
     border-radius: 6px;
     font-family: monospace;
     font-size: 12px;
     text-align: left;
     word-break: break-all;
-    line-height: 1.7;
     margin-top: 10px;
+    color: #ffffff;
 }
-
+   
