@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (tiktokButton) {
     tiktokButton.addEventListener("click", function () {
       // Client Key Asli Anda
-      const clientKey = "awlpvei9cfj4q344";
+      const clientKey = "sbawbsenpxelimpj3k";
       
       // Parameter URL Pengalihan Resmi ke Halaman Kreator (Sudah Ditambahkan /kreator.html)
       const redirectUri = encodeURIComponent("https://eheyagency.web.id");
