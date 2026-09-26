@@ -1160,3 +1160,41 @@ body .floating-nav.active::before {
     body .floating-nav-menu { width: min(240px, calc(100vw - 30px)) !important; padding: 12px !important; }
     body .floating-nav.active .floating-nav-menu { transform: translate(-62px, -50%) scale(1) !important; }
 }
+
+/* DESAIN TOMBOL LOGIN TIKTOK KUSTOM */
+.login-tiktok-wrapper {
+  margin: 25px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.btn-tiktok {
+  background-color: #010101;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+/* Efek saat tombol disentuh/hover di layar */
+.btn-tiktok:hover {
+  background-color: #25f4ee;
+  color: #010101;
+  border-color: #25f4ee;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(37, 244, 238, 0.4);
+}
+
+.btn-tiktok i {
+  font-size: 20px;
+}
+
