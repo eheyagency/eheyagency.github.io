@@ -22,7 +22,6 @@
             padding: 20px;
         }
 
-        /* Kotak Utama */
         .login-box {
             background: #000;
             padding: 40px 30px;
@@ -53,7 +52,7 @@
             line-height: 1.5;
         }
 
-        /* ========== TOMBOL LOGIN TIKTOK — SAMA PERSIS RESMI ========== */
+        /* TOMBOL LOGIN TIKTOK — SAMA PERSIS RESMI */
         .btn-tiktok {
             display: flex;
             align-items: center;
@@ -69,7 +68,6 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.25s ease;
-            text-decoration: none;
         }
 
         .btn-tiktok:hover {
@@ -82,7 +80,6 @@
             width: 22px;
             height: 22px;
         }
-        /* ============================================================ */
 
         .sandbox-label {
             display: inline-block;
@@ -152,15 +149,13 @@
 </head>
 <body>
 
-<!-- HALAMAN AWAL — TOMBOL LOGIN -->
+<!-- HALAMAN AWAL -->
 <div id="halaman-awal" class="login-box">
     <img src="ehey.png" alt="EHEY AGENCY" class="logo" onerror="this.style.display='none'">
     <h2>EHEY AGENCY</h2>
     <p class="deskripsi">Masuk menggunakan akun TikTok untuk mengakses daftar anggota.</p>
 
-    <!-- TOMBOL LOGIN — SAMA PERSIS DENGAN ASLINYA -->
     <button class="btn-tiktok" onclick="mulaiLogin()">
-        <!-- Ikon TikTok Resmi -->
         <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M34.1605 10.7033C33.4842 9.96065 32.9485 9.10354 32.5776 8.17334H37.0776V27.624C36.7882 30.4716 34.7004 32.8093 32.0409 33.6082C29.3814 34.4071 26.4847 33.5532 24.6027 31.4044C22.7207 29.2556 22.1251 26.1724 23.0056 23.3404C23.8861 20.5084 26.1437 18.3228 28.9606 17.3118C29.9236 16.9662 30.9512 16.7837 31.9996 16.7787V12.2683C30.9512 12.2683 29.9236 12.4508 28.9606 12.7964V16.7787C27.4436 17.0108 26.0413 17.7739 25.0314 18.9492C24.0215 20.1245 23.4708 21.6353 23.5006 23.1804C23.5304 24.7255 24.1394 26.2129 25.2134 27.3295C26.2874 28.4461 27.7519 29.1114 29.3116 29.1734C30.8713 29.2354 32.3731 28.6885 33.4911 27.624C34.6091 26.5595 35.1744 25.0571 35.0776 23.5283V10.7033H34.1605Z" fill="#25F4EE"/>
             <path d="M32.5774 8.17334H37.0774V23.5283C36.9806 25.0571 36.4153 26.5595 35.2973 27.624C34.1793 28.6885 32.6775 29.2354 31.1178 29.1734C29.5581 29.1114 28.0936 28.4461 27.0196 27.3295C25.9456 26.2129 25.3366 24.7255 25.3664 23.1804C25.3962 21.6353 25.9469 20.1245 26.9568 18.9492C27.9667 17.7739 29.369 17.0108 30.886 16.7787V12.7964C29.923 12.4508 28.8954 12.2683 27.847 12.2683V16.7787C26.1646 17.0234 24.5902 17.8409 23.3799 19.0896C22.1696 20.3383 21.3846 21.9401 21.1398 23.6554C20.895 25.3707 21.2023 27.1376 22.0171 28.6349C22.8319 30.1322 24.1011 31.2719 25.6132 31.8514C27.1253 32.4309 28.7849 32.4131 30.2863 31.7987C31.7877 31.1843 33.0318 30.0113 33.7634 28.5034C34.495 26.9955 34.6659 25.2432 34.2474 23.6043V8.17334H32.5774Z" fill="#FE2C55"/>
@@ -170,7 +165,7 @@
         Masuk dengan TikTok
     </button>
 
-    <p class="sandbox-label">🧪 MODE SANDBOX — Hanya untuk uji coba pengembang</p>
+    <p class="sandbox-label">🧪 MODE SANDBOX — Hanya untuk uji coba</p>
 </div>
 
 <!-- LAYAR PERSETUJUAN -->
@@ -185,52 +180,69 @@
     <a href="#" class="kembali-link" onclick="kembaliAwal(event)">← Batal</a>
 </div>
 
-<!-- HALAMAN SUKSES -->
+<!-- HALAMAN SUKSES / CALLBACK -->
 <div id="halaman-sukses" class="login-box hidden">
     <div class="sukses-icon">✅</div>
     <h2 style="color:#2bde73; margin-bottom:10px;">Berhasil Masuk!</h2>
     <p style="color:#999; font-size:14px;">Selamat datang di EHEY AGENCY</p>
     
-    <div class="data-box">
-        <strong>Status:</strong> Berhasil terhubung ke Sandbox<br>
-        <strong>Akun:</strong> @jemzlamato<br>
-        <strong>Role:</strong> Penguji Sandbox<br>
-        <strong>Kode Auth:</strong> clt.sandbox.code.ehey777xyz
+    <div class="data-box" id="data-hasil">
+        Memuat data...
     </div>
     
     <a href="#" class="kembali-link" onclick="kembaliAwal(event)">← Keluar</a>
 </div>
 
 <script>
-function mulaiLogin() {
-    document.getElementById('halaman-awal').classList.add('hidden');
-    document.getElementById('layar-izin').classList.remove('hidden');
+// === DATA SUDAH DIISI ===
+const CLIENT_KEY = "sbawbsenpxelimpj3k";
+const REDIRECT_URI = "https://eheyagency.web.id/teslogin.html";
+const SCOPE = "user.info.basic";
+
+// Cek apakah kembali dari TikTok (ada kode di alamat)
+window.addEventListener('load', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const authCode = urlParams.get('code');
     
-    // Nanti ganti baris di atas dengan kode ini untuk koneksi sungguhan:
-    // window.location.href = "https://www.tiktok.com/auth/authorize/?client_key=GANTI_DISINI&scope=user.info.basic&redirect_uri=GANTI_REDIRECT_URI";
+    if (authCode) {
+        // Berhasil kembali dari TikTok
+        document.getElementById('halaman-awal').classList.add('hidden');
+        document.getElementById('halaman-sukses').classList.remove('hidden');
+        document.getElementById('data-hasil').innerHTML = `
+            <strong>Status:</strong> Berhasil terhubung ke Sandbox ✅<br>
+            <strong>Kode Otorisasi:</strong> ${authCode}<br>
+            <strong>Client Key:</strong> ${CLIENT_KEY}<br>
+            <strong>Scope:</strong> ${SCOPE}
+        `;
+    }
+});
+
+function mulaiLogin() {
+    // Arahkan ke halaman izin TikTok sungguhan
+    const authUrl = `https://www.tiktok.com/auth/authorize/?client_key=${CLIENT_KEY}&scope=${SCOPE}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=code`;
+    window.location.href = authUrl;
 }
 
 function prosesIzin() {
+    // Simulasi — untuk demo
     document.getElementById('layar-izin').classList.add('hidden');
     document.getElementById('halaman-sukses').classList.remove('hidden');
+    document.getElementById('data-hasil').innerHTML = `
+        <strong>Status:</strong> Demo Sandbox ✅<br>
+        <strong>Akun:</strong> @jemzlamato<br>
+        <strong>Client Key:</strong> ${CLIENT_KEY}
+    `;
 }
 
 function kembaliAwal(e) {
     e.preventDefault();
+    // Hapus parameter dari URL
+    window.history.replaceState({}, document.title, REDIRECT_URI);
+    // Kembali ke halaman awal
     document.getElementById('halaman-sukses').classList.add('hidden');
     document.getElementById('layar-izin').classList.add('hidden');
     document.getElementById('halaman-awal').classList.remove('hidden');
 }
-<script>
-function mulaiLogin() {
-    // GANTI baris di bawah ini:
-    const CLIENT_KEY = "SALIN-DARI-TIKTOK-DEVELOPER";
-    const REDIRECT_URI = encodeURIComponent("https://nama-lovable.lovable.app/auth/callback");
-    const SCOPE = "user.info.basic";
-    
-    window.location.href = `https://www.tiktok.com/auth/authorize/?client_key=${CLIENT_KEY}&scope=${SCOPE}&redirect_uri=${REDIRECT_URI}`;
-}
-
 </script>
 
 </body>
